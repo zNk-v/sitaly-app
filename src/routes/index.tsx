@@ -22,8 +22,7 @@ import {
 import exampleRenovation from "@/assets/example-renovation.jpg";
 import examplePlombier from "@/assets/example-plombier.jpg";
 import exampleElectricien from "@/assets/example-electricien.jpg";
-import sitalyLogo from "@/assets/sitaly-logo.png.asset.json";
-import sitalyLogoHorizontal from "@/assets/sitaly-logo-horizontal.png.asset.json";
+import { SitalyLogo } from "@/components/SitalyLogo";
 
 const FAQ_ITEMS = [
   {
@@ -108,12 +107,8 @@ function Nav() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
-        <a href="#top" className="flex items-center">
-          <img
-            src={sitalyLogoHorizontal.url}
-            alt="Sitaly — Sites internet pour artisans"
-            className="h-10 w-auto"
-          />
+        <a href="#top" className="flex items-center" aria-label="Sitaly — accueil">
+          <SitalyLogo />
         </a>
         <nav className="hidden items-center gap-8 md:flex">
           <a href="#offre" className="text-sm font-medium text-muted-foreground hover:text-foreground">Offre</a>
@@ -934,11 +929,7 @@ function Footer() {
         <div className="grid gap-8 md:grid-cols-3">
           <div>
             <div className="flex items-center gap-2">
-              <img
-                src={sitalyLogo.url}
-                alt="Sitaly — Sites internet pour artisans"
-                className="h-9 w-auto"
-              />
+              <SitalyLogo />
             </div>
             <p className="mt-3 text-sm text-primary-foreground/70">
               Création de sites internet pour artisans et TPE.
