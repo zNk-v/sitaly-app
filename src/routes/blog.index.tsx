@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Calendar, Clock } from "lucide-react";
 import { BLOG_POSTS, formatDate } from "@/data/blog-posts";
-import sitalyLogoHorizontal from "@/assets/sitaly-logo-horizontal.png.asset.json";
+import { SitalyLogo } from "@/components/SitalyLogo";
 
 export const Route = createFileRoute("/blog/")({
   head: () => ({
@@ -164,12 +164,8 @@ function BlogNav() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
-        <Link to="/" className="flex items-center">
-          <img
-            src={sitalyLogoHorizontal.url}
-            alt="Sitaly — Sites internet pour artisans"
-            className="h-10 w-auto"
-          />
+        <Link to="/" className="flex items-center" aria-label="Sitaly — accueil">
+          <SitalyLogo />
         </Link>
         <nav className="hidden items-center gap-8 md:flex">
           <Link to="/" className="text-sm font-medium text-muted-foreground hover:text-foreground">

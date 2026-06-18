@@ -942,6 +942,7 @@ function Footer() {
               <li><a href="#exemples" className="hover:text-primary-foreground">Exemples</a></li>
               <li><a href="#process" className="hover:text-primary-foreground">Process</a></li>
               <li><a href="#faq" className="hover:text-primary-foreground">FAQ</a></li>
+              <li><Link to="/blog" className="hover:text-primary-foreground">Blog</Link></li>
             </ul>
           </div>
           <div>
