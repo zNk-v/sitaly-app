@@ -95,9 +95,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "google-site-verification", content: "zZ06krdPwgDK34kIDMFiPjqh3Sbpf8U1pEPxbTTiSag" },
     ],
     links: [
-      { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
-      { rel: "icon", href: "/favicon-32.png", type: "image/png", sizes: "32x32" },
-      { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
@@ -130,13 +127,57 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@context": "https://schema.org",
           "@graph": [
             {
-              "@type": "Organization",
+              "@type": "ProfessionalService",
+              "@id": "https://sitaly.fr/#business",
               name: "Sitaly",
               url: "https://sitaly.fr",
-              description: "Création de sites internet pour artisans et TPE.",
+              image: "https://sitaly.fr/og-image.png",
+              description:
+                "Sitaly crée des sites internet professionnels pour artisans et TPE en Essonne et en Île-de-France. Site sur mesure livré en 48h : 790€ en paiement unique, ou 99€/mois avec hébergement et maintenance inclus.",
+              telephone: "+33658683372",
+              email: "contact@sitaly.fr",
+              priceRange: "€€",
+              currenciesAccepted: "EUR",
+              identifier: { "@type": "PropertyValue", propertyID: "SIRET", value: "83384883100032" },
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Brétigny-sur-Orge",
+                postalCode: "91220",
+                addressRegion: "Île-de-France",
+                addressCountry: "FR",
+              },
+              areaServed: [
+                { "@type": "City", name: "Brétigny-sur-Orge" },
+                { "@type": "AdministrativeArea", name: "Essonne" },
+                { "@type": "AdministrativeArea", name: "Île-de-France" },
+                { "@type": "Country", name: "France" },
+              ],
+              knowsLanguage: "fr",
+              makesOffer: [
+                {
+                  "@type": "Offer",
+                  name: "Création de site internet (paiement unique)",
+                  description:
+                    "Création complète d'un site vitrine sur mesure pour artisan ou TPE, livré en 48h.",
+                  price: "790",
+                  priceCurrency: "EUR",
+                  category: "Création de site internet",
+                },
+                {
+                  "@type": "Offer",
+                  name: "Site + maintenance (abonnement)",
+                  description:
+                    "Création du site, hébergement, sécurité, mises à jour, petites modifications et support inclus. Sans engagement.",
+                  price: "99",
+                  priceCurrency: "EUR",
+                  category: "Site internet avec maintenance",
+                  eligibleDuration: { "@type": "QuantitativeValue", unitCode: "MON", value: 1 },
+                },
+              ],
               contactPoint: {
                 "@type": "ContactPoint",
                 telephone: "+33658683372",
+                email: "contact@sitaly.fr",
                 contactType: "sales",
                 areaServed: "FR",
                 availableLanguage: "French",
@@ -144,8 +185,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             },
             {
               "@type": "WebSite",
+              "@id": "https://sitaly.fr/#website",
               name: "Sitaly",
               url: "https://sitaly.fr",
+              publisher: { "@id": "https://sitaly.fr/#business" },
+              inLanguage: "fr",
             },
           ],
         }),
@@ -162,6 +206,10 @@ function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="fr">
       <head>
+        {/* Favicons en dur : les <link> du head TanStack ne sont pas sérialisés au prerender */}
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <HeadContent />
       </head>
       <body>
