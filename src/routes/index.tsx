@@ -8,16 +8,19 @@ import {
   Search,
   Clock,
   Frown,
-  Wrench,
   TrendingUp,
   Shield,
-  HeadphonesIcon,
   Star,
   ChevronDown,
   Sparkles,
-  MapPin,
   Mail,
   Globe,
+  Target,
+  Zap,
+  Megaphone,
+  Bell,
+  Filter,
+  MessageSquare,
 } from "lucide-react";
 import exampleRenovation from "@/assets/example-renovation.jpg";
 import examplePlombier from "@/assets/example-plombier.jpg";
@@ -45,6 +48,14 @@ const FAQ_ITEMS = [
     q: "Puis-je arrêter l'option maintenance ?",
     a: "Oui, l'option est sans engagement. Vous pouvez l'arrêter à tout moment avec un simple préavis.",
   },
+  {
+    q: "C'est quoi Google Ads et pourquoi en ai-je besoin ?",
+    a: "Google Ads vous place en haut des résultats de recherche dès le premier jour, sans attendre le référencement naturel. On cible les personnes qui cherchent vos services dans votre zone, vous fixez le budget et vous gardez le contrôle. C'est une option qu'on met en place selon vos besoins.",
+  },
+  {
+    q: "L'automatisation est-elle obligatoire ?",
+    a: "Non. Les automatisations (réponse automatique aux demandes, relance des devis, rappels de rendez-vous…) sont proposées en option, selon les besoins réels de votre activité. On commence simple et on ajoute uniquement ce qui vous fait gagner du temps.",
+  },
 ];
 
 export const Route = createFileRoute("/")({
@@ -54,7 +65,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Sitaly crée votre site internet artisan professionnel. 790€ paiement unique ou 99€/mois tout inclus. Livré en 48h. Réservez votre appel !",
+          "Sitaly aide les artisans, indépendants et PME à obtenir plus de clients : site internet performant, Google Ads et automatisations. À partir de 790€ ou 99€/mois, livré en 48h.",
       },
       { property: "og:title", content: "Création site internet artisan | Sitaly" },
       {
@@ -89,7 +100,9 @@ function SitalyHome() {
       <Hero />
       <TrustBar />
       <Problem />
-      <Solution />
+      <HowItWorks />
+      <GoogleAds />
+      <Automation />
       <Pricing />
       <Options />
       <Examples />
@@ -138,13 +151,13 @@ function Hero() {
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-muted-foreground shadow-soft">
               <Sparkles className="h-3.5 w-3.5 text-accent" />
-              Solution clé en main pour artisans & TPE
+              Pour artisans, indépendants & PME de services
             </div>
             <h1 className="mt-5 font-display text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
-              Un site internet conçu pour vous <span className="gradient-text">générer des appels&nbsp;</span>
+              Plus de clients. Plus d'appels. <span className="gradient-text">Moins de temps perdu.</span>
             </h1>
             <p className="mt-5 text-lg text-muted-foreground sm:text-xl">
-              Deux offres simples : création de votre site à <strong className="text-foreground">790€</strong>, ou site + maintenance à <strong className="text-foreground">99€/mois</strong> (création incluse). Livré en <strong className="text-foreground">48h</strong>.
+              Sitaly met en place les outils qui vous apportent des clients : un <strong className="text-foreground">site internet performant</strong>, <strong className="text-foreground">Google Ads</strong> et des <strong className="text-foreground">automatisations</strong>. Votre site livré en <strong className="text-foreground">48h</strong>.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -166,10 +179,10 @@ function Hero() {
 
             <ul className="mt-8 grid grid-cols-2 gap-x-6 gap-y-3 text-sm sm:grid-cols-4 sm:text-[15px]">
               {[
-                "Site sur mesure",
+                "Plus d'appels",
+                "Plus de devis",
                 "Visible sur Google",
-                "Maintenance incluse",
-                "Support continu",
+                "Zéro temps perdu",
               ].map((t) => (
                 <li key={t} className="flex items-center gap-2 text-foreground/90">
                   <Check className="h-4 w-4 shrink-0 text-success" />
@@ -313,33 +326,174 @@ function Problem() {
   );
 }
 
-/* ---------------- SOLUTION ---------------- */
-function Solution() {
-  const items = [
-    { icon: Wrench, title: "Création du site", desc: "Un site sur mesure, moderne et adapté à votre métier." },
-    { icon: MapPin, title: "Référencement local", desc: "Soyez visible sur Google quand vos clients vous cherchent." },
-    { icon: Shield, title: "Maintenance & sécurité", desc: "Hébergement, mises à jour et sauvegardes inclus." },
-    { icon: HeadphonesIcon, title: "Accompagnement", desc: "Un interlocuteur dédié pour vos questions et modifications." },
+/* ---------------- HOW IT WORKS ---------------- */
+function HowItWorks() {
+  const steps = [
+    {
+      n: "01",
+      icon: Search,
+      title: "Attirer",
+      benefit: "Être trouvé par vos futurs clients",
+      points: [
+        "Site internet professionnel",
+        "Référencement local",
+        "Google Business Profile",
+        "Google Ads",
+      ],
+    },
+    {
+      n: "02",
+      icon: Target,
+      title: "Convertir",
+      benefit: "Transformer les visiteurs en demandes",
+      points: [
+        "Pages optimisées",
+        "Formulaires performants",
+        "Appels à l'action efficaces",
+      ],
+    },
+    {
+      n: "03",
+      icon: Zap,
+      title: "Automatiser",
+      benefit: "Gagner du temps sur le suivi",
+      points: [
+        "Réponse automatique aux demandes",
+        "Qualification des prospects",
+        "Relance des devis",
+        "Prise de rendez-vous",
+      ],
+    },
   ];
   return (
     <section className="bg-secondary/40 py-20 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <SectionHeader
-          eyebrow="Notre solution"
-          title="Une solution clé en main"
-          subtitle="On s'occupe de tout. Vous, vous vous concentrez sur votre métier."
+          eyebrow="Notre méthode"
+          title="Comment ça fonctionne ?"
+          subtitle="Un système simple en trois temps pour transformer votre présence en ligne en clients."
         />
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {items.map((it) => (
-            <div key={it.title} className="rounded-2xl border border-border bg-card p-6 shadow-soft">
-              <div className="grid h-12 w-12 place-items-center rounded-xl bg-accent/12 text-accent">
-                <it.icon className="h-6 w-6" />
+        <div className="mt-12 grid gap-5 md:grid-cols-3">
+          {steps.map((s) => (
+            <div key={s.title} className="rounded-2xl border border-border bg-card p-7 shadow-soft transition hover:shadow-elevated">
+              <div className="flex items-center justify-between">
+                <div className="grid h-12 w-12 place-items-center rounded-xl bg-accent/12 text-accent">
+                  <s.icon className="h-6 w-6" />
+                </div>
+                <span className="font-display text-3xl font-extrabold text-accent/30">{s.n}</span>
               </div>
-              <h3 className="mt-5 font-bold">{it.title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{it.desc}</p>
+              <h3 className="mt-5 text-xl font-bold">{s.title}</h3>
+              <p className="mt-1 text-[15px] font-medium text-muted-foreground">{s.benefit}</p>
+              <ul className="mt-5 space-y-2.5">
+                {s.points.map((p) => (
+                  <li key={p} className="flex items-start gap-2.5 text-[15px]">
+                    <Check className="mt-0.5 h-5 w-5 shrink-0 text-success" />
+                    <span>{p}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------------- GOOGLE ADS ---------------- */
+function GoogleAds() {
+  const points = [
+    {
+      icon: Megaphone,
+      title: "Visibilité immédiate",
+      desc: "Pourquoi attendre des mois le référencement naturel ? Apparaissez en haut de Google dès le premier jour.",
+    },
+    {
+      icon: Target,
+      title: "Des prospects qualifiés",
+      desc: "On cible les personnes qui cherchent vos services, dans votre zone, au bon moment.",
+    },
+    {
+      icon: Shield,
+      title: "Un budget maîtrisé",
+      desc: "Vous fixez le budget. Pas de mauvaise surprise, vous gardez le contrôle.",
+    },
+    {
+      icon: TrendingUp,
+      title: "Des résultats mesurables",
+      desc: "Vous savez exactement combien d'appels et de demandes vos campagnes génèrent.",
+    },
+  ];
+  return (
+    <section className="py-20 sm:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+        <div className="grid items-center gap-12 lg:grid-cols-[1fr_1.1fr]">
+          <div>
+            <div className="text-xs font-semibold uppercase tracking-wider text-accent">Google Ads</div>
+            <h2 className="mt-2 font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
+              Soyez visible <span className="gradient-text">immédiatement</span>
+            </h2>
+            <p className="mt-4 text-muted-foreground sm:text-lg">
+              Le référencement naturel prend du temps. Google Ads vous place en tête des recherches dès aujourd'hui, et vous apporte des demandes pendant que votre visibilité naturelle se construit.
+            </p>
+            <a
+              href="#contact"
+              className="mt-7 inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3.5 text-base font-semibold text-primary-foreground shadow-elevated transition hover:opacity-90"
+            >
+              <Calendar className="h-5 w-5" />
+              En discuter
+            </a>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {points.map((p) => (
+              <div key={p.title} className="rounded-2xl border border-border bg-card p-6 shadow-soft">
+                <div className="grid h-11 w-11 place-items-center rounded-xl bg-accent/12 text-accent">
+                  <p.icon className="h-5 w-5" />
+                </div>
+                <h3 className="mt-4 font-bold">{p.title}</h3>
+                <p className="mt-1.5 text-sm text-muted-foreground">{p.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------------- AUTOMATION ---------------- */
+function Automation() {
+  const examples = [
+    { icon: MessageSquare, t: "Répondre automatiquement aux demandes entrantes" },
+    { icon: Filter, t: "Qualifier les prospects avant qu'ils vous contactent" },
+    { icon: Bell, t: "Relancer les devis automatiquement" },
+    { icon: Calendar, t: "Envoyer des rappels de rendez-vous" },
+    { icon: Clock, t: "Gagner du temps sur les tâches répétitives" },
+  ];
+  return (
+    <section className="bg-secondary/40 py-20 sm:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+        <SectionHeader
+          eyebrow="Automatisation"
+          title="Automatisation intelligente"
+          subtitle="Laissez les tâches répétitives se faire toutes seules et concentrez-vous sur votre métier."
+        />
+        <div className="mx-auto mt-12 grid max-w-4xl gap-3 sm:grid-cols-2">
+          {examples.map((e) => (
+            <div
+              key={e.t}
+              className="flex items-center gap-3 rounded-xl border border-border bg-card px-5 py-4 shadow-soft transition hover:border-accent/40"
+            >
+              <div className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-accent/10 text-accent">
+                <e.icon className="h-5 w-5" />
+              </div>
+              <span className="font-medium">{e.t}</span>
+            </div>
+          ))}
+        </div>
+        <p className="mx-auto mt-8 max-w-2xl text-center text-sm text-muted-foreground">
+          Ces automatisations sont proposées en option, selon les besoins réels de votre entreprise. Rien d'imposé.
+        </p>
       </div>
     </section>
   );
@@ -478,20 +632,21 @@ function Pricing() {
 /* ---------------- OPTIONS ---------------- */
 function Options() {
   const opts = [
+    "Campagnes Google Ads",
+    "Automatisation des demandes & relances",
+    "Gestion de la visibilité locale",
     "Référencement SEO avancé",
-    "Publicité Google Ads",
+    "Prise de rendez-vous en ligne",
     "Rédaction de contenus",
     "Photos professionnelles",
     "Logo et identité visuelle",
-    "Pages supplémentaires",
-    "Prise de rendez-vous en ligne",
   ];
   return (
     <section className="bg-secondary/40 py-20 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <SectionHeader
-          eyebrow="Sur mesure"
-          title="Options disponibles selon vos besoins"
+          eyebrow="Pour aller plus loin"
+          title="Des leviers en plus pour générer des clients"
           subtitle="Ajoutez uniquement ce qui vous est utile. Rien d'imposé."
         />
         <div className="mx-auto mt-10 grid max-w-4xl grid-cols-1 gap-3 sm:grid-cols-2">
@@ -932,7 +1087,7 @@ function Footer() {
               <SitalyLogo />
             </div>
             <p className="mt-3 text-sm text-primary-foreground/70">
-              Création de sites internet pour artisans et TPE.
+              Plus de clients pour les artisans, indépendants et PME : site internet, Google Ads et automatisation.
             </p>
           </div>
           <div>
