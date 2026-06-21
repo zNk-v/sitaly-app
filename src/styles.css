@@ -111,3 +111,26 @@
 @utility animate-float {
   animation: float-soft 6s ease-in-out infinite;
 }
+
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@utility animate-marquee {
+  animation: marquee-scroll 38s linear infinite;
+  will-change: transform;
+}
+@utility marquee-mask {
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+@media (hover: hover) {
+  .marquee:hover .animate-marquee {
+    animation-play-state: paused;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
+}

@@ -98,6 +98,7 @@ function SitalyHome() {
     <div className="min-h-screen bg-background text-foreground">
       <Nav />
       <Hero />
+      <ProfessionsMarquee />
       <TrustBar />
       <Problem />
       <HowItWorks />
@@ -256,6 +257,57 @@ function HeroMock() {
         </div>
       </div>
     </div>
+  );
+}
+
+/* ---------------- PROFESSIONS MARQUEE ---------------- */
+function ProfessionsMarquee() {
+  const metiers = [
+    "Artisans",
+    "Ostéopathes",
+    "Kinésithérapeutes",
+    "Coachs sportifs",
+    "Agents immobiliers",
+    "Garages automobiles",
+    "Restaurateurs",
+    "Commerçants",
+    "Avocats",
+    "Experts-comptables",
+    "Cabinets de recrutement",
+    "Centres de formation",
+    "Consultants",
+    "PME de services",
+    "Entrepreneurs",
+  ];
+
+  const Track = ({ hidden = false }: { hidden?: boolean }) => (
+    <ul className="flex shrink-0 items-center" aria-hidden={hidden || undefined}>
+      {metiers.map((m) => (
+        <li key={m} className="flex items-center">
+          <span className="whitespace-nowrap px-6 text-base font-semibold text-foreground/80 sm:px-8 sm:text-lg">
+            {m}
+          </span>
+          <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-accent/40" aria-hidden="true" />
+        </li>
+      ))}
+    </ul>
+  );
+
+  return (
+    <section className="border-y border-border bg-background py-12 sm:py-16">
+      <div className="mx-auto max-w-3xl px-4 text-center sm:px-6">
+        <h2 className="font-display text-xl font-bold tracking-tight sm:text-2xl">
+          Plus de clients pour votre activité,{" "}
+          <span className="gradient-text">quel que soit votre métier</span>
+        </h2>
+      </div>
+      <div className="marquee marquee-mask group relative mt-9 flex overflow-hidden">
+        <div className="animate-marquee flex shrink-0">
+          <Track />
+          <Track hidden />
+        </div>
+      </div>
+    </section>
   );
 }
 
