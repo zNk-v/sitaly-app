@@ -61,16 +61,16 @@ const FAQ_ITEMS = [
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Création site internet artisan | Sitaly — 790€ ou 99€/mois" },
+      { title: "Sitaly | Sites web, Google Ads et automatisation pour générer plus de clients" },
       {
         name: "description",
         content:
-          "Sitaly aide les artisans, indépendants et PME à obtenir plus de clients : site internet performant, Google Ads et automatisations. À partir de 790€ ou 99€/mois, livré en 48h.",
+          "Sitaly aide les artisans, indépendants et PME à obtenir plus de clients grâce à des sites internet performants, Google Ads et des automatisations simples. Développez votre activité avec un système conçu pour générer des appels et des demandes de devis.",
       },
-      { property: "og:title", content: "Création site internet artisan | Sitaly" },
+      { property: "og:title", content: "Sitaly | Sites web, Google Ads et automatisation pour générer plus de clients" },
       {
         property: "og:description",
-        content: "Site pro pour artisan livré en 48h. 790€ unique ou 99€/mois création + maintenance incluses. Réservez votre appel gratuit.",
+        content: "Sitaly aide les artisans, indépendants et PME à obtenir plus de clients grâce à des sites internet performants, Google Ads et des automatisations simples. Développez votre activité avec un système conçu pour générer des appels et des demandes de devis.",
       },
       { property: "og:url", content: "https://sitaly.fr/" },
     ],
