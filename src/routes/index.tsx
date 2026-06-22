@@ -30,23 +30,23 @@ import { SitalyLogo } from "@/components/SitalyLogo";
 const FAQ_ITEMS = [
   {
     q: "Quel est le tarif ?",
-    a: "790€ couvrent la création complète de votre site sur mesure, livré en 48h. L'offre maintenance à 99€/mois inclut la création du site, l'hébergement, la sécurité, les mises à jour, les petites modifications et le support. Engagement minimum de 12 mois pour l'offre maintenance. Vous pouvez aussi prendre uniquement le site sans maintenance.",
+    a: "Trois formules au choix selon votre objectif : Présence (99€/mois) pour être visible et crédible en ligne, Acquisition (249€/mois) pour générer des appels et des devis grâce à Google, et Croissance (499€/mois) pour convertir davantage et automatiser le suivi. Pour les offres Acquisition et Croissance, le budget publicitaire Google n'est pas inclus. Vous pouvez aussi opter pour une création unique à 790€ en paiement comptant, sans abonnement.",
   },
   {
     q: "Est-ce que je peux modifier mon site ?",
-    a: "Oui. Les petites modifications (textes, photos, infos) sont incluses dans l'option maintenance. Pour des évolutions plus importantes, on vous propose un devis transparent.",
+    a: "Oui. Les petites modifications (textes, photos, infos) sont incluses dans votre abonnement. Pour des évolutions plus importantes, on vous propose un devis transparent.",
   },
   {
     q: "Suis-je propriétaire du site ?",
-    a: "Oui, le contenu de votre site vous appartient. Vous pouvez héberger le site où vous le souhaitez si vous ne prenez pas l'option maintenance.",
+    a: "Oui, le contenu de votre site vous appartient. Si vous choisissez la création unique à 790€, vous pouvez héberger le site où vous le souhaitez.",
   },
   {
     q: "Combien de temps pour le mettre en ligne ?",
     a: "Votre site est livré en 48h après l'appel découverte et la fourniture des contenus.",
   },
   {
-    q: "Puis-je arrêter l'option maintenance ?",
-    a: "Oui, l'option est sans engagement. Vous pouvez l'arrêter à tout moment avec un simple préavis.",
+    q: "Puis-je arrêter mon abonnement ?",
+    a: "Oui, votre abonnement est sans engagement. Vous pouvez l'arrêter à tout moment avec un simple préavis.",
   },
   {
     q: "C'est quoi Google Ads et pourquoi en ai-je besoin ?",
@@ -313,10 +313,10 @@ function ProfessionsMarquee() {
 
 function TrustBar() {
   const items = [
-    { v: "790€", l: "Création unique" },
-    { v: "99€/mois", l: "Création + maintenance" },
+    { v: "Dès 99€", l: "par mois" },
+    { v: "Google Ads", l: "+ automatisation" },
     { v: "48h", l: "Mise en ligne" },
-    { v: "Support", l: "Réactif 7j/7" },
+    { v: "7j/7", l: "Support réactif" },
   ];
   return (
     <div className="border-y border-border bg-secondary/50">
@@ -552,131 +552,209 @@ function Automation() {
 }
 
 /* ---------------- PRICING ---------------- */
+const PRICING_TIERS = [
+  {
+    name: "Présence",
+    badge: "Pour démarrer",
+    icon: Globe,
+    price: "99€",
+    period: "/mois",
+    objective: "Être visible et crédible en ligne.",
+    inherits: null,
+    features: [
+      "Site internet professionnel",
+      "Optimisation mobile",
+      "Hébergement",
+      "Maintenance",
+      "Support",
+    ],
+    note: null,
+    promise: "Une présence professionnelle sur internet, sans gérer la technique.",
+    featured: false,
+  },
+  {
+    name: "Acquisition",
+    badge: "Recommandé",
+    icon: Megaphone,
+    price: "249€",
+    period: "/mois",
+    objective: "Commencer à générer des appels, des devis et des rendez-vous.",
+    inherits: "Tout le pack Présence",
+    features: [
+      "Optimisation de la conversion",
+      "Configuration Google Business Profile",
+      "Gestion de vos campagnes Google Ads",
+      "Suivi des performances",
+    ],
+    note: "Budget publicitaire Google non inclus.",
+    promise: "Attirez régulièrement de nouveaux prospects grâce à Google.",
+    featured: true,
+  },
+  {
+    name: "Croissance",
+    badge: "Performance",
+    icon: Zap,
+    price: "499€",
+    period: "/mois",
+    objective: "Convertir plus de visiteurs en clients et automatiser les tâches répétitives.",
+    inherits: "Tout le pack Acquisition",
+    features: [
+      "Optimisation continue des campagnes",
+      "Automatisations intelligentes",
+      "Relance automatique des prospects",
+      "Qualification des demandes",
+      "Optimisation du parcours client",
+    ],
+    note: "Budget publicitaire Google non inclus.",
+    promise: "Un système conçu pour générer plus de clients avec moins d'efforts.",
+    featured: false,
+  },
+] as const;
+
 function Pricing() {
   return (
     <section id="offre" className="py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <SectionHeader
           eyebrow="Tarifs"
-          title="Choisissez l'offre qui vous convient"
-          subtitle="Deux options simples. Aucune surprise."
+          title="Choisissez le niveau d'accompagnement adapté à votre activité"
+          subtitle="De la simple présence en ligne à un système complet d'acquisition et de croissance."
         />
 
-        <div className="mx-auto mt-14 flex max-w-5xl flex-col items-stretch gap-0 md:flex-row md:items-center">
-          {/* OFFER 1 — Left */}
-          <div className="flex-1 rounded-3xl border border-border bg-card shadow-soft md:rounded-r-none">
-            <div className="p-8 sm:p-10">
-              <h3 className="text-center text-xl font-bold sm:text-2xl">
-                Site internet clé en main
-              </h3>
-              <div className="mt-4 flex items-baseline justify-center gap-1">
-                <span className="font-display text-5xl font-extrabold tracking-tight sm:text-6xl">
-                  790 €
-                </span>
-              </div>
-              <p className="mt-2 text-center text-sm font-medium text-muted-foreground">
-                Paiement unique
-              </p>
-              <p className="mt-4 text-center text-sm text-muted-foreground">
-                Votre site internet livré prêt à l'emploi.
-              </p>
-
-              <ul className="mt-8 space-y-3">
-                {[
-                  "Création complète du site internet",
-                  "Design personnalisé",
-                  "Optimisation mobile",
-                  "Formulaire de contact",
-                  "Intégration Google Maps",
-                  "SEO local de base",
-                  "Mise en ligne",
-                  "Propriétaire du site",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-[15px]">
-                    <Check className="mt-0.5 h-5 w-5 shrink-0 text-success" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <a
-                href="https://buy.stripe.com/28E14nfny52A03X6aJgjC00"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-border bg-secondary px-6 py-3.5 text-base font-semibold text-secondary-foreground transition hover:bg-muted"
-              >
-                Commander mon site
-              </a>
-            </div>
-          </div>
-
-          {/* SEPARATOR */}
-          <div className="flex items-center justify-center py-4 md:flex-col md:py-0">
-            <div className="h-px w-12 bg-border md:h-12 md:w-px" />
-            <span className="mx-3 text-sm font-semibold uppercase tracking-wider text-muted-foreground md:my-2">
-              OU
-            </span>
-            <div className="h-px w-12 bg-border md:h-12 md:w-px" />
-          </div>
-
-          {/* OFFER 2 — Recommended */}
-          <div className="relative flex-1 rounded-3xl border-2 border-accent bg-card shadow-glow md:rounded-l-none">
-            <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-accent px-4 py-1 text-xs font-bold uppercase tracking-wider text-accent-foreground shadow-elevated">
-              Recommandé
-            </div>
-            <div className="p-8 sm:p-10">
-              <h3 className="text-center text-xl font-bold sm:text-2xl">
-                Site internet + maintenance
-              </h3>
-              <div className="mt-4 flex items-baseline justify-center gap-1">
-                <span className="font-display text-5xl font-extrabold tracking-tight sm:text-6xl">
-                  99 €
-                </span>
-                <span className="text-lg text-muted-foreground">/mois</span>
-              </div>
-              <p className="mt-2 text-center text-sm font-medium text-accent">
-                Création du site incluse, sans frais de départ.
-              </p>
-              <p className="mt-4 text-center text-sm text-muted-foreground">
-                Un site internet professionnel créé et entièrement géré pour vous.
-              </p>
-
-              <ul className="mt-8 space-y-3">
-                {[
-                  "Création complète du site internet",
-                  "Mise en ligne",
-                  "Hébergement sécurisé",
-                  "Maintenance technique continue",
-                  "Sauvegardes automatiques",
-                  "Mises à jour régulières",
-                  "Petites modifications incluses",
-                  "Support réactif",
-                  "SEO local de base",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-[15px]">
-                    <Check className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <p className="mt-6 text-center text-xs text-muted-foreground">
-                Engagement minimum de 12 mois
-              </p>
-
-              <a
-                href="https://buy.stripe.com/fZu7sL7V652A181fLjgjC01"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-accent px-6 py-3.5 text-base font-semibold text-accent-foreground shadow-elevated transition hover:opacity-90"
-              >
-                Commencer mon site
-              </a>
-            </div>
-          </div>
+        <div className="mx-auto mt-14 grid max-w-6xl items-stretch gap-6 lg:grid-cols-3">
+          {PRICING_TIERS.map((t) => (
+            <PricingCard key={t.name} tier={t} featured={t.featured} />
+          ))}
         </div>
+
+        <OneTimeOffer />
       </div>
     </section>
+  );
+}
+
+type Tier = (typeof PRICING_TIERS)[number];
+
+function PricingCard({ tier, featured }: { tier: Tier; featured: boolean }) {
+  return (
+    <div
+      className={`relative flex h-full flex-col rounded-3xl bg-card p-7 sm:p-8 ${
+        featured
+          ? "border-2 border-accent shadow-glow"
+          : "border border-border shadow-soft"
+      }`}
+    >
+      {featured && (
+        <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-accent px-4 py-1 text-xs font-bold uppercase tracking-wider text-accent-foreground shadow-elevated">
+          Recommandé
+        </div>
+      )}
+
+      <div className="flex items-center justify-between">
+        <div
+          className={`grid h-11 w-11 place-items-center rounded-xl ${
+            featured ? "bg-accent/15 text-accent" : "bg-secondary text-foreground/70"
+          }`}
+        >
+          <tier.icon className="h-5 w-5" />
+        </div>
+        <span
+          className={`rounded-full px-3 py-1 text-xs font-semibold ${
+            featured ? "bg-accent/10 text-accent" : "bg-secondary text-muted-foreground"
+          }`}
+        >
+          {tier.badge}
+        </span>
+      </div>
+
+      <h3 className="mt-5 text-xl font-bold">{tier.name}</h3>
+      <p className="mt-1 text-sm text-muted-foreground">{tier.objective}</p>
+
+      <div className="mt-5 flex items-baseline gap-1">
+        <span className="font-display text-4xl font-extrabold tracking-tight sm:text-5xl">
+          {tier.price}
+        </span>
+        <span className="text-muted-foreground">{tier.period}</span>
+      </div>
+
+      <div className="mt-7 space-y-3">
+        {tier.inherits && (
+          <div className="flex items-center gap-2 text-sm font-semibold text-accent">
+            <Check className="h-5 w-5 shrink-0" />
+            {tier.inherits}
+          </div>
+        )}
+        <ul className="space-y-3">
+          {tier.features.map((f) => (
+            <li key={f} className="flex items-start gap-3 text-[15px]">
+              <Check
+                className={`mt-0.5 h-5 w-5 shrink-0 ${
+                  featured ? "text-accent" : "text-success"
+                }`}
+              />
+              <span>{f}</span>
+            </li>
+          ))}
+        </ul>
+        {tier.note && (
+          <p className="flex items-start gap-1.5 pt-1 text-xs text-muted-foreground">
+            <span aria-hidden="true">*</span>
+            {tier.note}
+          </p>
+        )}
+      </div>
+
+      <p className="mt-6 border-t border-border pt-5 text-sm font-medium text-foreground/80">
+        {tier.promise}
+      </p>
+
+      <a
+        href="#contact"
+        className={`mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-base font-semibold transition ${
+          featured
+            ? "bg-accent text-accent-foreground shadow-elevated hover:opacity-90"
+            : "border border-border bg-secondary text-secondary-foreground hover:bg-muted"
+        }`}
+      >
+        <Calendar className="h-5 w-5" />
+        Réserver un appel
+      </a>
+    </div>
+  );
+}
+
+function OneTimeOffer() {
+  return (
+    <div className="mx-auto mt-8 max-w-4xl rounded-2xl border border-border bg-secondary/40 p-6 sm:p-7">
+      <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+            <h3 className="text-lg font-bold">Création unique</h3>
+            <span className="font-display text-2xl font-extrabold tracking-tight">790€</span>
+            <span className="text-xs font-medium text-muted-foreground">paiement comptant</span>
+          </div>
+          <p className="mt-1.5 text-sm text-muted-foreground">
+            Idéal pour les entreprises qui préfèrent un paiement unique.
+          </p>
+          <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-1.5 text-sm text-foreground/80">
+            {["Création du site internet", "Mise en ligne", "Optimisation mobile"].map((f) => (
+              <li key={f} className="flex items-center gap-1.5">
+                <Check className="h-4 w-4 shrink-0 text-success" />
+                {f}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <a
+          href="https://buy.stripe.com/28E14nfny52A03X6aJgjC00"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex shrink-0 items-center justify-center rounded-xl border border-border bg-card px-6 py-3 text-sm font-semibold transition hover:bg-muted"
+        >
+          Commander mon site
+        </a>
+      </div>
+    </div>
   );
 }
 
