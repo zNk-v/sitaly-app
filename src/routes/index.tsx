@@ -105,6 +105,7 @@ function SitalyHome() {
       <GoogleAds />
       <Automation />
       <Pricing />
+      <RecurringModules />
       <Options />
       <Examples />
       <Process />
@@ -721,6 +722,45 @@ function PricingCard({ tier, featured }: { tier: Tier; featured: boolean }) {
         Réserver un appel
       </a>
     </div>
+  );
+}
+
+/* ---------------- MODULES RÉCURRENTS ---------------- */
+function RecurringModules() {
+  const modules = [
+    { icon: MessageSquare, name: "Rappel SMS appels manqués", install: "390€ d'installation", monthly: "99€/mois" },
+    { icon: Bell, name: "Relance automatique de devis", install: "390€ d'installation", monthly: "99€/mois" },
+    { icon: Calendar, name: "Prise de rendez-vous en ligne", install: "290€ d'installation", monthly: "59€/mois" },
+    { icon: Search, name: "SEO local avancé", install: null as string | null, monthly: "129€/mois" },
+  ];
+  return (
+    <section className="py-20 sm:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+        <SectionHeader
+          eyebrow="Modules récurrents"
+          title="Des briques à ajouter sur n'importe quelle offre"
+          subtitle="Frais d'installation unique, puis un abonnement mensuel. Greffables sur tous les forfaits."
+        />
+        <div className="mx-auto mt-10 grid max-w-4xl grid-cols-1 gap-3 sm:grid-cols-2">
+          {modules.map((m) => (
+            <div
+              key={m.name}
+              className="flex items-center gap-3 rounded-xl border border-border bg-card px-5 py-4 shadow-soft transition hover:border-accent/40"
+            >
+              <div className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-accent/10 text-accent">
+                <m.icon className="h-5 w-5" />
+              </div>
+              <div className="min-w-0">
+                <span className="block font-medium">{m.name}</span>
+                <span className="text-sm text-muted-foreground">
+                  {m.install ? `${m.install} + ${m.monthly}` : `${m.monthly} · sans frais d'installation`}
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
 
