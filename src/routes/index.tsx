@@ -560,6 +560,7 @@ const PRICING_TIERS = [
     icon: Globe,
     price: "149€",
     period: "/mois",
+    setup: null,
     objective: "Un site entretenu, visible et bien référencé localement.",
     inherits: null,
     features: [
@@ -581,6 +582,7 @@ const PRICING_TIERS = [
     icon: Megaphone,
     price: "349€",
     period: "/mois",
+    setup: null,
     objective: "Générer des appels, des devis et des rendez-vous grâce à Google.",
     inherits: "Tout le pack Visibilité",
     features: [
@@ -597,6 +599,7 @@ const PRICING_TIERS = [
     icon: Zap,
     price: "590€",
     period: "/mois",
+    setup: "+ 990€ d'installation (une fois)",
     objective: "Convertir plus de demandes et automatiser tout le suivi.",
     inherits: "Tout le pack Acquisition",
     features: [
@@ -623,7 +626,7 @@ function Pricing() {
         />
 
         <p className="mx-auto mt-10 max-w-3xl rounded-full border border-border bg-secondary/60 px-5 py-3 text-center text-sm font-semibold text-foreground/80">
-          Sans engagement · Sans frais d'installation · Tout est géré, tu ne touches à rien.
+          Sans engagement · Tout est géré, vous ne touchez à rien.
         </p>
         <div className="mx-auto mt-10 grid max-w-6xl items-stretch gap-6 lg:grid-cols-3">
           {PRICING_TIERS.map((t) => (
@@ -678,6 +681,9 @@ function PricingCard({ tier, featured }: { tier: Tier; featured: boolean }) {
         </span>
         <span className="text-muted-foreground">{tier.period}</span>
       </div>
+      {tier.setup && (
+        <p className="mt-1 text-sm font-medium text-foreground/70">{tier.setup}</p>
+      )}
 
       <div className="mt-7 space-y-3">
         {tier.inherits && (
