@@ -767,17 +767,17 @@ function RecurringModules() {
 /* ---------------- OPTIONS SUR DEVIS ---------------- */
 function Options() {
   const opts = [
-    { icon: Sparkles, name: "Logo / identité visuelle" },
-    { icon: Star, name: "Photos professionnelles" },
-    { icon: TrendingUp, name: "Rédaction de contenus" },
+    { icon: Sparkles, name: "Logo / identité visuelle", price: "390€" },
+    { icon: Star, name: "Photos professionnelles", price: "290€" },
+    { icon: TrendingUp, name: "Rédaction de contenus", price: "sur devis" },
   ];
   return (
     <section className="bg-secondary/40 py-20 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <SectionHeader
-          eyebrow="Sur devis"
-          title="Quelques options ponctuelles, en plus"
-          subtitle="Ajoutées seulement si vous en avez besoin. Sur devis."
+          eyebrow="Options ponctuelles"
+          title="Des leviers en plus, en paiement unique"
+          subtitle="Ajoutez uniquement ce qui vous est utile. Rien d'imposé."
         />
         <div className="mx-auto mt-10 grid max-w-4xl grid-cols-1 gap-3 sm:grid-cols-3">
           {opts.map((o) => (
@@ -788,7 +788,10 @@ function Options() {
               <div className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-accent/10 text-accent">
                 <o.icon className="h-5 w-5" />
               </div>
-              <span className="font-medium">{o.name}</span>
+              <div className="min-w-0">
+                <span className="block font-medium">{o.name}</span>
+                <span className="text-sm text-muted-foreground">{o.price}</span>
+              </div>
             </div>
           ))}
         </div>
