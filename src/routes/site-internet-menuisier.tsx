@@ -2,9 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { MetierLanding, buildMetierMeta } from "@/components/MetierLanding";
 
 const URL = "https://sitaly.fr/site-internet-menuisier";
-const TITLE = "Site internet menuisier : portfolio & devis | Sitaly 790€";
+const TITLE = "Site internet menuisier : portfolio & devis | Sitaly dès 149€/mois";
 const DESCRIPTION =
-  "Site internet menuisier avec portfolio avant/après, devis en ligne et SEO local. Livré en 48h, 790€ ou 99€/mois tout inclus.";
+  "Site internet menuisier avec portfolio avant/après, devis en ligne et SEO local. Livré en 48h, dès 149€/mois en location, sans engagement et tout inclus.";
 
 const FAQ = [
   {
@@ -16,8 +16,8 @@ const FAQ = [
     a: "Possible en option (cuisine sur mesure, dressing, escalier). Pré-qualifie le prospect et fait gagner 1 à 2h de devis par projet.",
   },
   {
-    q: "Comment je rentabilise un site à 790€ en menuiserie ?",
-    a: "1 seul chantier de cuisine ou dressing rapporte généralement 3 000 à 10 000€. Un seul appel converti via votre site sur 12 mois rentabilise très largement l'investissement.",
+    q: "Comment je rentabilise un site à 149€/mois en menuiserie ?",
+    a: "1 seul chantier de cuisine ou dressing rapporte généralement 3 000 à 10 000€. Un seul appel converti via votre site dans l'année rentabilise très largement l'abonnement.",
   },
   {
     q: "Travaillez-vous avec les artisans menuisiers d'agencement pro ?",

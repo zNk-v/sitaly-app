@@ -36,20 +36,22 @@ function CGV() {
       <h2>2. Devis et commande</h2>
       <p>
         Toute prestation fait l'objet d'un devis personnalisé. Le devis est valable 30 jours à
-        compter de sa date d'émission. La signature du devis et le versement de l'acompte valent
-        acceptation sans réserve des présentes CGV.
+        compter de sa date d'émission. La signature du devis vaut acceptation sans réserve des
+        présentes CGV.
       </p>
 
       <h2>3. Tarifs et modalités de paiement</h2>
       <p>
-        Les prix sont indiqués en euros. Le tarif standard est de <strong>790 € HT</strong> pour la
-        création du site et <strong>99 € HT/mois</strong> pour la maintenance, l'hébergement et le
-        suivi. La TVA est applicable selon le régime du Prestataire (mention « TVA non applicable,
+        Les prix sont indiqués en euros. Le service est proposé en location, sans frais
+        d'installation, selon trois formules mensuelles : <strong>Visibilité 149 € HT/mois</strong>,{" "}
+        <strong>Acquisition 349 € HT/mois</strong> et <strong>Performance 590 € HT/mois</strong>.
+        Pour les formules Acquisition et Performance, le budget publicitaire Google n'est pas
+        inclus. La TVA est applicable selon le régime du Prestataire (mention « TVA non applicable,
         art. 293 B du CGI » le cas échéant).
       </p>
       <p>
-        Modalités : 50 % d'acompte à la commande, solde à la livraison. L'abonnement mensuel est
-        prélevé chaque mois à terme à échoir. En cas de retard de paiement, des pénalités égales à
+        Modalités : l'abonnement mensuel est prélevé chaque mois à terme à échoir, sans frais
+        d'installation ni engagement de durée. En cas de retard de paiement, des pénalités égales à
         trois fois le taux d'intérêt légal, ainsi qu'une indemnité forfaitaire de recouvrement de
         40 € (article D.441-5 du Code de commerce), seront automatiquement appliquées.
       </p>
@@ -70,18 +72,21 @@ function CGV() {
 
       <h2>6. Propriété intellectuelle</h2>
       <p>
-        Le site et ses éléments restent la propriété du Prestataire jusqu'au paiement intégral du
-        prix. À compter du paiement complet, le Client dispose d'un droit d'usage personnel et
-        non exclusif sur le site. Le code source et les éléments techniques développés par le
-        Prestataire restent sa propriété exclusive.
+        Le service étant fourni en location, le site, son code source et les éléments techniques
+        développés par le Prestataire restent sa propriété exclusive pendant toute la durée de
+        l'abonnement. Le Client dispose d'un droit d'usage personnel et non exclusif sur le site
+        tant que l'abonnement est actif. Les contenus fournis par le Client (textes, photos, logo)
+        restent sa propriété. Un rachat du site reste possible sur demande, aux conditions
+        convenues entre les parties.
       </p>
 
       <h2>7. Maintenance et hébergement</h2>
       <p>
         L'abonnement mensuel inclut l'hébergement, les mises à jour techniques, les sauvegardes,
         les modifications mineures de contenu et le support. Il est conclu pour une durée
-        indéterminée et résiliable par chacune des parties moyennant un préavis d'un mois, par
-        e-mail à <a href="mailto:contact@sitaly.fr">contact@sitaly.fr</a>.
+        indéterminée, sans engagement ni durée minimale, et résiliable par chacune des parties
+        moyennant un préavis d'un mois, par e-mail à{" "}
+        <a href="mailto:contact@sitaly.fr">contact@sitaly.fr</a>.
       </p>
 
       <h2>8. Droit de rétractation</h2>

@@ -57,7 +57,7 @@ export function MetierLanding(props: MetierLandingProps) {
             </Link>
             <Link
               to="/"
-              hash="tarifs"
+              hash="offre"
               className="inline-flex items-center gap-2 rounded-xl border border-border bg-background px-6 py-3.5 text-sm font-semibold text-foreground transition hover:bg-secondary"
             >
               Voir les tarifs
@@ -146,58 +146,92 @@ export function MetierLanding(props: MetierLandingProps) {
           <h2 className="font-display text-3xl font-bold tracking-tight sm:text-4xl">
             Combien coûte un site internet {metier} ?
           </h2>
-          <div className="mt-8 grid gap-5 md:grid-cols-2">
-            <article className="rounded-2xl border border-border bg-card p-7 shadow-soft">
-              <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                Paiement unique
-              </div>
-              <div className="mt-2 flex items-baseline gap-2">
-                <span className="font-display text-5xl font-extrabold">790€</span>
-                <span className="text-sm text-muted-foreground">une fois</span>
-              </div>
-              <ul className="mt-5 space-y-2.5 text-sm">
-                {[
-                  "Site sur mesure livré en 48h",
-                  "SEO local optimisé pour votre ville",
-                  "Téléphone cliquable + formulaire devis",
-                  "Hébergement 1ère année incluse",
-                  "Vous êtes propriétaire du contenu",
-                ].map((it) => (
-                  <li key={it} className="flex items-start gap-2.5">
-                    <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-accent" />
-                    <span>{it}</span>
-                  </li>
-                ))}
-              </ul>
-            </article>
-            <article className="rounded-2xl border-2 border-primary bg-primary/5 p-7 shadow-elevated">
-              <div className="flex items-center justify-between">
-                <div className="text-xs font-semibold uppercase tracking-wider text-primary">
-                  Tout inclus
+          <p className="mt-3 text-sm font-semibold text-foreground/80">
+            En location, sans engagement et sans frais d'installation. Tout est géré, vous ne touchez à rien.
+          </p>
+          <div className="mt-8 grid gap-5 md:grid-cols-3">
+            {[
+              {
+                name: "Visibilité",
+                price: "149€",
+                featured: false,
+                features: [
+                  "Site professionnel + hébergement",
+                  "Maintenance & modifications",
+                  "Support",
+                  "Fiche Google Business",
+                  "Référencement local",
+                ],
+                note: null as string | null,
+              },
+              {
+                name: "Acquisition",
+                price: "349€",
+                featured: true,
+                features: [
+                  "Tout le pack Visibilité",
+                  "Création & gestion Google Ads",
+                  "Suivi des performances",
+                ],
+                note: "Budget publicitaire Google non inclus.",
+              },
+              {
+                name: "Performance",
+                price: "590€",
+                featured: false,
+                features: [
+                  "Tout le pack Acquisition",
+                  "Automatisation complète",
+                  "Rappel SMS appels manqués",
+                  "Relance automatique des devis",
+                  "Prise de rendez-vous en ligne",
+                ],
+                note: "Budget publicitaire Google non inclus.",
+              },
+            ].map((tier) => (
+              <article
+                key={tier.name}
+                className={`rounded-2xl p-7 ${
+                  tier.featured
+                    ? "border-2 border-primary bg-primary/5 shadow-elevated"
+                    : "border border-border bg-card shadow-soft"
+                }`}
+              >
+                <div className="flex items-center justify-between">
+                  <div
+                    className={`text-xs font-semibold uppercase tracking-wider ${
+                      tier.featured ? "text-primary" : "text-muted-foreground"
+                    }`}
+                  >
+                    {tier.name}
+                  </div>
+                  {tier.featured && (
+                    <span className="rounded-full bg-primary px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-primary-foreground">
+                      Recommandé
+                    </span>
+                  )}
                 </div>
-                <span className="rounded-full bg-primary px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-primary-foreground">
-                  Recommandé
-                </span>
-              </div>
-              <div className="mt-2 flex items-baseline gap-2">
-                <span className="font-display text-5xl font-extrabold">99€</span>
-                <span className="text-sm text-muted-foreground">/mois</span>
-              </div>
-              <ul className="mt-5 space-y-2.5 text-sm">
-                {[
-                  "Tout du pack 790€",
-                  "Hébergement + sécurité + sauvegardes",
-                  "Mises à jour & petites modifications",
-                  "Suivi du référencement local",
-                  "Support réactif",
-                ].map((it) => (
-                  <li key={it} className="flex items-start gap-2.5">
-                    <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
-                    <span>{it}</span>
-                  </li>
-                ))}
-              </ul>
-            </article>
+                <div className="mt-2 flex items-baseline gap-2">
+                  <span className="font-display text-5xl font-extrabold">{tier.price}</span>
+                  <span className="text-sm text-muted-foreground">/mois</span>
+                </div>
+                <ul className="mt-5 space-y-2.5 text-sm">
+                  {tier.features.map((it) => (
+                    <li key={it} className="flex items-start gap-2.5">
+                      <Check
+                        className={`mt-0.5 h-4 w-4 flex-shrink-0 ${
+                          tier.featured ? "text-primary" : "text-accent"
+                        }`}
+                      />
+                      <span>{it}</span>
+                    </li>
+                  ))}
+                </ul>
+                {tier.note && (
+                  <p className="mt-4 text-xs text-muted-foreground">* {tier.note}</p>
+                )}
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -334,8 +368,9 @@ export function buildMetierMeta(opts: {
           },
           areaServed: { "@type": "Country", name: "France" },
           offers: [
-            { "@type": "Offer", name: "Pack site unique", price: "790", priceCurrency: "EUR" },
-            { "@type": "Offer", name: "Pack mensuel tout inclus", price: "99", priceCurrency: "EUR", priceSpecification: { "@type": "UnitPriceSpecification", price: "99", priceCurrency: "EUR", unitCode: "MON" } },
+            { "@type": "Offer", name: "Visibilité", price: "149", priceCurrency: "EUR", priceSpecification: { "@type": "UnitPriceSpecification", price: "149", priceCurrency: "EUR", unitCode: "MON" } },
+            { "@type": "Offer", name: "Acquisition", price: "349", priceCurrency: "EUR", priceSpecification: { "@type": "UnitPriceSpecification", price: "349", priceCurrency: "EUR", unitCode: "MON" } },
+            { "@type": "Offer", name: "Performance", price: "590", priceCurrency: "EUR", priceSpecification: { "@type": "UnitPriceSpecification", price: "590", priceCurrency: "EUR", unitCode: "MON" } },
           ],
           url,
         }),

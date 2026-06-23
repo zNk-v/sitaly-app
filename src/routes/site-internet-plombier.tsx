@@ -2,9 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { MetierLanding, buildMetierMeta } from "@/components/MetierLanding";
 
 const URL = "https://sitaly.fr/site-internet-plombier";
-const TITLE = "Site internet plombier : appels en 48h | Sitaly 790€";
+const TITLE = "Site internet plombier : appels en 48h | Sitaly dès 149€/mois";
 const DESCRIPTION =
-  "Site internet plombier optimisé urgence et SEO local. Livré en 48h, 790€ ou 99€/mois tout inclus. Téléphone cliquable, devis rapide, top Google local.";
+  "Site internet plombier optimisé urgence et SEO local. Livré en 48h, dès 149€/mois en location, sans engagement et tout inclus. Téléphone cliquable, devis rapide, top Google local.";
 
 const FAQ = [
   {
@@ -20,8 +20,8 @@ const FAQ = [
     a: "Le numéro de téléphone est cliquable sur mobile et présent en haut de chaque page, plus un bouton 'Urgence 24/7' optionnel. Les clients appellent en 2 secondes depuis Google.",
   },
   {
-    q: "Que se passe-t-il si je veux arrêter la formule mensuelle ?",
-    a: "Sans engagement après 12 mois : vous arrêtez quand vous voulez avec un simple préavis. Le contenu vous appartient et reste exportable.",
+    q: "Que se passe-t-il si je veux arrêter ?",
+    a: "Nos formules sont en location, sans engagement : vous arrêtez quand vous voulez avec un simple préavis, sans frais ni durée minimale.",
   },
 ];
 

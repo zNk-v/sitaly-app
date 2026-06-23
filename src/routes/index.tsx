@@ -30,15 +30,15 @@ import { SitalyLogo } from "@/components/SitalyLogo";
 const FAQ_ITEMS = [
   {
     q: "Quel est le tarif ?",
-    a: "Trois formules au choix selon votre objectif : Présence (99€/mois) pour être visible et crédible en ligne, Acquisition (249€/mois) pour générer des appels et des devis grâce à Google, et Croissance (499€/mois) pour convertir davantage et automatiser le suivi. Pour les offres Acquisition et Croissance, le budget publicitaire Google n'est pas inclus. Vous pouvez aussi opter pour une création unique à 790€ en paiement comptant, sans abonnement.",
+    a: "Trois formules en location, sans engagement et sans frais d'installation : Visibilité (149€/mois) pour un site entretenu et bien référencé localement, Acquisition (349€/mois) qui ajoute la création et la gestion de vos campagnes Google Ads, et Performance (590€/mois) qui ajoute un système d'automatisation complet. Pour Acquisition et Performance, le budget publicitaire Google n'est pas inclus.",
   },
   {
     q: "Est-ce que je peux modifier mon site ?",
     a: "Oui. Les petites modifications (textes, photos, infos) sont incluses dans votre abonnement. Pour des évolutions plus importantes, on vous propose un devis transparent.",
   },
   {
-    q: "Suis-je propriétaire du site ?",
-    a: "Oui, le contenu de votre site vous appartient. Si vous choisissez la création unique à 790€, vous pouvez héberger le site où vous le souhaitez.",
+    q: "Puis-je acheter mon site ?",
+    a: "Sitaly fonctionne en location : c'est ce qui nous permet de tout gérer pour vous (technique, hébergement, mises à jour) et de rester sans engagement. Un rachat reste possible sur demande si vous le souhaitez.",
   },
   {
     q: "Combien de temps pour le mettre en ligne ?",
@@ -46,15 +46,15 @@ const FAQ_ITEMS = [
   },
   {
     q: "Puis-je arrêter mon abonnement ?",
-    a: "Oui, votre abonnement est sans engagement. Vous pouvez l'arrêter à tout moment avec un simple préavis.",
+    a: "Oui. Nos formules sont sans engagement : vous pouvez arrêter à tout moment avec un simple préavis, sans frais ni durée minimale.",
   },
   {
     q: "C'est quoi Google Ads et pourquoi en ai-je besoin ?",
-    a: "Google Ads vous place en haut des résultats de recherche dès le premier jour, sans attendre le référencement naturel. On cible les personnes qui cherchent vos services dans votre zone, vous fixez le budget et vous gardez le contrôle. C'est une option qu'on met en place selon vos besoins.",
+    a: "Google Ads vous place en haut des résultats de recherche dès le premier jour, sans attendre le référencement naturel. On cible les personnes qui cherchent vos services dans votre zone, vous fixez le budget et vous gardez le contrôle. La gestion des campagnes est incluse dans les offres Acquisition et Performance (le budget publicitaire reste à votre charge).",
   },
   {
     q: "L'automatisation est-elle obligatoire ?",
-    a: "Non. Les automatisations (réponse automatique aux demandes, relance des devis, rappels de rendez-vous…) sont proposées en option, selon les besoins réels de votre activité. On commence simple et on ajoute uniquement ce qui vous fait gagner du temps.",
+    a: "Non. Le système d'automatisation complet — rappel SMS des appels manqués, relance automatique des devis, qualification des demandes, prise de rendez-vous en ligne — est inclus dans l'offre Performance. Les formules Visibilité et Acquisition fonctionnent très bien sans. On commence simple et on monte en puissance uniquement si ça vous fait gagner du temps.",
   },
 ];
 
@@ -125,7 +125,7 @@ function Nav() {
           <SitalyLogo />
         </a>
         <nav className="hidden items-center gap-8 md:flex">
-          <a href="#offre" className="text-sm font-medium text-muted-foreground hover:text-foreground">Offre</a>
+          <a href="#offre" className="text-sm font-medium text-muted-foreground hover:text-foreground">Offres</a>
           <a href="#exemples" className="text-sm font-medium text-muted-foreground hover:text-foreground">Exemples</a>
           <a href="#process" className="text-sm font-medium text-muted-foreground hover:text-foreground">Process</a>
           <Link to="/blog" className="text-sm font-medium text-muted-foreground hover:text-foreground">Blog</Link>
@@ -313,7 +313,7 @@ function ProfessionsMarquee() {
 
 function TrustBar() {
   const items = [
-    { v: "Dès 99€", l: "par mois" },
+    { v: "Dès 149€", l: "par mois" },
     { v: "Google Ads", l: "+ automatisation" },
     { v: "48h", l: "Mise en ligne" },
     { v: "7j/7", l: "Support réactif" },
@@ -554,36 +554,36 @@ function Automation() {
 /* ---------------- PRICING ---------------- */
 const PRICING_TIERS = [
   {
-    name: "Présence",
+    name: "Visibilité",
     badge: "Pour démarrer",
     icon: Globe,
-    price: "99€",
+    price: "149€",
     period: "/mois",
-    objective: "Être visible et crédible en ligne.",
+    objective: "Un site entretenu, visible et bien référencé localement.",
     inherits: null,
     features: [
       "Site internet professionnel",
-      "Optimisation mobile",
       "Hébergement",
       "Maintenance",
+      "Modifications",
       "Support",
+      "Fiche Google Business",
+      "Référencement local",
     ],
     note: null,
-    promise: "Une présence professionnelle sur internet, sans gérer la technique.",
+    promise: "Une présence professionnelle qui reste à jour, sans gérer la technique.",
     featured: false,
   },
   {
     name: "Acquisition",
     badge: "Recommandé",
     icon: Megaphone,
-    price: "249€",
+    price: "349€",
     period: "/mois",
-    objective: "Commencer à générer des appels, des devis et des rendez-vous.",
-    inherits: "Tout le pack Présence",
+    objective: "Générer des appels, des devis et des rendez-vous grâce à Google.",
+    inherits: "Tout le pack Visibilité",
     features: [
-      "Optimisation de la conversion",
-      "Configuration Google Business Profile",
-      "Gestion de vos campagnes Google Ads",
+      "Création et gestion des campagnes Google Ads",
       "Suivi des performances",
     ],
     note: "Budget publicitaire Google non inclus.",
@@ -591,19 +591,19 @@ const PRICING_TIERS = [
     featured: true,
   },
   {
-    name: "Croissance",
-    badge: "Performance",
+    name: "Performance",
+    badge: "Système complet",
     icon: Zap,
-    price: "499€",
+    price: "590€",
     period: "/mois",
-    objective: "Convertir plus de visiteurs en clients et automatiser les tâches répétitives.",
+    objective: "Convertir plus de demandes et automatiser tout le suivi.",
     inherits: "Tout le pack Acquisition",
     features: [
-      "Optimisation continue des campagnes",
-      "Automatisations intelligentes",
-      "Relance automatique des prospects",
+      "Automatisation complète",
+      "Rappel SMS des appels manqués",
+      "Relance automatique des devis",
       "Qualification des demandes",
-      "Optimisation du parcours client",
+      "Prise de rendez-vous en ligne",
     ],
     note: "Budget publicitaire Google non inclus.",
     promise: "Un système conçu pour générer plus de clients avec moins d'efforts.",
@@ -621,13 +621,14 @@ function Pricing() {
           subtitle="De la simple présence en ligne à un système complet d'acquisition et de croissance."
         />
 
-        <div className="mx-auto mt-14 grid max-w-6xl items-stretch gap-6 lg:grid-cols-3">
+        <p className="mx-auto mt-10 max-w-3xl rounded-full border border-border bg-secondary/60 px-5 py-3 text-center text-sm font-semibold text-foreground/80">
+          Sans engagement · Sans frais d'installation · Tout est géré, tu ne touches à rien.
+        </p>
+        <div className="mx-auto mt-10 grid max-w-6xl items-stretch gap-6 lg:grid-cols-3">
           {PRICING_TIERS.map((t) => (
             <PricingCard key={t.name} tier={t} featured={t.featured} />
           ))}
         </div>
-
-        <OneTimeOffer />
       </div>
     </section>
   );
@@ -723,72 +724,31 @@ function PricingCard({ tier, featured }: { tier: Tier; featured: boolean }) {
   );
 }
 
-function OneTimeOffer() {
-  return (
-    <div className="mx-auto mt-8 max-w-4xl rounded-2xl border border-border bg-secondary/40 p-6 sm:p-7">
-      <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
-        <div>
-          <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-            <h3 className="text-lg font-bold">Création unique</h3>
-            <span className="font-display text-2xl font-extrabold tracking-tight">790€</span>
-            <span className="text-xs font-medium text-muted-foreground">paiement comptant</span>
-          </div>
-          <p className="mt-1.5 text-sm text-muted-foreground">
-            Idéal pour les entreprises qui préfèrent un paiement unique.
-          </p>
-          <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-1.5 text-sm text-foreground/80">
-            {["Création du site internet", "Mise en ligne", "Optimisation mobile"].map((f) => (
-              <li key={f} className="flex items-center gap-1.5">
-                <Check className="h-4 w-4 shrink-0 text-success" />
-                {f}
-              </li>
-            ))}
-          </ul>
-        </div>
-        <a
-          href="https://buy.stripe.com/28E14nfny52A03X6aJgjC00"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex shrink-0 items-center justify-center rounded-xl border border-border bg-card px-6 py-3 text-sm font-semibold transition hover:bg-muted"
-        >
-          Commander mon site
-        </a>
-      </div>
-    </div>
-  );
-}
-
-
-/* ---------------- OPTIONS ---------------- */
+/* ---------------- OPTIONS SUR DEVIS ---------------- */
 function Options() {
   const opts = [
-    "Campagnes Google Ads",
-    "Automatisation des demandes & relances",
-    "Gestion de la visibilité locale",
-    "Référencement SEO avancé",
-    "Prise de rendez-vous en ligne",
-    "Rédaction de contenus",
-    "Photos professionnelles",
-    "Logo et identité visuelle",
+    { icon: Sparkles, name: "Logo / identité visuelle" },
+    { icon: Star, name: "Photos professionnelles" },
+    { icon: TrendingUp, name: "Rédaction de contenus" },
   ];
   return (
     <section className="bg-secondary/40 py-20 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <SectionHeader
-          eyebrow="Pour aller plus loin"
-          title="Des leviers en plus pour générer des clients"
-          subtitle="Ajoutez uniquement ce qui vous est utile. Rien d'imposé."
+          eyebrow="Sur devis"
+          title="Quelques options ponctuelles, en plus"
+          subtitle="Ajoutées seulement si vous en avez besoin. Sur devis."
         />
-        <div className="mx-auto mt-10 grid max-w-4xl grid-cols-1 gap-3 sm:grid-cols-2">
+        <div className="mx-auto mt-10 grid max-w-4xl grid-cols-1 gap-3 sm:grid-cols-3">
           {opts.map((o) => (
             <div
-              key={o}
+              key={o.name}
               className="flex items-center gap-3 rounded-xl border border-border bg-card px-5 py-4 shadow-soft transition hover:border-accent/40"
             >
               <div className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-accent/10 text-accent">
-                <TrendingUp className="h-5 w-5" />
+                <o.icon className="h-5 w-5" />
               </div>
-              <span className="font-medium">{o}</span>
+              <span className="font-medium">{o.name}</span>
             </div>
           ))}
         </div>
@@ -1223,7 +1183,7 @@ function Footer() {
           <div>
             <div className="text-sm font-semibold">Navigation</div>
             <ul className="mt-3 space-y-2 text-sm text-primary-foreground/70">
-              <li><a href="#offre" className="hover:text-primary-foreground">Offre</a></li>
+              <li><a href="#offre" className="hover:text-primary-foreground">Offres</a></li>
               <li><a href="#exemples" className="hover:text-primary-foreground">Exemples</a></li>
               <li><a href="#process" className="hover:text-primary-foreground">Process</a></li>
               <li><a href="#faq" className="hover:text-primary-foreground">FAQ</a></li>
