@@ -21,6 +21,7 @@ import {
   Bell,
   Filter,
   MessageSquare,
+  FileText,
 } from "lucide-react";
 import exampleRenovation from "@/assets/example-renovation.jpg";
 import examplePlombier from "@/assets/example-plombier.jpg";
@@ -33,8 +34,8 @@ const FAQ_ITEMS = [
     a: "Trois formules en location, sans engagement et sans frais d'installation : Visibilité (149€/mois) pour un site entretenu et bien référencé localement, Acquisition (349€/mois) qui ajoute la création et la gestion de vos campagnes Google Ads, et Performance (590€/mois) qui ajoute un système d'automatisation complet. Pour Acquisition et Performance, le budget publicitaire Google n'est pas inclus.",
   },
   {
-    q: "Est-ce que je peux modifier mon site ?",
-    a: "Oui. Les petites modifications (textes, photos, infos) sont incluses dans votre abonnement. Pour des évolutions plus importantes, on vous propose un devis transparent.",
+    q: "Que comprennent vraiment les modifications incluses ?",
+    a: "Les petites modifications de contenu existant sont incluses : changer un texte, une photo, un prix, des horaires ou vos coordonnées. Ce qui demande de la création — nouvelle page, nouveau visuel, rédaction d'articles — fait l'objet d'un devis transparent. Vous savez toujours à l'avance ce qui est inclus et ce qui ne l'est pas.",
   },
   {
     q: "Puis-je acheter mon site ?",
@@ -106,6 +107,7 @@ function SitalyHome() {
       <Automation />
       <Pricing />
       <RecurringModules />
+      <BlogOption />
       <Options />
       <Examples />
       <Process />
@@ -567,7 +569,7 @@ const PRICING_TIERS = [
       "Site internet professionnel",
       "Hébergement",
       "Maintenance",
-      "Modifications",
+      "Modifications*",
       "Support",
       "Fiche Google Business",
       "Référencement local",
@@ -700,7 +702,22 @@ function PricingCard({ tier, featured }: { tier: Tier; featured: boolean }) {
                   featured ? "text-accent" : "text-success"
                 }`}
               />
-              <span>{f}</span>
+              <span>
+                {f.endsWith("*") ? (
+                  <>
+                    {f.slice(0, -1)}
+                    <a
+                      href="#faq-modifications"
+                      aria-label="Voir le détail des modifications incluses"
+                      className="font-semibold text-accent hover:underline"
+                    >
+                      *
+                    </a>
+                  </>
+                ) : (
+                  f
+                )}
+              </span>
             </li>
           ))}
         </ul>
@@ -761,6 +778,52 @@ function RecurringModules() {
                 <span className="text-sm text-muted-foreground">
                   {m.install ? `${m.install} + ${m.monthly}` : `${m.monthly} · sans frais d'installation`}
                 </span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------------- OPTION BLOG SEO ---------------- */
+const BLOG_TIERS = [
+  { name: "Essentiel", articles: "1 article SEO / mois", price: "89€", featured: false },
+  { name: "Croissance", articles: "2 articles SEO / mois", price: "159€", featured: true },
+  { name: "Premium", articles: "4 articles SEO / mois", price: "299€", featured: false },
+] as const;
+
+function BlogOption() {
+  return (
+    <section className="py-20 sm:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+        <SectionHeader
+          eyebrow="Option contenu"
+          title="Un blog qui vous fait monter sur Google, chaque mois"
+          subtitle="Des articles optimisés SEO, rédigés et mis en page pour vous. En option sur votre forfait, ou seul si vous avez déjà un site."
+        />
+        <div className="mx-auto mt-10 grid max-w-4xl grid-cols-1 gap-4 sm:grid-cols-3">
+          {BLOG_TIERS.map((t) => (
+            <div
+              key={t.name}
+              className={`relative flex flex-col rounded-2xl bg-card p-6 shadow-soft transition ${
+                t.featured ? "border-2 border-accent shadow-glow" : "border border-border hover:border-accent/40"
+              }`}
+            >
+              {t.featured && (
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-accent px-3 py-0.5 text-[11px] font-bold uppercase tracking-wider text-accent-foreground">
+                  Recommandé
+                </span>
+              )}
+              <div className="grid h-9 w-9 place-items-center rounded-lg bg-accent/10 text-accent">
+                <FileText className="h-5 w-5" />
+              </div>
+              <h3 className="mt-4 font-bold">Blog SEO {t.name}</h3>
+              <p className="mt-1 text-sm text-muted-foreground">{t.articles}</p>
+              <div className="mt-4 flex items-baseline gap-1">
+                <span className="font-display text-2xl font-extrabold">{t.price}</span>
+                <span className="text-sm text-muted-foreground">/mois</span>
               </div>
             </div>
           ))}
@@ -1050,16 +1113,37 @@ function Testimonials() {
 }
 
 /* ---------------- FAQ ---------------- */
+const FAQ_MODIF_INDEX = FAQ_ITEMS.findIndex((it) =>
+  it.q.includes("modifications incluses"),
+);
+
 function Faq() {
   const items = FAQ_ITEMS;
   const [open, setOpen] = useState<number | null>(0);
+
+  useEffect(() => {
+    const openFromHash = () => {
+      if (window.location.hash !== "#faq-modifications") return;
+      setOpen(FAQ_MODIF_INDEX);
+      const el = document.getElementById("faq-modifications");
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "center" });
+    };
+    openFromHash();
+    window.addEventListener("hashchange", openFromHash);
+    return () => window.removeEventListener("hashchange", openFromHash);
+  }, []);
+
   return (
     <section id="faq" className="bg-secondary/40 py-20 sm:py-24">
       <div className="mx-auto max-w-3xl px-4 sm:px-6">
         <SectionHeader eyebrow="FAQ" title="Questions fréquentes" subtitle="Tout ce que vous voulez savoir, simplement." />
         <div className="mt-10 space-y-3">
           {items.map((it, i) => (
-            <div key={it.q} className="overflow-hidden rounded-xl border border-border bg-card shadow-soft">
+            <div
+              key={it.q}
+              id={i === FAQ_MODIF_INDEX ? "faq-modifications" : undefined}
+              className="overflow-hidden scroll-mt-24 rounded-xl border border-border bg-card shadow-soft"
+            >
               <button
                 onClick={() => setOpen(open === i ? null : i)}
                 className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left font-semibold"
