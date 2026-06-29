@@ -6,29 +6,29 @@ import { SitalyLogo } from "@/components/SitalyLogo";
 export const Route = createFileRoute("/blog/")({
   head: () => ({
     meta: [
-      { title: "Blog Sitaly — Conseils pour artisans : site web, clients, Google" },
+      { title: "Blog Sitaly — Plus de clients : site web, Google Ads & automatisation" },
       {
         name: "description",
         content:
-          "Le blog Sitaly : guides pratiques pour artisans qui veulent attirer plus de clients, créer leur site internet et être visibles sur Google.",
+          "Le blog Sitaly : guides pratiques pour artisans, indépendants et PME qui veulent générer plus de clients — site internet, référencement Google local, Google Ads et automatisation.",
       },
       { name: "robots", content: "index, follow, max-snippet:-1, max-image-preview:large" },
-      { property: "og:title", content: "Blog Sitaly — Conseils pour artisans" },
+      { property: "og:title", content: "Blog Sitaly — Plus de clients : site web, Google Ads & automatisation" },
       {
         property: "og:description",
         content:
-          "Guides pratiques pour artisans : création de site internet, référencement Google local, développement commercial.",
+          "Guides pratiques pour générer plus de clients : site internet, référencement Google local, Google Ads et automatisation. Pour artisans, indépendants et PME de services.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://sitaly.fr/blog" },
       { property: "og:site_name", content: "Sitaly" },
       { property: "og:locale", content: "fr_FR" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Blog Sitaly — Conseils pour artisans" },
+      { name: "twitter:title", content: "Blog Sitaly — Plus de clients : site web, Google Ads & automatisation" },
       {
         name: "twitter:description",
         content:
-          "Guides pratiques pour artisans : création de site internet, référencement Google local, développement commercial.",
+          "Guides pratiques pour générer plus de clients : site internet, référencement Google local, Google Ads et automatisation. Pour artisans, indépendants et PME de services.",
       },
     ],
     links: [{ rel: "canonical", href: "https://sitaly.fr/blog" }],
@@ -42,7 +42,7 @@ export const Route = createFileRoute("/blog/")({
           url: "https://sitaly.fr/blog",
           inLanguage: "fr-FR",
           description:
-            "Conseils pour artisans : site internet, référencement Google, développement de clientèle.",
+            "Guides pour générer plus de clients : site internet, référencement Google local, Google Ads et automatisation. Pour artisans, indépendants et PME de services.",
           publisher: {
             "@type": "Organization",
             name: "Sitaly",
@@ -85,11 +85,12 @@ function BlogIndex() {
         <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20">
           <p className="text-sm font-medium uppercase tracking-wider text-accent">Le blog Sitaly</p>
           <h1 className="mt-3 font-display text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl">
-            Conseils pour artisans qui veulent <span className="gradient-text">plus de clients</span>
+            Générer <span className="gradient-text">plus de clients</span>, quel que soit votre métier
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
-            Création de site internet, référencement Google local, développement de clientèle :
-            tout ce qu'un artisan doit savoir pour développer son activité en 2026.
+            Site internet, référencement Google local, Google Ads et automatisation : les guides
+            pratiques pour artisans, indépendants et PME de services qui veulent développer leur
+            activité en 2026.
           </p>
         </div>
       </header>
@@ -138,11 +139,11 @@ function BlogIndex() {
 
         <div className="mt-16 rounded-2xl border border-accent/30 bg-accent/5 p-8 text-center sm:p-10">
           <h2 className="font-display text-2xl font-bold sm:text-3xl">
-            Prêt à avoir votre propre site internet ?
+            Prêt à générer plus de clients ?
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-muted-foreground">
-            790€ en paiement unique ou 99€/mois tout inclus. Livré en 48h. Réservez un appel
-            gratuit de 15 minutes.
+            Site internet, Google Ads et automatisation : à partir de 99€/mois, ou création unique
+            à 790€. Réservez un appel gratuit de 15 minutes.
           </p>
           <Link
             to="/"
