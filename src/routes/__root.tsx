@@ -133,7 +133,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
               url: "https://sitaly.fr",
               image: "https://sitaly.fr/og-image.png",
               description:
-                "Sitaly crée des sites internet professionnels pour artisans et TPE en Essonne et en Île-de-France. Site sur mesure livré en 48h : 790€ en paiement unique, ou 99€/mois avec hébergement et maintenance inclus.",
+                "Sitaly crée des sites internet professionnels pour artisans et TPE en Essonne et en Île-de-France. Site sur mesure livré en 48h, en location à partir de 149€/mois tout inclus (hébergement, maintenance, modifications), sans engagement et sans frais d'installation.",
               telephone: "+33658683372",
               email: "contact@sitaly.fr",
               priceRange: "€€",

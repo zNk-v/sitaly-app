@@ -142,8 +142,8 @@ function BlogIndex() {
             Prêt à générer plus de clients ?
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-muted-foreground">
-            Site internet, Google Ads et automatisation : à partir de 99€/mois, ou création unique
-            à 790€. Réservez un appel gratuit de 15 minutes.
+            Site internet, Google Ads et automatisation : à partir de 149€/mois en location,
+            sans engagement. Réservez un appel gratuit de 15 minutes.
           </p>
           <Link
             to="/"
