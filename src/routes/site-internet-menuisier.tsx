@@ -58,13 +58,6 @@ function MenuisierLanding() {
           desc: "Formulaire intelligent (type de projet, budget, délai) qui pré-qualifie : vous ne perdez plus de temps sur des prospects hors cible.",
         },
       ]}
-      example={{
-        label: "Menuiserie — Île-de-France",
-        description:
-          "Site vitrine réalisé par Sitaly pour un artisan menuisier. Portfolio mis en avant, formulaire devis, SEO local optimisé. Naviguez directement dans l'aperçu.",
-        iframeUrl: "https://znk-v.github.io/yacine-menuiserie/",
-        exempleHref: "/exemples/menuiserie",
-      }}
       faq={FAQ}
       testimonial={{
         quote:

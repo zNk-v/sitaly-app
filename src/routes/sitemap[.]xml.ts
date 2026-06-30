@@ -24,8 +24,6 @@ const entries: SitemapEntry[] = [
   { path: "/site-internet-electricien", changefreq: "monthly", priority: "0.9" },
   { path: "/site-internet-menuisier", changefreq: "monthly", priority: "0.9" },
   { path: "/site-internet-couvreur", changefreq: "monthly", priority: "0.9" },
-  { path: "/exemples/ks-artisan", changefreq: "monthly", priority: "0.8" },
-  { path: "/exemples/menuiserie", changefreq: "monthly", priority: "0.8" },
   { path: "/cgv", changefreq: "yearly", priority: "0.3" },
   { path: "/mentions-legales", changefreq: "yearly", priority: "0.3" },
   { path: "/politique-confidentialite", changefreq: "yearly", priority: "0.3" },

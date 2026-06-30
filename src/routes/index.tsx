@@ -872,28 +872,24 @@ function Options() {
 /* ---------------- EXAMPLES ---------------- */
 function Examples() {
   type Item = {
-    img?: string;
-    embedUrl?: string;
+    embedUrl: string;
     tag: string;
     title: string;
     desc: string;
-    align: "left" | "right";
   };
 
   const items: Item[] = [
     {
-      embedUrl: "https://znk-v.github.io/ks-artisan/",
-      tag: "Couvreur / Façadier",
-      title: "Couvreur-Façadier — Essonne",
-      desc: "Site vitrine local réalisé pour un couvreur-façadier en Essonne. Scrollez directement dans l'aperçu pour visiter le site.",
-      align: "left",
+      embedUrl: "https://znk-v.github.io/aymeric-pataud/",
+      tag: "Chef à domicile",
+      title: "Aymeric Pataud — Chef expert du goût",
+      desc: "Site vitrine premium réalisé pour un chef à domicile. Cliquez sur l'aperçu pour ouvrir le site.",
     },
     {
-      embedUrl: "https://znk-v.github.io/yacine-menuiserie/",
-      tag: "Menuiserie",
-      title: "Menuiserie — Île-de-France",
-      desc: "Site vitrine réalisé pour un artisan menuisier. Scrollez directement dans l'aperçu pour visiter le site.",
-      align: "right",
+      embedUrl: "https://lafleur-toiture.fr/#top",
+      tag: "Couvreur",
+      title: "Lafleur Toiture — Essonne",
+      desc: "Site vitrine réalisé pour un couvreur de l'Essonne. Cliquez sur l'aperçu pour ouvrir le site.",
     },
   ];
 
@@ -903,26 +899,26 @@ function Examples() {
         <SectionHeader
           eyebrow="Exemples"
           title="Des sites pensés pour convertir"
-          subtitle="Quelques exemples de sites réalisés pour des artisans. Naviguez directement dans l'aperçu."
+          subtitle="Quelques exemples de sites réalisés pour des artisans et indépendants. Cliquez sur un aperçu pour ouvrir le site."
         />
 
-        <div className="mt-16 space-y-12 sm:mt-20 sm:space-y-28">
+        <div className="mt-16 grid gap-8 sm:mt-20 md:grid-cols-2">
           {items.map((it) => (
-            <article
+            <a
               key={it.title}
-              className={`grid gap-6 sm:items-center ${
-                it.align === "right"
-                  ? "sm:grid-cols-[1fr_1.15fr]"
-                  : "sm:grid-cols-[1.15fr_1fr]"
-              }`}
+              href={it.embedUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-elevated transition duration-300 hover:-translate-y-2 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
             >
-              {/* Text card — first on mobile when right-aligned, else second */}
-              <div
-                className={`order-2 rounded-2xl border border-border bg-card p-6 shadow-elevated sm:p-8 ${
-                  it.align === "right" ? "sm:order-1" : "sm:order-2"
-                }`}
-              >
-                <span className="inline-block rounded-full bg-accent/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-widest text-accent sm:text-xs">
+              {/* Media preview — non-interactive, the whole card opens the real site */}
+              <div className="border-b border-border bg-secondary">
+                <EmbedPreview url={it.embedUrl} title={it.title} />
+              </div>
+
+              {/* Caption */}
+              <div className="flex flex-1 flex-col p-6">
+                <span className="inline-block w-fit rounded-full bg-accent/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-widest text-accent sm:text-xs">
                   {it.tag}
                 </span>
                 <h3 className="mt-2 text-lg font-bold text-foreground sm:text-xl">
@@ -931,41 +927,12 @@ function Examples() {
                 <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
                   {it.desc}
                 </p>
-                {it.embedUrl && (
-                  <a
-                    href={it.embedUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-accent transition hover:gap-2.5"
-                  >
-                    Ouvrir en plein écran
-                    <ArrowRight className="h-4 w-4" />
-                  </a>
-                )}
+                <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-accent transition-all group-hover:gap-2.5">
+                  Ouvrir le site
+                  <ArrowRight className="h-4 w-4" />
+                </span>
               </div>
-
-              {/* Media */}
-              <div
-                className={`order-1 overflow-hidden rounded-2xl border border-border bg-secondary shadow-elevated transition duration-500 hover:-translate-y-2 ${
-                  it.align === "right" ? "sm:order-2" : "sm:order-1"
-                }`}
-              >
-                {it.embedUrl ? (
-                  <EmbedPreview url={it.embedUrl} title={it.title} />
-                ) : (
-                  <div className="aspect-[4/5] sm:aspect-[16/10]">
-                    <img
-                      src={it.img}
-                      alt={it.title}
-                      loading="lazy"
-                      width={800}
-                      height={1000}
-                      className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.03]"
-                    />
-                  </div>
-                )}
-              </div>
-            </article>
+            </a>
           ))}
         </div>
       </div>
@@ -973,12 +940,11 @@ function Examples() {
   );
 }
 
-/* Scaled-down live preview of an external site */
+/* Non-interactive, scaled-down live preview of an external site (16:9, top-cropped) */
 function EmbedPreview({ url, title }: { url: string; title: string }) {
   const wrapRef = useRef<HTMLDivElement>(null);
   const [scale, setScale] = useState(0.5);
   const DESIGN_W = 1440;
-  const DESIGN_H = 900;
 
   useEffect(() => {
     const el = wrapRef.current;
@@ -993,24 +959,27 @@ function EmbedPreview({ url, title }: { url: string; title: string }) {
   return (
     <div
       ref={wrapRef}
-      className="relative w-full overflow-hidden bg-white"
-      style={{ height: DESIGN_H * scale }}
+      className="relative aspect-[16/9] w-full overflow-hidden bg-white"
     >
       <iframe
         src={url}
         title={`Aperçu du site ${title}`}
         loading="lazy"
+        tabIndex={-1}
+        aria-hidden="true"
+        scrolling="no"
         sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
         referrerPolicy="no-referrer-when-downgrade"
-        scrolling="yes"
-        className="absolute left-0 top-0 border-0 bg-white"
+        className="pointer-events-none absolute left-0 top-0 border-0 bg-white"
         style={{
           width: DESIGN_W,
-          height: DESIGN_H,
+          height: 1024,
           transform: `scale(${scale})`,
           transformOrigin: "top left",
         }}
       />
+      {/* Transparent overlay: captures all pointer events, the parent <a> handles the click */}
+      <span aria-hidden className="absolute inset-0 z-10" />
     </div>
   );
 }

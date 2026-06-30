@@ -21,8 +21,6 @@ import { Route as CgvRouteImport } from './routes/cgv'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
-import { Route as ExemplesMenuiserieRouteImport } from './routes/exemples.menuiserie'
-import { Route as ExemplesKsArtisanRouteImport } from './routes/exemples.ks-artisan'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
@@ -86,16 +84,6 @@ const BlogIndexRoute = BlogIndexRouteImport.update({
   path: '/',
   getParentRoute: () => BlogRoute,
 } as any)
-const ExemplesMenuiserieRoute = ExemplesMenuiserieRouteImport.update({
-  id: '/exemples/menuiserie',
-  path: '/exemples/menuiserie',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ExemplesKsArtisanRoute = ExemplesKsArtisanRouteImport.update({
-  id: '/exemples/ks-artisan',
-  path: '/exemples/ks-artisan',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const BlogSlugRoute = BlogSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
@@ -115,8 +103,6 @@ export interface FileRoutesByFullPath {
   '/site-internet-plombier': typeof SiteInternetPlombierRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
-  '/exemples/ks-artisan': typeof ExemplesKsArtisanRoute
-  '/exemples/menuiserie': typeof ExemplesMenuiserieRoute
   '/blog/': typeof BlogIndexRoute
 }
 export interface FileRoutesByTo {
@@ -131,8 +117,6 @@ export interface FileRoutesByTo {
   '/site-internet-plombier': typeof SiteInternetPlombierRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
-  '/exemples/ks-artisan': typeof ExemplesKsArtisanRoute
-  '/exemples/menuiserie': typeof ExemplesMenuiserieRoute
   '/blog': typeof BlogIndexRoute
 }
 export interface FileRoutesById {
@@ -149,8 +133,6 @@ export interface FileRoutesById {
   '/site-internet-plombier': typeof SiteInternetPlombierRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
-  '/exemples/ks-artisan': typeof ExemplesKsArtisanRoute
-  '/exemples/menuiserie': typeof ExemplesMenuiserieRoute
   '/blog/': typeof BlogIndexRoute
 }
 export interface FileRouteTypes {
@@ -168,8 +150,6 @@ export interface FileRouteTypes {
     | '/site-internet-plombier'
     | '/sitemap.xml'
     | '/blog/$slug'
-    | '/exemples/ks-artisan'
-    | '/exemples/menuiserie'
     | '/blog/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -184,8 +164,6 @@ export interface FileRouteTypes {
     | '/site-internet-plombier'
     | '/sitemap.xml'
     | '/blog/$slug'
-    | '/exemples/ks-artisan'
-    | '/exemples/menuiserie'
     | '/blog'
   id:
     | '__root__'
@@ -201,8 +179,6 @@ export interface FileRouteTypes {
     | '/site-internet-plombier'
     | '/sitemap.xml'
     | '/blog/$slug'
-    | '/exemples/ks-artisan'
-    | '/exemples/menuiserie'
     | '/blog/'
   fileRoutesById: FileRoutesById
 }
@@ -218,8 +194,6 @@ export interface RootRouteChildren {
   SiteInternetMenuisierRoute: typeof SiteInternetMenuisierRoute
   SiteInternetPlombierRoute: typeof SiteInternetPlombierRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
-  ExemplesKsArtisanRoute: typeof ExemplesKsArtisanRoute
-  ExemplesMenuiserieRoute: typeof ExemplesMenuiserieRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -308,20 +282,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogIndexRouteImport
       parentRoute: typeof BlogRoute
     }
-    '/exemples/menuiserie': {
-      id: '/exemples/menuiserie'
-      path: '/exemples/menuiserie'
-      fullPath: '/exemples/menuiserie'
-      preLoaderRoute: typeof ExemplesMenuiserieRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/exemples/ks-artisan': {
-      id: '/exemples/ks-artisan'
-      path: '/exemples/ks-artisan'
-      fullPath: '/exemples/ks-artisan'
-      preLoaderRoute: typeof ExemplesKsArtisanRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/blog/$slug': {
       id: '/blog/$slug'
       path: '/$slug'
@@ -356,8 +316,6 @@ const rootRouteChildren: RootRouteChildren = {
   SiteInternetMenuisierRoute: SiteInternetMenuisierRoute,
   SiteInternetPlombierRoute: SiteInternetPlombierRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
-  ExemplesKsArtisanRoute: ExemplesKsArtisanRoute,
-  ExemplesMenuiserieRoute: ExemplesMenuiserieRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

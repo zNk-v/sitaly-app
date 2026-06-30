@@ -59,11 +59,11 @@ function CouvreurLanding() {
         },
       ]}
       example={{
-        label: "Couvreur-Façadier — Essonne",
+        label: "Lafleur Toiture — Essonne",
         description:
-          "Site vitrine local réalisé par Sitaly pour un couvreur-façadier en Essonne. Pages services, galerie réalisations, formulaire devis local. Visitez l'aperçu.",
-        iframeUrl: "https://znk-v.github.io/ks-artisan/",
-        exempleHref: "/exemples/ks-artisan",
+          "Site vitrine local réalisé par Sitaly pour un couvreur de l'Essonne. Pages services, galerie chantiers, formulaire devis local. Visitez l'aperçu.",
+        iframeUrl: "https://lafleur-toiture.fr/#top",
+        exempleHref: "https://lafleur-toiture.fr/#top",
       }}
       faq={FAQ}
       testimonial={{
