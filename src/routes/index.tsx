@@ -630,9 +630,14 @@ function Pricing() {
         <p className="mx-auto mt-10 max-w-3xl rounded-full border border-border bg-secondary/60 px-5 py-3 text-center text-sm font-semibold text-foreground/80">
           Sans engagement · Tout est géré, vous ne touchez à rien.
         </p>
-        <div className="mx-auto mt-10 grid max-w-6xl items-stretch gap-6 lg:grid-cols-3">
+        <div className="mx-auto mt-10 flex max-w-6xl snap-x snap-mandatory items-stretch gap-5 overflow-x-auto pb-2 pt-6 [-ms-overflow-style:none] [scrollbar-width:none] sm:gap-6 lg:grid lg:grid-cols-3 lg:overflow-visible lg:pb-0 lg:pt-0 [&::-webkit-scrollbar]:hidden">
           {PRICING_TIERS.map((t) => (
-            <PricingCard key={t.name} tier={t} featured={t.featured} />
+            <div
+              key={t.name}
+              className="w-[85%] shrink-0 snap-center sm:w-[60%] lg:w-auto lg:shrink"
+            >
+              <PricingCard tier={t} featured={t.featured} />
+            </div>
           ))}
         </div>
       </div>
