@@ -9,6 +9,7 @@ import {
   type BlogSection,
 } from "@/data/blog-posts";
 import { SitalyLogo } from "@/components/SitalyLogo";
+import { CALENDLY_URL } from "@/lib/config";
 
 export const Route = createFileRoute("/blog/$slug")({
   loader: ({ params }) => {
@@ -359,14 +360,15 @@ function InlineCTA() {
       <p className="mt-2 text-foreground/80">
         Site artisan livré en 48h, optimisé pour le SEO local. À partir de 149€/mois en location, sans engagement.
       </p>
-      <Link
-        to="/"
-        hash="contact"
+      <a
+        href={CALENDLY_URL}
+        target="_blank"
+        rel="noopener noreferrer"
         className="mt-4 inline-flex items-center gap-2 rounded-xl bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-soft transition hover:opacity-90"
       >
         Réserver un appel gratuit
         <ArrowRight className="h-4 w-4" />
-      </Link>
+      </a>
     </aside>
   );
 }
@@ -381,14 +383,15 @@ function FinalCTA() {
         Sitaly s'occupe de tout : création, référencement local, mise en ligne en 48h.
         À partir de 149€/mois en location, tout inclus et sans engagement.
       </p>
-      <Link
-        to="/"
-        hash="contact"
+      <a
+        href={CALENDLY_URL}
+        target="_blank"
+        rel="noopener noreferrer"
         className="mt-5 inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-elevated transition hover:opacity-90"
       >
         Réserver un appel gratuit
         <ArrowRight className="h-4 w-4" />
-      </Link>
+      </a>
     </div>
   );
 }
@@ -408,13 +411,14 @@ function PostNav() {
             Blog
           </Link>
         </nav>
-        <Link
-          to="/"
-          hash="contact"
+        <a
+          href={CALENDLY_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-soft transition hover:opacity-90"
         >
           Réserver un appel
-        </Link>
+        </a>
       </div>
     </header>
   );

@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Calendar, Clock } from "lucide-react";
 import { BLOG_POSTS, formatDate } from "@/data/blog-posts";
 import { SitalyLogo } from "@/components/SitalyLogo";
+import { CALENDLY_URL } from "@/lib/config";
 
 export const Route = createFileRoute("/blog/")({
   head: () => ({
@@ -145,14 +146,15 @@ function BlogIndex() {
             Site internet, Google Ads et automatisation : à partir de 149€/mois en location,
             sans engagement. Réservez un appel gratuit de 15 minutes.
           </p>
-          <Link
-            to="/"
-            hash="contact"
+          <a
+            href={CALENDLY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-6 inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3.5 text-base font-semibold text-primary-foreground shadow-elevated transition hover:opacity-90"
           >
             Réserver un appel
             <ArrowRight className="h-5 w-5" />
-          </Link>
+          </a>
         </div>
       </main>
 
@@ -180,13 +182,14 @@ function BlogNav() {
             Blog
           </Link>
         </nav>
-        <Link
-          to="/"
-          hash="contact"
+        <a
+          href={CALENDLY_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-soft transition hover:opacity-90"
         >
           Réserver un appel
-        </Link>
+        </a>
       </div>
     </header>
   );

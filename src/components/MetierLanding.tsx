@@ -10,6 +10,7 @@ import {
   Star,
 } from "lucide-react";
 import { SitalyLogo } from "@/components/SitalyLogo";
+import { CALENDLY_URL } from "@/lib/config";
 
 export interface MetierLandingProps {
   metier: string; // "plombier"
@@ -47,14 +48,15 @@ export function MetierLanding(props: MetierLandingProps) {
           </h1>
           <p className="mt-5 max-w-2xl text-lg text-muted-foreground sm:text-xl">{intro}</p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
-            <Link
-              to="/"
-              hash="contact"
+            <a
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-elevated transition hover:opacity-90"
             >
               Réserver un appel gratuit
               <ArrowRight className="h-4 w-4" />
-            </Link>
+            </a>
             <Link
               to="/"
               hash="offre"
@@ -283,14 +285,15 @@ export function MetierLanding(props: MetierLandingProps) {
           <p className="mt-3 text-primary-foreground/90">
             Échangeons 20 minutes pour cadrer votre site {metier}, sans engagement.
           </p>
-          <Link
-            to="/"
-            hash="contact"
+          <a
+            href={CALENDLY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-7 inline-flex items-center gap-2 rounded-xl bg-background px-7 py-3.5 text-sm font-semibold text-foreground shadow-elevated transition hover:opacity-95"
           >
             <Phone className="h-4 w-4" />
             Réserver un appel gratuit
-          </Link>
+          </a>
         </div>
       </section>
 
@@ -318,13 +321,14 @@ function LandingNav() {
             Blog
           </Link>
         </nav>
-        <Link
-          to="/"
-          hash="contact"
+        <a
+          href={CALENDLY_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-soft transition hover:opacity-90"
         >
           Réserver un appel
-        </Link>
+        </a>
       </div>
     </header>
   );

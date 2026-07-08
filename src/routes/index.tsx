@@ -28,6 +28,7 @@ import exampleRenovation from "@/assets/example-renovation.jpg";
 import examplePlombier from "@/assets/example-plombier.jpg";
 import exampleElectricien from "@/assets/example-electricien.jpg";
 import { SitalyLogo } from "@/components/SitalyLogo";
+import { CALENDLY_URL } from "@/lib/config";
 
 const FAQ_ITEMS = [
   {
@@ -136,7 +137,9 @@ function Nav() {
           <a href="#faq" className="text-sm font-medium text-muted-foreground hover:text-foreground">FAQ</a>
         </nav>
         <a
-          href="#contact"
+          href={CALENDLY_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-soft transition hover:opacity-90"
         >
           <Calendar className="h-4 w-4" />
@@ -167,7 +170,9 @@ function Hero() {
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
-                href="#contact"
+                href={CALENDLY_URL}
+          target="_blank"
+          rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3.5 text-base font-semibold text-primary-foreground shadow-elevated transition hover:opacity-90"
               >
                 <Calendar className="h-5 w-5" />
@@ -493,7 +498,9 @@ function GoogleAds() {
               Le référencement naturel prend du temps. Google Ads vous place en tête des recherches dès aujourd'hui, et vous apporte des demandes pendant que votre visibilité naturelle se construit.
             </p>
             <a
-              href="#contact"
+              href={CALENDLY_URL}
+          target="_blank"
+          rel="noopener noreferrer"
               className="mt-7 inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3.5 text-base font-semibold text-primary-foreground shadow-elevated transition hover:opacity-90"
             >
               <Calendar className="h-5 w-5" />
@@ -740,7 +747,9 @@ function PricingCard({ tier, featured }: { tier: Tier; featured: boolean }) {
       </p>
 
       <a
-        href="#contact"
+        href={CALENDLY_URL}
+          target="_blank"
+          rel="noopener noreferrer"
         className={`mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-base font-semibold transition ${
           featured
             ? "bg-accent text-accent-foreground shadow-elevated hover:opacity-90"
