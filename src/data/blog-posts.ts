@@ -458,7 +458,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Les artisans du bâtiment urgentiste (plombier, électricien, chauffagiste) ont des besoins très spécifiques en matière de site internet. Voici ce qui change vraiment.",
     category: "Site internet",
     readingTime: "11 min",
-    publishedAt: "2026-07-16",
+    publishedAt: "2026-06-25",
     author: "L'équipe Sitaly",
     keyword: "site internet plombier",
     content: [
@@ -519,7 +519,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Créer une page par ville desservie peut multiplier votre trafic SEO local par 3 ou 4 — à condition de bien le faire. Voici la méthode propre.",
     category: "Référencement",
     readingTime: "10 min",
-    publishedAt: "2026-07-30",
+    publishedAt: "2026-06-27",
     author: "L'équipe Sitaly",
     keyword: "seo local artisan villes",
     content: [
@@ -590,7 +590,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Investir 149€/mois dans un site, c'est combien d'appels en retour ? Combien de chantiers ? Voici les chiffres et la méthode pour calculer votre ROI réel.",
     category: "Tarifs",
     readingTime: "10 min",
-    publishedAt: "2026-08-13",
+    publishedAt: "2026-06-30",
     author: "L'équipe Sitaly",
     keyword: "rentabilité site internet artisan",
     content: [
@@ -654,7 +654,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Google Ads peut ramener des appels en 24h... ou cramer 500€ pour zéro chantier si c'est mal configuré. Voici le guide honnête pour les artisans.",
     category: "Développement commercial",
     readingTime: "11 min",
-    publishedAt: "2026-08-27",
+    publishedAt: "2026-07-04",
     author: "L'équipe Sitaly",
     keyword: "google ads artisan",
     content: [
@@ -736,7 +736,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Votre site a 4 ans, ne convertit plus, et vous perdez des appels ? Voici comment savoir s'il faut refondre, et la méthode pour le faire sans perdre Google.",
     category: "Site internet",
     readingTime: "11 min",
-    publishedAt: "2026-09-10",
+    publishedAt: "2026-07-07",
     author: "L'équipe Sitaly",
     keyword: "refonte site internet artisan",
     content: [
