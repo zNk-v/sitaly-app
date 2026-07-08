@@ -4,6 +4,53 @@ import { BLOG_POSTS, formatDate } from "@/data/blog-posts";
 import { SitalyLogo } from "@/components/SitalyLogo";
 import { CALENDLY_URL } from "@/lib/config";
 
+// Rubriques du blog, dans l'ordre d'affichage. `key` doit correspondre au champ
+// `category` des articles (src/data/blog-posts.ts).
+const RUBRIQUES: { key: string; id: string; label: string; desc: string }[] = [
+  {
+    key: "Acquisition de clients",
+    id: "clients-par-metier",
+    label: "Clients par métier",
+    desc: "Ostéo, avocat, coach, consultant, expert-comptable… les leviers concrets, métier par métier.",
+  },
+  {
+    key: "Site internet",
+    id: "site-internet",
+    label: "Site internet",
+    desc: "Créer, refondre et rentabiliser un site qui transforme vos visiteurs en appels.",
+  },
+  {
+    key: "Référencement",
+    id: "referencement",
+    label: "Référencement local",
+    desc: "Être trouvé sur Google : fiche Google Business, avis clients et SEO local.",
+  },
+  {
+    key: "Acquisition payante",
+    id: "google-ads",
+    label: "Google Ads",
+    desc: "Générer des appels rapidement grâce à la publicité, sans attendre le référencement naturel.",
+  },
+  {
+    key: "Automatisation",
+    id: "automatisation",
+    label: "Automatisation",
+    desc: "Relance de devis, prise de rendez-vous en ligne, suivi client : gagnez du temps.",
+  },
+  {
+    key: "Développement commercial",
+    id: "developpement-commercial",
+    label: "Développement commercial",
+    desc: "Attirer plus de clients et remplir votre planning, sans dépendre du hasard.",
+  },
+  {
+    key: "Tarifs",
+    id: "tarifs",
+    label: "Prix & rentabilité",
+    desc: "Combien ça coûte, combien ça rapporte : les vrais chiffres pour décider.",
+  },
+];
+
 export const Route = createFileRoute("/blog/")({
   head: () => ({
     meta: [
@@ -97,48 +144,52 @@ function BlogIndex() {
       </header>
 
       <main className="mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-16">
-        <div className="grid gap-6 sm:gap-8">
-          {BLOG_POSTS.map((post) => (
-            <article
-              key={post.slug}
-              className="group rounded-2xl border border-border bg-card p-6 shadow-soft transition hover:shadow-elevated sm:p-8"
-            >
-              <div className="flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
-                <span className="rounded-full bg-accent/10 px-3 py-1 font-semibold text-accent">
-                  {post.category}
-                </span>
-                <span className="inline-flex items-center gap-1.5">
-                  <Calendar className="h-3.5 w-3.5" />
-                  {formatDate(post.publishedAt)}
-                </span>
-                <span className="inline-flex items-center gap-1.5">
-                  <Clock className="h-3.5 w-3.5" />
-                  {post.readingTime}
-                </span>
-              </div>
-              <h2 className="mt-4 font-display text-2xl font-bold leading-tight tracking-tight sm:text-3xl">
-                <Link
-                  to="/blog/$slug"
-                  params={{ slug: post.slug }}
-                  className="transition group-hover:text-accent"
-                >
-                  {post.title}
-                </Link>
-              </h2>
-              <p className="mt-3 text-[15px] text-muted-foreground sm:text-base">{post.excerpt}</p>
-              <Link
-                to="/blog/$slug"
-                params={{ slug: post.slug }}
-                className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:underline"
-              >
-                Lire l'article
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </article>
-          ))}
-        </div>
+        {(() => {
+          const sections = RUBRIQUES.map((r) => ({
+            ...r,
+            posts: BLOG_POSTS.filter((p) => p.category === r.key),
+          })).filter((r) => r.posts.length > 0);
 
-        <div className="mt-16 rounded-2xl border border-accent/30 bg-accent/5 p-8 text-center sm:p-10">
+          return (
+            <>
+              {/* Navigation par rubrique */}
+              <nav aria-label="Rubriques du blog" className="mb-12 flex flex-wrap gap-2.5">
+                {sections.map((r) => (
+                  <a
+                    key={r.id}
+                    href={`#${r.id}`}
+                    className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm font-medium text-foreground shadow-soft transition hover:border-accent hover:text-accent"
+                  >
+                    {r.label}
+                    <span className="inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-accent/10 px-1.5 text-xs font-semibold text-accent">
+                      {r.posts.length}
+                    </span>
+                  </a>
+                ))}
+              </nav>
+
+              <div className="space-y-16">
+                {sections.map((r) => (
+                  <section key={r.id} id={r.id} className="scroll-mt-24">
+                    <div className="border-b border-border pb-5">
+                      <h2 className="font-display text-2xl font-extrabold tracking-tight sm:text-3xl">
+                        {r.label}
+                      </h2>
+                      <p className="mt-2 max-w-2xl text-[15px] text-muted-foreground">{r.desc}</p>
+                    </div>
+                    <div className="mt-8 grid gap-6 sm:gap-8">
+                      {r.posts.map((post) => (
+                        <PostCard key={post.slug} post={post} />
+                      ))}
+                    </div>
+                  </section>
+                ))}
+              </div>
+            </>
+          );
+        })()}
+
+        <div className="mt-20 rounded-2xl border border-accent/30 bg-accent/5 p-8 text-center sm:p-10">
           <h2 className="font-display text-2xl font-bold sm:text-3xl">
             Prêt à générer plus de clients ?
           </h2>
@@ -160,6 +211,44 @@ function BlogIndex() {
 
       <BlogFooter />
     </div>
+  );
+}
+
+function PostCard({ post }: { post: (typeof BLOG_POSTS)[number] }) {
+  return (
+    <article className="group rounded-2xl border border-border bg-card p-6 shadow-soft transition hover:shadow-elevated sm:p-8">
+      <div className="flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
+        <span className="rounded-full bg-accent/10 px-3 py-1 font-semibold text-accent">
+          {post.category}
+        </span>
+        <span className="inline-flex items-center gap-1.5">
+          <Calendar className="h-3.5 w-3.5" />
+          {formatDate(post.publishedAt)}
+        </span>
+        <span className="inline-flex items-center gap-1.5">
+          <Clock className="h-3.5 w-3.5" />
+          {post.readingTime}
+        </span>
+      </div>
+      <h3 className="mt-4 font-display text-2xl font-bold leading-tight tracking-tight sm:text-3xl">
+        <Link
+          to="/blog/$slug"
+          params={{ slug: post.slug }}
+          className="transition group-hover:text-accent"
+        >
+          {post.title}
+        </Link>
+      </h3>
+      <p className="mt-3 text-[15px] text-muted-foreground sm:text-base">{post.excerpt}</p>
+      <Link
+        to="/blog/$slug"
+        params={{ slug: post.slug }}
+        className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:underline"
+      >
+        Lire l'article
+        <ArrowRight className="h-4 w-4" />
+      </Link>
+    </article>
   );
 }
 

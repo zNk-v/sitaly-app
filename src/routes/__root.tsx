@@ -102,7 +102,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     scripts: [
       {
-        src: "https://www.googletagmanager.com/gtag/js?id=G-MH5SX3G1DG",
+        src: "https://www.googletagmanager.com/gtag/js?id=G-H4Z6HZLE3S",
         async: true,
       },
       {
@@ -118,7 +118,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             wait_for_update: 500,
           });
           gtag('js', new Date());
-          gtag('config', 'G-MH5SX3G1DG', { anonymize_ip: true });
+          gtag('config', 'G-H4Z6HZLE3S', { anonymize_ip: true });
         `,
       },
       {
