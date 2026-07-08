@@ -22,6 +22,7 @@ import {
   Filter,
   MessageSquare,
   FileText,
+  Instagram,
 } from "lucide-react";
 import exampleRenovation from "@/assets/example-renovation.jpg";
 import examplePlombier from "@/assets/example-plombier.jpg";
@@ -1302,6 +1303,16 @@ function Footer() {
             <ul className="mt-3 space-y-2 text-sm text-primary-foreground/70">
               <li className="flex items-center gap-2"><Mail className="h-4 w-4" /> contact@sitaly.fr</li>
               <li className="flex items-center gap-2"><Globe className="h-4 w-4" /> sitaly.fr</li>
+              <li>
+                <a
+                  href="https://instagram.com/sitaly.fr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 hover:text-primary-foreground"
+                >
+                  <Instagram className="h-4 w-4" /> @sitaly.fr
+                </a>
+              </li>
             </ul>
           </div>
         </div>
