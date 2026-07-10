@@ -133,6 +133,10 @@ function Nav() {
           <a href="#offre" className="text-sm font-medium text-muted-foreground hover:text-foreground">Offres</a>
           <a href="#exemples" className="text-sm font-medium text-muted-foreground hover:text-foreground">Exemples</a>
           <a href="#process" className="text-sm font-medium text-muted-foreground hover:text-foreground">Process</a>
+          <Link to="/sitaly-app" className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:opacity-80">
+            <Sparkles className="h-3.5 w-3.5" />
+            Sitaly App
+          </Link>
           <Link to="/blog" className="text-sm font-medium text-muted-foreground hover:text-foreground">Blog</Link>
           <a href="#faq" className="text-sm font-medium text-muted-foreground hover:text-foreground">FAQ</a>
         </nav>

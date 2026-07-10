@@ -14,6 +14,7 @@ import { Route as SiteInternetPlombierRouteImport } from './routes/site-internet
 import { Route as SiteInternetMenuisierRouteImport } from './routes/site-internet-menuisier'
 import { Route as SiteInternetElectricienRouteImport } from './routes/site-internet-electricien'
 import { Route as SiteInternetCouvreurRouteImport } from './routes/site-internet-couvreur'
+import { Route as SitalyAppRouteImport } from './routes/sitaly-app'
 import { Route as PolitiqueConfidentialiteRouteImport } from './routes/politique-confidentialite'
 import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
 import { Route as CookiesRouteImport } from './routes/cookies'
@@ -46,6 +47,11 @@ const SiteInternetElectricienRoute = SiteInternetElectricienRouteImport.update({
 const SiteInternetCouvreurRoute = SiteInternetCouvreurRouteImport.update({
   id: '/site-internet-couvreur',
   path: '/site-internet-couvreur',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitalyAppRoute = SitalyAppRouteImport.update({
+  id: '/sitaly-app',
+  path: '/sitaly-app',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PolitiqueConfidentialiteRoute =
@@ -97,6 +103,7 @@ export interface FileRoutesByFullPath {
   '/cookies': typeof CookiesRoute
   '/mentions-legales': typeof MentionsLegalesRoute
   '/politique-confidentialite': typeof PolitiqueConfidentialiteRoute
+  '/sitaly-app': typeof SitalyAppRoute
   '/site-internet-couvreur': typeof SiteInternetCouvreurRoute
   '/site-internet-electricien': typeof SiteInternetElectricienRoute
   '/site-internet-menuisier': typeof SiteInternetMenuisierRoute
@@ -111,6 +118,7 @@ export interface FileRoutesByTo {
   '/cookies': typeof CookiesRoute
   '/mentions-legales': typeof MentionsLegalesRoute
   '/politique-confidentialite': typeof PolitiqueConfidentialiteRoute
+  '/sitaly-app': typeof SitalyAppRoute
   '/site-internet-couvreur': typeof SiteInternetCouvreurRoute
   '/site-internet-electricien': typeof SiteInternetElectricienRoute
   '/site-internet-menuisier': typeof SiteInternetMenuisierRoute
@@ -127,6 +135,7 @@ export interface FileRoutesById {
   '/cookies': typeof CookiesRoute
   '/mentions-legales': typeof MentionsLegalesRoute
   '/politique-confidentialite': typeof PolitiqueConfidentialiteRoute
+  '/sitaly-app': typeof SitalyAppRoute
   '/site-internet-couvreur': typeof SiteInternetCouvreurRoute
   '/site-internet-electricien': typeof SiteInternetElectricienRoute
   '/site-internet-menuisier': typeof SiteInternetMenuisierRoute
@@ -144,6 +153,7 @@ export interface FileRouteTypes {
     | '/cookies'
     | '/mentions-legales'
     | '/politique-confidentialite'
+    | '/sitaly-app'
     | '/site-internet-couvreur'
     | '/site-internet-electricien'
     | '/site-internet-menuisier'
@@ -158,6 +168,7 @@ export interface FileRouteTypes {
     | '/cookies'
     | '/mentions-legales'
     | '/politique-confidentialite'
+    | '/sitaly-app'
     | '/site-internet-couvreur'
     | '/site-internet-electricien'
     | '/site-internet-menuisier'
@@ -173,6 +184,7 @@ export interface FileRouteTypes {
     | '/cookies'
     | '/mentions-legales'
     | '/politique-confidentialite'
+    | '/sitaly-app'
     | '/site-internet-couvreur'
     | '/site-internet-electricien'
     | '/site-internet-menuisier'
@@ -189,6 +201,7 @@ export interface RootRouteChildren {
   CookiesRoute: typeof CookiesRoute
   MentionsLegalesRoute: typeof MentionsLegalesRoute
   PolitiqueConfidentialiteRoute: typeof PolitiqueConfidentialiteRoute
+  SitalyAppRoute: typeof SitalyAppRoute
   SiteInternetCouvreurRoute: typeof SiteInternetCouvreurRoute
   SiteInternetElectricienRoute: typeof SiteInternetElectricienRoute
   SiteInternetMenuisierRoute: typeof SiteInternetMenuisierRoute
@@ -231,6 +244,13 @@ declare module '@tanstack/react-router' {
       path: '/site-internet-couvreur'
       fullPath: '/site-internet-couvreur'
       preLoaderRoute: typeof SiteInternetCouvreurRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitaly-app': {
+      id: '/sitaly-app'
+      path: '/sitaly-app'
+      fullPath: '/sitaly-app'
+      preLoaderRoute: typeof SitalyAppRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/politique-confidentialite': {
@@ -311,6 +331,7 @@ const rootRouteChildren: RootRouteChildren = {
   CookiesRoute: CookiesRoute,
   MentionsLegalesRoute: MentionsLegalesRoute,
   PolitiqueConfidentialiteRoute: PolitiqueConfidentialiteRoute,
+  SitalyAppRoute: SitalyAppRoute,
   SiteInternetCouvreurRoute: SiteInternetCouvreurRoute,
   SiteInternetElectricienRoute: SiteInternetElectricienRoute,
   SiteInternetMenuisierRoute: SiteInternetMenuisierRoute,
