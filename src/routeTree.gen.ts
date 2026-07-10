@@ -20,6 +20,7 @@ import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
 import { Route as CookiesRouteImport } from './routes/cookies'
 import { Route as CgvRouteImport } from './routes/cgv'
 import { Route as BlogRouteImport } from './routes/blog'
+import { Route as AcquisitionRouteImport } from './routes/acquisition'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
@@ -80,6 +81,11 @@ const BlogRoute = BlogRouteImport.update({
   path: '/blog',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AcquisitionRoute = AcquisitionRouteImport.update({
+  id: '/acquisition',
+  path: '/acquisition',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -98,6 +104,7 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/acquisition': typeof AcquisitionRoute
   '/blog': typeof BlogRouteWithChildren
   '/cgv': typeof CgvRoute
   '/cookies': typeof CookiesRoute
@@ -114,6 +121,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/acquisition': typeof AcquisitionRoute
   '/cgv': typeof CgvRoute
   '/cookies': typeof CookiesRoute
   '/mentions-legales': typeof MentionsLegalesRoute
@@ -130,6 +138,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/acquisition': typeof AcquisitionRoute
   '/blog': typeof BlogRouteWithChildren
   '/cgv': typeof CgvRoute
   '/cookies': typeof CookiesRoute
@@ -148,6 +157,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/acquisition'
     | '/blog'
     | '/cgv'
     | '/cookies'
@@ -164,6 +174,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/acquisition'
     | '/cgv'
     | '/cookies'
     | '/mentions-legales'
@@ -179,6 +190,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/acquisition'
     | '/blog'
     | '/cgv'
     | '/cookies'
@@ -196,6 +208,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AcquisitionRoute: typeof AcquisitionRoute
   BlogRoute: typeof BlogRouteWithChildren
   CgvRoute: typeof CgvRoute
   CookiesRoute: typeof CookiesRoute
@@ -288,6 +301,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/acquisition': {
+      id: '/acquisition'
+      path: '/acquisition'
+      fullPath: '/acquisition'
+      preLoaderRoute: typeof AcquisitionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -326,6 +346,7 @@ const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AcquisitionRoute: AcquisitionRoute,
   BlogRoute: BlogRouteWithChildren,
   CgvRoute: CgvRoute,
   CookiesRoute: CookiesRoute,

@@ -33,7 +33,7 @@ import { CALENDLY_URL } from "@/lib/config";
 const FAQ_ITEMS = [
   {
     q: "Quel est le tarif ?",
-    a: "Trois formules en location, sans engagement et sans frais d'installation : Visibilité (149€/mois) pour un site entretenu et bien référencé localement, Acquisition (349€/mois) qui ajoute la création et la gestion de vos campagnes Google Ads, et Performance (590€/mois) qui ajoute un système d'automatisation complet. Pour Acquisition et Performance, le budget publicitaire Google n'est pas inclus.",
+    a: "Deux briques, sans engagement et sans frais d'installation. Sitaly Présence (149€/mois) : votre site entretenu, bien référencé localement, avec l'application Sitaly incluse. Sitaly Acquisition (dès 299€/mois) : la gestion de vos campagnes Google Ads pour générer des clients, indépendamment du site — trois formules Starter (299€), Growth (499€) et Performance (799€). Vous prenez l'une, l'autre, ou les deux. Le budget publicitaire Google reste séparé.",
   },
   {
     q: "Que comprennent vraiment les modifications incluses ?",
@@ -53,11 +53,11 @@ const FAQ_ITEMS = [
   },
   {
     q: "C'est quoi Google Ads et pourquoi en ai-je besoin ?",
-    a: "Google Ads vous place en haut des résultats de recherche dès le premier jour, sans attendre le référencement naturel. On cible les personnes qui cherchent vos services dans votre zone, vous fixez le budget et vous gardez le contrôle. La gestion des campagnes est incluse dans les offres Acquisition et Performance (le budget publicitaire reste à votre charge).",
+    a: "Google Ads vous place en haut des résultats de recherche dès le premier jour, sans attendre le référencement naturel. On cible les personnes qui cherchent vos services dans votre zone, vous fixez le budget et vous gardez le contrôle. La gestion des campagnes fait l'objet des formules Sitaly Acquisition (le budget publicitaire reste à votre charge).",
   },
   {
     q: "L'automatisation est-elle obligatoire ?",
-    a: "Non. Le système d'automatisation complet — rappel SMS des appels manqués, relance automatique des devis, qualification des demandes, prise de rendez-vous en ligne — est inclus dans l'offre Performance. Les formules Visibilité et Acquisition fonctionnent très bien sans. On commence simple et on monte en puissance uniquement si ça vous fait gagner du temps.",
+    a: "Non. Les automatisations — rappel SMS des appels manqués, relance automatique des devis, qualification des demandes, prise de rendez-vous en ligne — s'ajoutent en modules, selon vos besoins. On commence simple et on monte en puissance uniquement si ça vous fait gagner du temps.",
   },
 ];
 
@@ -569,62 +569,65 @@ function Automation() {
 /* ---------------- PRICING ---------------- */
 const PRICING_TIERS = [
   {
-    name: "Visibilité",
-    badge: "Pour démarrer",
+    name: "Sitaly Présence",
+    badge: "Le tout-en-un",
     icon: Globe,
     price: "149€",
     period: "/mois",
     setup: null,
-    objective: "Un site entretenu, visible et bien référencé localement.",
+    objective: "Votre présence en ligne gérée de A à Z. L'application Sitaly incluse.",
     inherits: null,
     features: [
       "Site internet professionnel",
-      "Hébergement",
-      "Maintenance",
+      "Hébergement & maintenance",
       "Modifications*",
-      "Support",
       "Fiche Google Business",
       "Référencement local",
+      "Accès Sitaly App inclus",
     ],
     note: null,
-    promise: "Une présence professionnelle qui reste à jour, sans gérer la technique.",
-    featured: false,
-  },
-  {
-    name: "Acquisition",
-    badge: "Recommandé",
-    icon: Megaphone,
-    price: "349€",
-    period: "/mois",
-    setup: null,
-    objective: "Générer des appels, des devis et des rendez-vous grâce à Google.",
-    inherits: "Tout le pack Visibilité",
-    features: [
-      "Création et gestion des campagnes Google Ads",
-      "Suivi des performances",
-    ],
-    note: "Budget publicitaire Google non inclus.",
-    promise: "Attirez régulièrement de nouveaux prospects grâce à Google.",
+    promise: "Une présence pro qui reste à jour, sans gérer la technique.",
+    cta: { label: "Réserver un appel", calendly: true },
     featured: true,
   },
   {
-    name: "Performance",
-    badge: "Système complet",
-    icon: Zap,
-    price: "590€",
+    name: "Sitaly Acquisition",
+    badge: "Plus de clients",
+    icon: Megaphone,
+    price: "Dès 299€",
     period: "/mois",
-    setup: "+ 990€ d'installation (une fois)",
-    objective: "Convertir plus de demandes et automatiser tout le suivi.",
-    inherits: "Tout le pack Acquisition",
+    setup: null,
+    objective: "Des appels et des devis via Google Ads. Avec ou sans site.",
+    inherits: "Indépendant de votre site",
     features: [
-      "Automatisation complète",
-      "Rappel SMS des appels manqués",
-      "Relance automatique des devis",
-      "Qualification des demandes",
-      "Prise de rendez-vous en ligne",
+      "3 formules : Starter, Growth, Performance",
+      "Création & gestion des campagnes",
+      "Optimisation & suivi des conversions",
+      "Reporting mensuel",
     ],
     note: "Budget publicitaire Google non inclus.",
-    promise: "Un système conçu pour générer plus de clients avec moins d'efforts.",
+    promise: "Attirez de nouveaux clients, à votre rythme.",
+    cta: { label: "Voir les formules", to: "/acquisition" },
+    featured: false,
+  },
+  {
+    name: "Sitaly Growth",
+    badge: "Sur sélection",
+    icon: TrendingUp,
+    price: "Sur mesure",
+    period: "",
+    setup: null,
+    objective: "L'accompagnement complet pour les entreprises à fort potentiel.",
+    inherits: "Tout Présence + Acquisition",
+    features: [
+      "Stratégie de croissance dédiée",
+      "Site + acquisition + optimisation",
+      "Suivi rapproché",
+      "Places limitées",
+    ],
+    note: null,
+    promise: "On construit votre croissance avec vous.",
+    cta: { label: "Candidater", calendly: true },
     featured: false,
   },
 ] as const;
@@ -636,7 +639,7 @@ function Pricing() {
         <SectionHeader
           eyebrow="Tarifs"
           title="Choisissez le niveau d'accompagnement adapté à votre activité"
-          subtitle="De la simple présence en ligne à un système complet d'acquisition et de croissance."
+          subtitle="Votre présence en ligne avec Présence, plus de clients avec Acquisition. Combinables, sans engagement."
         />
 
         <p className="mx-auto mt-10 max-w-3xl rounded-full border border-border bg-secondary/60 px-5 py-3 text-center text-sm font-semibold text-foreground/80">
@@ -750,19 +753,33 @@ function PricingCard({ tier, featured }: { tier: Tier; featured: boolean }) {
         {tier.promise}
       </p>
 
-      <a
-        href={CALENDLY_URL}
+      {"to" in tier.cta && tier.cta.to ? (
+        <Link
+          to={tier.cta.to}
+          className={`mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-base font-semibold transition ${
+            featured
+              ? "bg-accent text-accent-foreground shadow-elevated hover:opacity-90"
+              : "border border-border bg-secondary text-secondary-foreground hover:bg-muted"
+          }`}
+        >
+          <Megaphone className="h-5 w-5" />
+          {tier.cta.label}
+        </Link>
+      ) : (
+        <a
+          href={CALENDLY_URL}
           target="_blank"
           rel="noopener noreferrer"
-        className={`mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-base font-semibold transition ${
-          featured
-            ? "bg-accent text-accent-foreground shadow-elevated hover:opacity-90"
-            : "border border-border bg-secondary text-secondary-foreground hover:bg-muted"
-        }`}
-      >
-        <Calendar className="h-5 w-5" />
-        Réserver un appel
-      </a>
+          className={`mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-base font-semibold transition ${
+            featured
+              ? "bg-accent text-accent-foreground shadow-elevated hover:opacity-90"
+              : "border border-border bg-secondary text-secondary-foreground hover:bg-muted"
+          }`}
+        >
+          <Calendar className="h-5 w-5" />
+          {tier.cta.label}
+        </a>
+      )}
     </div>
   );
 }

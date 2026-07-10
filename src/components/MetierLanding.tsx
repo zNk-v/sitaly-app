@@ -151,42 +151,30 @@ export function MetierLanding(props: MetierLandingProps) {
           <p className="mt-3 text-sm font-semibold text-foreground/80">
             En location, sans engagement et sans frais d'installation. Tout est géré, vous ne touchez à rien.
           </p>
-          <div className="mt-8 grid gap-5 md:grid-cols-3">
+          <div className="mx-auto mt-8 grid max-w-3xl gap-5 md:grid-cols-2">
             {[
               {
-                name: "Visibilité",
+                name: "Sitaly Présence",
                 price: "149€",
-                featured: false,
+                featured: true,
                 features: [
                   "Site professionnel + hébergement",
                   "Maintenance & modifications",
-                  "Support",
                   "Fiche Google Business",
                   "Référencement local",
+                  "Accès Sitaly App inclus",
                 ],
                 note: null as string | null,
               },
               {
-                name: "Acquisition",
-                price: "349€",
-                featured: true,
-                features: [
-                  "Tout le pack Visibilité",
-                  "Création & gestion Google Ads",
-                  "Suivi des performances",
-                ],
-                note: "Budget publicitaire Google non inclus.",
-              },
-              {
-                name: "Performance",
-                price: "590€",
+                name: "Sitaly Acquisition",
+                price: "Dès 299€",
                 featured: false,
                 features: [
-                  "Tout le pack Acquisition",
-                  "Automatisation complète",
-                  "Rappel SMS appels manqués",
-                  "Relance automatique des devis",
-                  "Prise de rendez-vous en ligne",
+                  "Campagnes Google Ads gérées",
+                  "Indépendant de votre site",
+                  "3 formules selon vos besoins",
+                  "Reporting mensuel",
                 ],
                 note: "Budget publicitaire Google non inclus.",
               },
@@ -235,6 +223,13 @@ export function MetierLanding(props: MetierLandingProps) {
               </article>
             ))}
           </div>
+          <p className="mt-6 text-center text-sm text-muted-foreground">
+            Besoin de plus de clients ?{" "}
+            <Link to="/acquisition" className="font-semibold text-accent hover:underline">
+              Découvrez les formules Sitaly Acquisition
+            </Link>
+            .
+          </p>
         </div>
       </section>
 
@@ -372,9 +367,8 @@ export function buildMetierMeta(opts: {
           },
           areaServed: { "@type": "Country", name: "France" },
           offers: [
-            { "@type": "Offer", name: "Visibilité", price: "149", priceCurrency: "EUR", priceSpecification: { "@type": "UnitPriceSpecification", price: "149", priceCurrency: "EUR", unitCode: "MON" } },
-            { "@type": "Offer", name: "Acquisition", price: "349", priceCurrency: "EUR", priceSpecification: { "@type": "UnitPriceSpecification", price: "349", priceCurrency: "EUR", unitCode: "MON" } },
-            { "@type": "Offer", name: "Performance", price: "590", priceCurrency: "EUR", priceSpecification: { "@type": "UnitPriceSpecification", price: "590", priceCurrency: "EUR", unitCode: "MON" } },
+            { "@type": "Offer", name: "Sitaly Présence", price: "149", priceCurrency: "EUR", priceSpecification: { "@type": "UnitPriceSpecification", price: "149", priceCurrency: "EUR", unitCode: "MON" } },
+            { "@type": "Offer", name: "Sitaly Acquisition", price: "299", priceCurrency: "EUR", priceSpecification: { "@type": "UnitPriceSpecification", price: "299", priceCurrency: "EUR", unitCode: "MON" } },
           ],
           url,
         }),
