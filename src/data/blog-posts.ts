@@ -24,6 +24,112 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "logiciel-gestion-artisan-choisir",
+    title: "Logiciel de gestion pour artisan : lequel choisir pour vraiment développer votre activité ?",
+    metaTitle: "Logiciel de gestion pour artisan : lequel choisir en 2026",
+    metaDescription:
+      "Facturation, clients, avis Google, visibilité : tous les logiciels pour artisan ne servent pas à la même chose. Le guide pour choisir le bon outil, avec une option gratuite.",
+    excerpt:
+      "Vous avez un logiciel de devis, mais le planning ne se remplit pas tout seul. C'est normal : il n'a jamais été conçu pour ça. Voici comment choisir l'outil qui développe votre activité au lieu de seulement l'administrer.",
+    category: "Développement commercial",
+    readingTime: "10 min",
+    publishedAt: "2026-07-10",
+    author: "L'équipe Sitaly",
+    keyword: "logiciel de gestion pour artisan",
+    content: [
+      { type: "p", text: "Vous avez peut-être déjà un logiciel de devis. Pourtant le carnet de commandes ne se remplit pas tout seul, vos avis Google stagnent à trois, et deux prospects sur cinq ne rappellent jamais. Le souci n'est pas votre outil de facturation : il n'a jamais été conçu pour vous apporter des clients. Choisir un logiciel de gestion quand on est artisan, ça commence par savoir ce qu'on attend vraiment de lui. Ce guide fait le tri et vous aide à trouver l'outil qui remplit le planning, pas seulement celui qui édite les factures." },
+
+      { type: "h2", text: "Deux familles de logiciels à ne pas confondre" },
+      { type: "p", text: "Quand un artisan tape « logiciel de gestion » sur Google, il tombe sur des dizaines d'outils qui promettent tous de « tout gérer ». En réalité, ils se répartissent en deux familles très différentes. Les confondre, c'est payer pour un outil qui ne règle pas votre vrai problème." },
+      { type: "h3", text: "1. Les logiciels de facturation et de chantier" },
+      { type: "p", text: "Axonaut, Extrabat, Tolteck, Obat, Sellsy : ces solutions gèrent vos devis, vos factures, votre comptabilité et le suivi de vos chantiers. Elles sont utiles, souvent indispensables pour la paperasse et les obligations légales. Mais elles s'arrêtent là. Elles pilotent l'argent qui rentre, pas les clients qui frappent à la porte. Un excellent logiciel de facturation ne vous apportera jamais un seul appel de plus." },
+      { type: "h3", text: "2. Les outils pour trouver et fidéliser des clients" },
+      { type: "p", text: "Suivi des prospects, récolte d'avis Google, relances au bon moment, réponse rapide aux demandes, visibilité en ligne : c'est la brique que la plupart des artisans négligent. C'est pourtant celle qui décide si votre planning est plein ou à moitié vide. La bonne nouvelle, c'est qu'elle ne demande ni comptable ni compétences techniques, juste le bon outil et une routine simple." },
+      {
+        type: "table",
+        caption: "Les deux familles d'outils pour artisans",
+        headers: ["", "Logiciels de facturation", "Outils de développement client"],
+        rows: [
+          ["À quoi ça sert", "Éditer devis, factures, compta", "Trouver, suivre et fidéliser des clients"],
+          ["Exemples", "Axonaut, Extrabat, Tolteck", "CRM léger, gestion des avis, Sitaly App"],
+          ["Ce que ça règle", "La paperasse et le légal", "Le carnet de commandes"],
+          ["Impact sur le CA", "Indirect (gain de temps)", "Direct (plus d'appels, plus de devis)"],
+        ],
+      },
+      { type: "p", text: "La plupart des artisans équipés d'un logiciel de facturation n'ont rien pour la seconde famille. C'est exactement là que se joue leur croissance." },
+
+      { type: "h2", text: "Ce qu'un bon outil doit vous faire gagner" },
+      { type: "p", text: "Avant de comparer des marques, listez ce que vous attendez concrètement. Un outil de développement client digne de ce nom doit vous permettre de :" },
+      {
+        type: "ul",
+        items: [
+          "Garder toutes vos fiches clients et prospects au même endroit, avec leur statut et vos notes",
+          "Ne plus jamais oublier de relancer un devis ou de rappeler un prospect",
+          "Récolter des avis Google régulièrement, sans harceler ni quémander",
+          "Répondre vite et bien (avis, SMS, e-mails) même quand vous n'aimez pas écrire",
+          "Voir où vous en êtes de votre visibilité en ligne et quoi améliorer en priorité",
+          "Faire tout ça depuis votre téléphone, entre deux chantiers",
+        ],
+      },
+
+      { type: "h2", text: "Les 5 critères pour bien choisir" },
+      { type: "h3", text: "La simplicité avant tout" },
+      { type: "p", text: "Un artisan n'a pas le temps de suivre une formation de trois jours. Si l'outil demande un mode d'emploi, il finira au placard. Cherchez une prise en main en quelques minutes, un vocabulaire clair, zéro jargon." },
+      { type: "h3", text: "Pensé pour le mobile" },
+      { type: "p", text: "Votre bureau, c'est votre camionnette. L'outil doit fonctionner parfaitement sur téléphone, pas seulement sur ordinateur." },
+      { type: "h3", text: "Français et bien accompagné" },
+      { type: "p", text: "Un support en français, qui comprend les réalités du terrain, fait toute la différence le jour où vous bloquez." },
+      { type: "h3", text: "Un prix clair, sans engagement" },
+      { type: "p", text: "Fuyez les devis opaques et les engagements de douze mois. Un tarif mensuel affiché, résiliable quand vous voulez, vous garde libre." },
+      { type: "h3", text: "Une version gratuite pour tester" },
+      { type: "p", text: "Le meilleur moyen de savoir si un outil vous convient, c'est de l'essayer sur vos vrais clients, sans sortir la carte bancaire. Privilégiez une solution avec une offre gratuite." },
+
+      { type: "h2", text: "Un carnet et un tableur, ça ne suffit pas ?" },
+      { type: "p", text: "Pour vos cinq premiers clients, oui. Au-delà, le carnet devient un trou noir : vous oubliez de relancer, vous perdez un numéro, vous ne savez plus qui a reçu son devis. Un tableur Excel fait illusion un temps, mais il ne vous rappellera jamais d'appeler M. Diallo aujourd'hui, et il n'enverra jamais une demande d'avis à votre place. Le passage à un vrai outil, c'est le moment où vous arrêtez de gérer de tête et où vous arrêtez de perdre des clients par simple oubli." },
+
+      { type: "h2", text: "Sitaly App : le copilote pour développer votre activité" },
+      { type: "p", text: "Sitaly App n'est pas un énième logiciel de facturation. C'est l'outil de la seconde famille, celui qui vous manque : un assistant digital pensé pour les artisans, qui centralise vos clients, muscle votre réputation et vous dit chaque jour quoi faire pour développer votre activité." },
+      {
+        type: "ul",
+        items: [
+          "Un CRM simple : vos clients et prospects, leur statut, vos notes, l'historique, en un coup d'œil",
+          "Les avis Google : une demande d'avis envoyée par SMS ou WhatsApp en un clic, avec le lien direct vers votre fiche",
+          "Un assistant IA qui rédige vos réponses aux avis, vos SMS, vos e-mails et vos publications",
+          "Un tableau de bord qui affiche chaque matin vos actions prioritaires",
+          "Un score de visibilité et des recommandations concrètes, calculés dès votre inscription",
+        ],
+      },
+      { type: "p", text: "Le tout dans une interface épurée, utilisable depuis le téléphone, sans aucune compétence technique. Sitaly App se concentre sur ce qui remplit votre planning et laisse la facturation aux outils qui font ça très bien : les deux sont complémentaires." },
+      { type: "p", text: "Côté tarif, quatre offres sans engagement : Free (0 €, pour découvrir), Starter (19 €/mois), Pro (49 €/mois, l'offre complète) et Business (99 €/mois, pour les équipes). Vous créez votre compte gratuitement, sans carte bancaire, sur app.sitaly.fr, et vous ajoutez votre premier client en deux minutes." },
+
+      { type: "h2", text: "Comment démarrer en 5 minutes" },
+      {
+        type: "ul",
+        items: [
+          "Créez votre compte gratuit sur app.sitaly.fr : nom de l'entreprise, métier, c'est parti",
+          "Répondez au petit diagnostic : vous obtenez votre score de visibilité et vos actions prioritaires",
+          "Ajoutez vos clients et chantiers en cours",
+          "Laissez l'application vous guider : chaque jour, elle vous montre qui relancer et quel avis demander",
+        ],
+      },
+
+      { type: "quote", text: "Le meilleur logiciel n'est pas celui qui a le plus de boutons, c'est celui que vous ouvrez vraiment tous les jours." },
+
+      {
+        type: "faq",
+        items: [
+          { q: "C'est quoi un logiciel de gestion pour artisan ?", a: "C'est un outil qui centralise et automatise une partie de votre activité. Attention : certains gèrent la facturation et les chantiers (devis, factures, compta), d'autres gèrent le développement client (suivi des prospects, avis Google, relances, visibilité). Les deux sont utiles mais ne règlent pas le même problème." },
+          { q: "Existe-t-il un logiciel gratuit pour artisan ?", a: "Oui. Sitaly App propose une offre Free à 0 €, sans carte bancaire, pour gérer vos clients, envoyer des demandes d'avis Google et découvrir l'assistant IA. C'est le meilleur moyen de tester sur vos vrais clients avant de décider." },
+          { q: "Un CRM est-il vraiment utile pour un artisan seul ?", a: "Surtout pour un artisan seul. Quand personne ne gère les relances à votre place, un outil qui vous rappelle qui contacter et quand vous évite de perdre des devis par simple oubli. C'est du chiffre d'affaires récupéré sans aucun budget publicitaire." },
+          { q: "Sitaly remplace-t-il mon logiciel de facturation ?", a: "Non, et c'est volontaire. Sitaly App se concentre sur les clients, les avis et la visibilité. Vous gardez votre outil de devis et de facture : les deux fonctionnent très bien ensemble." },
+          { q: "Faut-il être à l'aise avec l'informatique ?", a: "Non. Sitaly App est conçu pour être utilisé entre deux chantiers, depuis le téléphone, sans formation. Si vous savez envoyer un SMS, vous savez vous en servir." },
+        ],
+      },
+
+      { type: "p", text: "Le bon logiciel de gestion, pour un artisan, n'est pas forcément celui qui fait le plus de choses. C'est celui qui vous fait gagner des clients sans vous voler du temps. Commencez simple, gratuitement, et gardez la main : créez votre compte sur app.sitaly.fr et voyez par vous-même ce que ça change sur votre planning." },
+    ],
+  },
+  {
     slug: "recolter-avis-google-artisan",
     title: "Récolter des avis Google quand on est artisan : la méthode complète",
     metaTitle: "Avis Google artisan : comment en obtenir plus (méthode 2026)",
@@ -232,7 +338,7 @@ export const BLOG_POSTS: BlogPost[] = [
         ["Google Ads", "300 à 800€", "24 à 48 h", "10 à 50"],
       ] },
       { type: "h2", text: "Cas concret : Julien, électricien à Nîmes" },
-      { type: "p", text: "Julien était à 60 % de planning rempli en moyenne. Il a appliqué 4 leviers en 3 mois : fiche Google passée de 6 à 28 avis, site internet refait, 2 pages 'ville' (Nîmes + Alès), et 200€/mois de Google Ads. Résultat à 6 mois : planning rempli à 95 %, refus de chantiers, et embauche d'un apprenti. CA additionnel mensuel : environ 4 800€, pour un investissement de 349€/mois (formule avec gestion Google Ads incluse) plus 200€/mois de budget publicitaire." },
+      { type: "p", text: "Julien était à 60 % de planning rempli en moyenne. Il a appliqué 4 leviers en 3 mois : fiche Google passée de 6 à 28 avis, site internet refait, 2 pages 'ville' (Nîmes + Alès), et 200€/mois de Google Ads. Résultat à 6 mois : planning rempli à 95 %, refus de chantiers, et embauche d'un apprenti. CA additionnel mensuel : environ 4 800€, pour un investissement de 448€/mois (Sitaly Présence pour le site + Sitaly Acquisition pour la gestion Google Ads) plus 200€/mois de budget publicitaire." },
       { type: "h2", text: "Par où commencer concrètement ?" },
       { type: "p", text: "Si vous n'avez ni site ni fiche Google optimisée, commencez par là — c'est la base. Un site propre + une fiche Google bien remplie + 10 avis clients suffisent souvent à doubler le volume d'appels en quelques mois. Sitaly s'occupe du site internet et du référencement local à partir de 149€/mois en location, sans engagement, et peut gérer vos campagnes Google Ads et vos automatisations (relance des devis, prise de rendez-vous) pour passer à la vitesse supérieure." },
       { type: "h2", text: "Questions fréquentes" },
@@ -930,7 +1036,7 @@ export const BLOG_POSTS: BlogPost[] = [
       { type: "p", text: "Les artisans les plus rentables que nous accompagnons font les deux. Pourquoi ? Parce que SEO et Google Ads ne s'adressent pas tout à fait au même prospect au même moment. Google Ads capte les requêtes ultra-commerciales (« plombier urgence Lyon ») où être premier garantit l'appel. Le SEO capte les recherches plus larges (« comment réparer fuite chasse d'eau », « refaire toiture ardoise prix ») où vous construisez votre crédibilité et récupérez du trafic au coût marginal zéro." },
       { type: "p", text: "Sur 12 mois, la stratégie combinée donne typiquement ce profil : 60 à 70 % des appels viennent du SEO (gratuits), 30 à 40 % viennent de Google Ads (payants mais immédiats). Le mois 1, c'est 90 % Ads / 10 % SEO. Le mois 12, c'est inversé. Pendant tout ce temps, votre chiffre d'affaires ne s'arrête jamais." },
       { type: "h2", text: "Exemple chiffré sur 12 mois : un électricien à Nantes" },
-      { type: "p", text: "Investissement total année 1 : formule Acquisition à 349€/mois (site + gestion Google Ads) plus 500€/mois de budget publicitaire, soit 10 188€ sur l'année. Résultat mesuré : 78 appels SEO sur l'année (presque tous arrivés au S2 après que le site soit bien référencé), 142 appels Google Ads (réguliers tout au long de l'année). Total : 220 appels qualifiés, dont 88 chantiers signés à 1 850€ de marge moyenne. CA généré : 162 800€. ROI : 16x." },
+      { type: "p", text: "Investissement total année 1 : Sitaly Présence + Sitaly Acquisition à 448€/mois (site + gestion Google Ads) plus 500€/mois de budget publicitaire, soit 11 376€ sur l'année. Résultat mesuré : 78 appels SEO sur l'année (presque tous arrivés au S2 après que le site soit bien référencé), 142 appels Google Ads (réguliers tout au long de l'année). Total : 220 appels qualifiés, dont 88 chantiers signés à 1 850€ de marge moyenne. CA généré : 162 800€. ROI : 14x." },
       { type: "p", text: "Sans Google Ads, l'électricien aurait fait probablement 80 appels SEO sur l'année — mais 0 le 1er trimestre, période critique pour sa trésorerie de démarrage. Sans SEO, il aurait dépensé 6 000€ en Ads pour 142 appels, soit un coût par appel de 42€ — viable mais beaucoup moins rentable que la stratégie combinée." },
       { type: "h2", text: "Le préalable absolu : un site qui convertit" },
       { type: "p", text: "Que vous choisissiez SEO, Ads ou les deux, le facteur multiplicateur (ou divisor) reste le même : votre site. Avec un site qui convertit à 8 % au lieu de 1,5 %, vous générez 5 fois plus d'appels pour la même visibilité. Investir dans Google Ads sur un mauvais site, c'est payer pour amener des prospects qui repartent immédiatement. Investir dans le SEO sur un mauvais site, c'est attendre 6 mois pour découvrir que ça ne convertit pas." },
@@ -944,7 +1050,7 @@ export const BLOG_POSTS: BlogPost[] = [
         { q: "Combien de temps avant que le SEO compense le coût des Ads ?", a: "En moyenne 6 à 9 mois pour un artisan local. À partir de là, vous pouvez réduire progressivement le budget Ads sans perdre de chiffre d'affaires." },
         { q: "Les annonces Google Ads ne font-elles pas fuir les clients méfiants ?", a: "Une minorité de prospects préfèrent les résultats organiques. Mais sur les requêtes d'urgence (« plombier urgence »), 60 à 70 % cliquent sur les 3 premières annonces sans distinguer. Le risque est mineur." },
         { q: "Google Ads améliore-t-il mon SEO ?", a: "Indirectement : Google Ads génère du trafic, des appels, des avis, des recherches de marque. Tous ces signaux renforcent votre SEO local sur 6 à 12 mois. Mais ce n'est pas un effet direct sur le classement." },
-        { q: "Quel budget global mensuel viser pour un artisan ?", a: "Pour un artisan qui veut vraiment décoller : la formule Acquisition à 349€/mois (site + gestion Google Ads) plus 300 à 500€/mois de budget publicitaire. ROI typique 10 à 25x sur 12 mois si le site convertit bien." },
+        { q: "Quel budget global mensuel viser pour un artisan ?", a: "Pour un artisan qui veut vraiment décoller : Sitaly Présence + Sitaly Acquisition à partir de 448€/mois (site + gestion Google Ads) plus 300 à 500€/mois de budget publicitaire. ROI typique 10 à 25x sur 12 mois si le site convertit bien." },
       ] },
       { type: "h2", text: "Sitaly : site + SEO + Google Ads, le trio gagnant" },
       { type: "p", text: "Nous concevons votre site (à partir de 149€/mois en location), optimisons votre SEO local et gérons vos campagnes Google Ads de A à Z. Une seule équipe, une stratégie cohérente, un reporting clair. Réservez un appel gratuit pour qu'on cadre votre stratégie acquisition sur les 12 prochains mois." },
