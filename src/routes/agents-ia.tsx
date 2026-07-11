@@ -166,7 +166,7 @@ function Hero() {
               Nouveau — Une équipe IA installée clé en main
             </div>
             <h1 className="mt-6 font-display text-4xl font-extrabold leading-[1.02] tracking-tight sm:text-5xl lg:text-6xl">
-              Une équipe d'agents IA qui travaille pour vous.{" "}
+              Une équipe d'agents IA à votre service.{" "}
               <span className="gradient-text">Pendant que vous travaillez.</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg text-muted-foreground sm:text-xl">
