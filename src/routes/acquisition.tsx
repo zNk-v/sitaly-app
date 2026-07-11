@@ -3,7 +3,6 @@ import {
   Calendar,
   Check,
   Megaphone,
-  ArrowRight,
   Target,
   BarChart3,
   Rocket,
@@ -251,34 +250,6 @@ function AcquisitionPage() {
                 <p className="mt-2 text-sm text-muted-foreground">{s.text}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Growth sur sélection */}
-      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
-        <div className="rounded-3xl border border-accent/30 bg-accent/5 p-8 sm:p-12">
-          <div className="grid items-center gap-8 lg:grid-cols-[1.4fr_1fr]">
-            <div>
-              <p className="text-xs font-bold tracking-widest text-accent">SUR SÉLECTION</p>
-              <h2 className="mt-3 font-display text-2xl font-extrabold tracking-tight sm:text-3xl">
-                Sitaly Growth
-              </h2>
-              <p className="mt-3 text-muted-foreground">
-                Pour les entreprises à fort potentiel qui veulent tout déléguer : site, acquisition,
-                stratégie et optimisation continue, réunis dans un accompagnement complet. Nombre de
-                places volontairement limité pour garantir la qualité du suivi.
-              </p>
-            </div>
-            <a
-              href={CALENDLY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3.5 text-base font-semibold text-primary-foreground shadow-elevated transition hover:opacity-90"
-            >
-              Candidater
-              <ArrowRight className="h-5 w-5" />
-            </a>
           </div>
         </div>
       </section>

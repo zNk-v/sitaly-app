@@ -28,7 +28,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "Logiciel de gestion pour artisan : lequel choisir pour vraiment développer votre activité ?",
     metaTitle: "Logiciel de gestion pour artisan : lequel choisir en 2026",
     metaDescription:
-      "Facturation, clients, avis Google, visibilité : tous les logiciels pour artisan ne servent pas à la même chose. Le guide pour choisir le bon outil, avec une option gratuite.",
+      "Facturation, clients, avis Google, visibilité : tous les logiciels pour artisan ne servent pas à la même chose. Le guide pour choisir le bon outil et remplir votre planning.",
     excerpt:
       "Vous avez un logiciel de devis, mais le planning ne se remplit pas tout seul. C'est normal : il n'a jamais été conçu pour ça. Voici comment choisir l'outil qui développe votre activité au lieu de seulement l'administrer.",
     category: "Développement commercial",
@@ -81,8 +81,8 @@ export const BLOG_POSTS: BlogPost[] = [
       { type: "p", text: "Un support en français, qui comprend les réalités du terrain, fait toute la différence le jour où vous bloquez." },
       { type: "h3", text: "Un prix clair, sans engagement" },
       { type: "p", text: "Fuyez les devis opaques et les engagements de douze mois. Un tarif mensuel affiché, résiliable quand vous voulez, vous garde libre." },
-      { type: "h3", text: "Une version gratuite pour tester" },
-      { type: "p", text: "Le meilleur moyen de savoir si un outil vous convient, c'est de l'essayer sur vos vrais clients, sans sortir la carte bancaire. Privilégiez une solution avec une offre gratuite." },
+      { type: "h3", text: "Un accompagnement à la mise en place" },
+      { type: "p", text: "Le meilleur logiciel du monde ne sert à rien s'il reste à moitié configuré. Pour un artisan qui n'a pas le temps, l'idéal n'est pas seulement d'essayer : c'est qu'on installe et paramètre l'outil pour vous, connecté à votre fiche Google et à vos clients. Vous démarrez avec quelque chose qui fonctionne, pas avec un formulaire vide." },
 
       { type: "h2", text: "Un carnet et un tableur, ça ne suffit pas ?" },
       { type: "p", text: "Pour vos cinq premiers clients, oui. Au-delà, le carnet devient un trou noir : vous oubliez de relancer, vous perdez un numéro, vous ne savez plus qui a reçu son devis. Un tableur Excel fait illusion un temps, mais il ne vous rappellera jamais d'appeler M. Diallo aujourd'hui, et il n'enverra jamais une demande d'avis à votre place. Le passage à un vrai outil, c'est le moment où vous arrêtez de gérer de tête et où vous arrêtez de perdre des clients par simple oubli." },
@@ -100,16 +100,16 @@ export const BLOG_POSTS: BlogPost[] = [
         ],
       },
       { type: "p", text: "Le tout dans une interface épurée, utilisable depuis le téléphone, sans aucune compétence technique. Sitaly App se concentre sur ce qui remplit votre planning et laisse la facturation aux outils qui font ça très bien : les deux sont complémentaires." },
-      { type: "p", text: "Côté tarif, quatre offres sans engagement : Free (0 €, pour découvrir), Starter (19 €/mois), Pro (49 €/mois, l'offre complète) et Business (99 €/mois, pour les équipes). Vous créez votre compte gratuitement, sans carte bancaire, sur app.sitaly.fr, et vous ajoutez votre premier client en deux minutes." },
+      { type: "p", text: "L'application Sitaly est incluse dans l'offre Sitaly Présence (à partir de 149 €/mois, sans engagement) : votre site, votre visibilité locale et votre copilote de développement client réunis. Surtout, on la configure pour vous et on la connecte à votre fiche Google. Vous ne partez pas d'une page blanche, vous démarrez avec un outil déjà prêt pour votre métier." },
 
-      { type: "h2", text: "Comment démarrer en 5 minutes" },
+      { type: "h2", text: "Comment on met ça en place pour vous" },
       {
         type: "ul",
         items: [
-          "Créez votre compte gratuit sur app.sitaly.fr : nom de l'entreprise, métier, c'est parti",
-          "Répondez au petit diagnostic : vous obtenez votre score de visibilité et vos actions prioritaires",
-          "Ajoutez vos clients et chantiers en cours",
-          "Laissez l'application vous guider : chaque jour, elle vous montre qui relancer et quel avis demander",
+          "Un appel de 20 minutes pour cadrer votre métier, votre zone et vos priorités",
+          "Sitaly configure l'application et la connecte à votre fiche Google Business",
+          "On importe avec vous vos clients et chantiers en cours",
+          "Chaque matin, l'application vous montre qui relancer et quel avis demander : vous n'avez plus qu'à suivre",
         ],
       },
 
@@ -119,14 +119,14 @@ export const BLOG_POSTS: BlogPost[] = [
         type: "faq",
         items: [
           { q: "C'est quoi un logiciel de gestion pour artisan ?", a: "C'est un outil qui centralise et automatise une partie de votre activité. Attention : certains gèrent la facturation et les chantiers (devis, factures, compta), d'autres gèrent le développement client (suivi des prospects, avis Google, relances, visibilité). Les deux sont utiles mais ne règlent pas le même problème." },
-          { q: "Existe-t-il un logiciel gratuit pour artisan ?", a: "Oui. Sitaly App propose une offre Free à 0 €, sans carte bancaire, pour gérer vos clients, envoyer des demandes d'avis Google et découvrir l'assistant IA. C'est le meilleur moyen de tester sur vos vrais clients avant de décider." },
+          { q: "Existe-t-il un logiciel gratuit pour artisan ?", a: "Plusieurs outils de facturation proposent une version gratuite ou un essai. Côté développement client (suivi des prospects, avis Google, relances), l'application Sitaly est incluse dans l'offre Sitaly Présence et installée pour vous, plutôt que laissée à configurer seul. Réservez un appel pour voir ce qui correspond à votre situation." },
           { q: "Un CRM est-il vraiment utile pour un artisan seul ?", a: "Surtout pour un artisan seul. Quand personne ne gère les relances à votre place, un outil qui vous rappelle qui contacter et quand vous évite de perdre des devis par simple oubli. C'est du chiffre d'affaires récupéré sans aucun budget publicitaire." },
           { q: "Sitaly remplace-t-il mon logiciel de facturation ?", a: "Non, et c'est volontaire. Sitaly App se concentre sur les clients, les avis et la visibilité. Vous gardez votre outil de devis et de facture : les deux fonctionnent très bien ensemble." },
           { q: "Faut-il être à l'aise avec l'informatique ?", a: "Non. Sitaly App est conçu pour être utilisé entre deux chantiers, depuis le téléphone, sans formation. Si vous savez envoyer un SMS, vous savez vous en servir." },
         ],
       },
 
-      { type: "p", text: "Le bon logiciel de gestion, pour un artisan, n'est pas forcément celui qui fait le plus de choses. C'est celui qui vous fait gagner des clients sans vous voler du temps. Commencez simple, gratuitement, et gardez la main : créez votre compte sur app.sitaly.fr et voyez par vous-même ce que ça change sur votre planning." },
+      { type: "p", text: "Le bon logiciel de gestion, pour un artisan, n'est pas celui qui fait le plus de choses. C'est celui qui vous fait gagner des clients sans vous voler du temps, et qui est déjà prêt quand vous l'ouvrez. Réservez un appel gratuit de 20 minutes : on regarde votre situation et on met en place l'outil qui remplit votre planning, sans que vous ayez à le configurer." },
     ],
   },
   {
