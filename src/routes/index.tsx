@@ -23,6 +23,7 @@ import {
   MessageSquare,
   FileText,
   Instagram,
+  Bot,
 } from "lucide-react";
 import exampleRenovation from "@/assets/example-renovation.jpg";
 import examplePlombier from "@/assets/example-plombier.jpg";
@@ -108,7 +109,6 @@ function SitalyHome() {
       <GoogleAds />
       <Automation />
       <Pricing />
-      <RecurringModules />
       <BlogOption />
       <Options />
       <Examples />
@@ -131,12 +131,12 @@ function Nav() {
         </a>
         <nav className="hidden items-center gap-8 md:flex">
           <a href="#offre" className="text-sm font-medium text-muted-foreground hover:text-foreground">Offres</a>
+          <Link to="/agents-ia" className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:opacity-80">
+            <Sparkles className="h-3.5 w-3.5" />
+            Agents IA
+          </Link>
           <a href="#exemples" className="text-sm font-medium text-muted-foreground hover:text-foreground">Exemples</a>
           <a href="#process" className="text-sm font-medium text-muted-foreground hover:text-foreground">Process</a>
-          <Link to="/sitaly-app" className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:opacity-80">
-            <Sparkles className="h-3.5 w-3.5" />
-            Sitaly App
-          </Link>
           <Link to="/blog" className="text-sm font-medium text-muted-foreground hover:text-foreground">Blog</Link>
           <a href="#faq" className="text-sm font-medium text-muted-foreground hover:text-foreground">FAQ</a>
         </nav>
@@ -611,23 +611,23 @@ const PRICING_TIERS = [
     featured: false,
   },
   {
-    name: "Sitaly Growth",
-    badge: "Sur sélection",
-    icon: TrendingUp,
+    name: "Sitaly Agents IA",
+    badge: "Automatisation",
+    icon: Bot,
     price: "Sur mesure",
     period: "",
     setup: null,
-    objective: "L'accompagnement complet pour les entreprises à fort potentiel.",
-    inherits: "Tout Présence + Acquisition",
+    objective: "Des agents IA qui répondent, qualifient et prennent vos rendez-vous. Installés clé en main.",
+    inherits: "Se greffe sur n'importe quelle offre",
     features: [
-      "Stratégie de croissance dédiée",
-      "Site + acquisition + optimisation",
-      "Suivi rapproché",
-      "Places limitées",
+      "Agent standardiste — ne rate plus un appel",
+      "Prise de rendez-vous automatique",
+      "Relance des devis en attente",
+      "Réponse aux messages & réseaux",
     ],
     note: null,
-    promise: "On construit votre croissance avec vous.",
-    cta: { label: "Candidater", calendly: true },
+    promise: "Vous ne configurez rien, on branche tout.",
+    cta: { label: "Découvrir les agents", to: "/agents-ia" },
     featured: false,
   },
 ] as const;
@@ -762,8 +762,8 @@ function PricingCard({ tier, featured }: { tier: Tier; featured: boolean }) {
               : "border border-border bg-secondary text-secondary-foreground hover:bg-muted"
           }`}
         >
-          <Megaphone className="h-5 w-5" />
           {tier.cta.label}
+          <ArrowRight className="h-5 w-5" />
         </Link>
       ) : (
         <a
@@ -781,45 +781,6 @@ function PricingCard({ tier, featured }: { tier: Tier; featured: boolean }) {
         </a>
       )}
     </div>
-  );
-}
-
-/* ---------------- MODULES RÉCURRENTS ---------------- */
-function RecurringModules() {
-  const modules = [
-    { icon: MessageSquare, name: "Rappel SMS appels manqués", install: "390€ d'installation", monthly: "99€/mois" },
-    { icon: Bell, name: "Relance automatique de devis", install: "390€ d'installation", monthly: "99€/mois" },
-    { icon: Calendar, name: "Prise de rendez-vous en ligne", install: "290€ d'installation", monthly: "59€/mois" },
-    { icon: Search, name: "SEO local avancé", install: null as string | null, monthly: "129€/mois" },
-  ];
-  return (
-    <section className="py-20 sm:py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <SectionHeader
-          eyebrow="Modules récurrents"
-          title="Des briques à ajouter sur n'importe quelle offre"
-          subtitle="Frais d'installation unique, puis un abonnement mensuel. Greffables sur tous les forfaits."
-        />
-        <div className="mx-auto mt-10 grid max-w-4xl grid-cols-1 gap-3 sm:grid-cols-2">
-          {modules.map((m) => (
-            <div
-              key={m.name}
-              className="flex items-center gap-3 rounded-xl border border-border bg-card px-5 py-4 shadow-soft transition hover:border-accent/40"
-            >
-              <div className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-accent/10 text-accent">
-                <m.icon className="h-5 w-5" />
-              </div>
-              <div className="min-w-0">
-                <span className="block font-medium">{m.name}</span>
-                <span className="text-sm text-muted-foreground">
-                  {m.install ? `${m.install} + ${m.monthly}` : `${m.monthly} · sans frais d'installation`}
-                </span>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
   );
 }
 
@@ -1322,6 +1283,7 @@ function Footer() {
             <div className="text-sm font-semibold">Navigation</div>
             <ul className="mt-3 space-y-2 text-sm text-primary-foreground/70">
               <li><a href="#offre" className="hover:text-primary-foreground">Offres</a></li>
+              <li><Link to="/agents-ia" className="hover:text-primary-foreground">Agents IA</Link></li>
               <li><a href="#exemples" className="hover:text-primary-foreground">Exemples</a></li>
               <li><a href="#process" className="hover:text-primary-foreground">Process</a></li>
               <li><a href="#faq" className="hover:text-primary-foreground">FAQ</a></li>

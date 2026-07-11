@@ -310,7 +310,7 @@ function AcquisitionPage() {
           <SitalyLogo className="scale-90" />
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
             <Link to="/" className="hover:text-foreground">Accueil</Link>
-            <Link to="/sitaly-app" className="hover:text-foreground">Sitaly App</Link>
+            <Link to="/agents-ia" className="hover:text-foreground">Agents IA</Link>
             <Link to="/mentions-legales" className="hover:text-foreground">Mentions légales</Link>
             <Link to="/cgv" className="hover:text-foreground">CGV</Link>
           </div>

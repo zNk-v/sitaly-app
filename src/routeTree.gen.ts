@@ -20,6 +20,7 @@ import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
 import { Route as CookiesRouteImport } from './routes/cookies'
 import { Route as CgvRouteImport } from './routes/cgv'
 import { Route as BlogRouteImport } from './routes/blog'
+import { Route as AgentsIaRouteImport } from './routes/agents-ia'
 import { Route as AcquisitionRouteImport } from './routes/acquisition'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
@@ -81,6 +82,11 @@ const BlogRoute = BlogRouteImport.update({
   path: '/blog',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AgentsIaRoute = AgentsIaRouteImport.update({
+  id: '/agents-ia',
+  path: '/agents-ia',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AcquisitionRoute = AcquisitionRouteImport.update({
   id: '/acquisition',
   path: '/acquisition',
@@ -105,6 +111,7 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/acquisition': typeof AcquisitionRoute
+  '/agents-ia': typeof AgentsIaRoute
   '/blog': typeof BlogRouteWithChildren
   '/cgv': typeof CgvRoute
   '/cookies': typeof CookiesRoute
@@ -122,6 +129,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/acquisition': typeof AcquisitionRoute
+  '/agents-ia': typeof AgentsIaRoute
   '/cgv': typeof CgvRoute
   '/cookies': typeof CookiesRoute
   '/mentions-legales': typeof MentionsLegalesRoute
@@ -139,6 +147,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/acquisition': typeof AcquisitionRoute
+  '/agents-ia': typeof AgentsIaRoute
   '/blog': typeof BlogRouteWithChildren
   '/cgv': typeof CgvRoute
   '/cookies': typeof CookiesRoute
@@ -158,6 +167,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/acquisition'
+    | '/agents-ia'
     | '/blog'
     | '/cgv'
     | '/cookies'
@@ -175,6 +185,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/acquisition'
+    | '/agents-ia'
     | '/cgv'
     | '/cookies'
     | '/mentions-legales'
@@ -191,6 +202,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/acquisition'
+    | '/agents-ia'
     | '/blog'
     | '/cgv'
     | '/cookies'
@@ -209,6 +221,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AcquisitionRoute: typeof AcquisitionRoute
+  AgentsIaRoute: typeof AgentsIaRoute
   BlogRoute: typeof BlogRouteWithChildren
   CgvRoute: typeof CgvRoute
   CookiesRoute: typeof CookiesRoute
@@ -301,6 +314,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/agents-ia': {
+      id: '/agents-ia'
+      path: '/agents-ia'
+      fullPath: '/agents-ia'
+      preLoaderRoute: typeof AgentsIaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/acquisition': {
       id: '/acquisition'
       path: '/acquisition'
@@ -347,6 +367,7 @@ const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AcquisitionRoute: AcquisitionRoute,
+  AgentsIaRoute: AgentsIaRoute,
   BlogRoute: BlogRouteWithChildren,
   CgvRoute: CgvRoute,
   CookiesRoute: CookiesRoute,
