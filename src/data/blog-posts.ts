@@ -1611,6 +1611,105 @@ export const BLOG_POSTS: BlogPost[] = [
       { type: "p", text: "Site avec estimation en ligne, référencement local, avis, et en option Google Ads et relance automatique des contacts vendeurs : Sitaly aide les agents immobiliers indépendants à rentrer plus de mandats et à convertir plus d'acheteurs. Réservez un appel gratuit de 15 minutes pour en parler." },
     ],
   },
+  {
+    slug: "agents-ia-artisans-tpe",
+    title: "Agents IA pour artisans et TPE : le guide complet pour ne plus perdre un seul client",
+    metaTitle: "Agent IA pour artisan & TPE : le guide complet 2026",
+    metaDescription:
+      "Standardiste IA, prise de rendez-vous, relance de devis : ce qu'un agent IA fait vraiment pour votre entreprise, comment ça marche, ce que ça coûte et par où commencer.",
+    excerpt:
+      "Un appel manqué, c'est un client qui appelle le concurrent. Un agent IA décroche, qualifie et prend le rendez-vous à votre place, même quand vous êtes sur un chantier. Voici tout ce qu'il faut savoir avant de vous lancer.",
+    category: "Automatisation",
+    readingTime: "12 min",
+    publishedAt: "2026-07-11",
+    author: "L'équipe Sitaly",
+    keyword: "agent IA",
+    content: [
+      { type: "p", text: "Il est 14h, vous êtes sur un chantier, les mains prises. Votre téléphone sonne. Vous ne pouvez pas décrocher. À l'autre bout, un client prêt à réserver raccroche au bout de quatre sonneries et appelle le concurrent suivant. Ce scénario se répète des dizaines de fois par mois dans une entreprise artisanale. Un agent IA règle précisément ce problème : il décroche, répond, qualifie la demande et prend le rendez-vous à votre place, 24h/24. Ce guide vous explique ce qu'est vraiment un agent IA, ce qu'il peut faire pour votre activité, ce que ça coûte, et comment le mettre en place sans y passer vos soirées." },
+
+      { type: "h2", text: "Qu'est-ce qu'un agent IA, concrètement ?" },
+      { type: "p", text: "Un agent IA est un programme capable de comprendre une demande formulée en langage naturel, de raisonner, puis d'agir pour la traiter du début à la fin. Là où un répondeur ou un menu à touches se contente d'enregistrer, l'agent IA tient une vraie conversation : il écoute, pose les bonnes questions, comprend les réponses et déclenche une action concrète, comme réserver un créneau dans votre agenda ou envoyer un SMS de confirmation." },
+      { type: "p", text: "Pour un artisan ou une TPE, un agent IA prend trois formes principales : un standardiste vocal qui répond au téléphone, un agent conversationnel qui traite vos messages, ou un assistant qui relance vos devis tout seul. Il travaille pendant que vous êtes ailleurs, sans pause, sans oubli, et sans mauvaise humeur le lundi matin." },
+
+      { type: "h2", text: "Agent IA, chatbot, automatisation : quelle différence ?" },
+      { type: "p", text: "On confond souvent ces trois termes. La différence tient à l'autonomie et à la capacité à gérer l'imprévu." },
+      {
+        type: "table",
+        caption: "Agent IA, chatbot et automatisation classique",
+        headers: ["", "Automatisation classique", "Chatbot", "Agent IA"],
+        rows: [
+          ["Fonctionnement", "Règles fixes (si X, alors Y)", "Réponses scriptées aux questions prévues", "Comprend, raisonne et agit en autonomie"],
+          ["Conversation", "Aucune", "Limitée, vite hors sujet", "Naturelle, s'adapte au client"],
+          ["Exemple", "SMS auto après un appel manqué", "FAQ sur un site web", "Standardiste qui prend un rendez-vous au téléphone"],
+          ["Quand ça coince", "Dès que le cas n'est pas prévu", "Répète « je n'ai pas compris »", "Reformule ou passe le relais à l'humain"],
+        ],
+      },
+      { type: "p", text: "Un chatbot suit un script. Un agent IA poursuit un objectif. C'est ce qui lui permet de gérer un vrai client, avec ses hésitations et ses questions imprévues, sans le frustrer." },
+
+      { type: "h2", text: "Ce qu'un agent IA peut faire pour votre entreprise" },
+      { type: "p", text: "Voici les usages les plus rentables pour une entreprise de services, du plus demandé au plus spécialisé." },
+      { type: "h3", text: "Le standardiste IA : ne plus jamais rater un appel" },
+      { type: "p", text: "C'est l'agent le plus réclamé, et le plus rentable. Un agent IA téléphonique décroche à votre place quand vous êtes occupé, en intervention ou en dehors des horaires. Il se présente au nom de votre entreprise, répond aux questions courantes (« vous intervenez sur ma commune ? », « quel est votre délai ? »), qualifie l'urgence et propose un créneau. Un appel manqué qui devient un rendez-vous confirmé, c'est du chiffre d'affaires récupéré sans lever le petit doigt." },
+      { type: "h3", text: "La prise de rendez-vous automatique" },
+      { type: "p", text: "L'agent consulte vos disponibilités, propose deux ou trois créneaux, confirme le rendez-vous et envoie un rappel la veille. Fini les dix allers-retours de SMS pour caler une date. Votre agenda se remplit pendant que vous travaillez." },
+      { type: "h3", text: "La relance de devis" },
+      { type: "p", text: "La moitié des devis restent sans réponse, non pas parce que le client a dit non, mais parce que personne n'a relancé. Un agent IA relance vos devis en attente au bon moment, avec le bon ton, et vous prévient dès qu'un client réagit. C'est souvent l'agent qui rembourse son coût le plus vite." },
+      { type: "h3", text: "La réponse aux messages et aux réseaux" },
+      { type: "p", text: "Formulaire du site, WhatsApp, Instagram, e-mail : les demandes arrivent de partout et s'accumulent le soir. Un agent conversationnel répond en quelques secondes, qualifie le besoin et bascule vers un rendez-vous. Une réponse immédiate donne une image sérieuse, là où un silence de deux jours fait fuir le prospect." },
+      { type: "h3", text: "La collecte et la réponse aux avis Google" },
+      { type: "p", text: "L'agent sollicite un avis après chaque intervention et rédige une réponse à chaque avis reçu. Plus d'avis et une fiche active, c'est un meilleur classement local et plus d'appels entrants." },
+
+      { type: "h2", text: "Combien de clients perdez-vous sans agent IA ?" },
+      { type: "p", text: "Le coût d'un agent IA se juge en regard de ce qu'il vous fait récupérer. Faites le calcul avec vos propres chiffres." },
+      {
+        type: "ul",
+        items: [
+          "60 à 80 % des personnes qui tombent sur un répondeur ne laissent pas de message et appellent ailleurs.",
+          "Un artisan seul manque en moyenne 20 à 30 % de ses appels entrants sur une journée de travail.",
+          "Un devis sur deux non signé l'est faute de relance, pas à cause du prix.",
+          "Une demande laissée sans réponse plus d'une heure a deux fois moins de chances de se transformer en client.",
+        ],
+      },
+      { type: "p", text: "Si vous manquez ne serait-ce que deux appels qualifiés par semaine, et qu'un client vaut plusieurs centaines d'euros, vous laissez filer des milliers d'euros par an. Un agent IA transforme une partie de ces pertes en rendez-vous." },
+
+      { type: "h2", text: "Un exemple concret" },
+      { type: "p", text: "Prenons Karim, plombier chauffagiste en Essonne, seul sur ses chantiers. Avant, il ratait 8 à 10 appels par jour et rappelait le soir, souvent trop tard. Il met en place un standardiste IA qui décroche à sa place, qualifie l'urgence et réserve les interventions non urgentes dans son agenda. Résultat sur le premier mois : 32 appels pris en charge qui seraient partis à la concurrence, 11 nouveaux rendez-vous, et deux dépannages urgents détectés et transférés aussitôt sur son portable. Le coût de l'agent a été couvert par le premier chantier signé." },
+
+      { type: "h2", text: "Combien coûte un agent IA ?" },
+      { type: "p", text: "Deux idées reçues à écarter. Non, il ne faut pas être une grande entreprise pour s'offrir un agent IA. Non, ce n'est pas un budget à cinq chiffres. Pour une TPE ou un artisan, un agent se compose en général d'une installation unique, puis d'un abonnement mensuel qui dépend du périmètre : un seul agent simple, ou plusieurs agents connectés à vos outils." },
+      { type: "p", text: "Le vrai piège n'est pas le prix, c'est le temps. Beaucoup d'outils « agent IA » se vendent en libre-service : vous payez, puis vous passez des heures à tout configurer, brancher, tester et corriger. Pour un artisan qui n'a pas une minute, c'est le meilleur moyen de laisser l'outil au placard. La bonne approche, c'est le clé en main : quelqu'un installe, paramètre et entretient l'agent pour vous. Vous achetez un résultat, pas un logiciel de plus à apprendre." },
+
+      { type: "h2", text: "Les objections les plus fréquentes" },
+      { type: "h3", text: "« Un agent IA va remplacer le contact humain »" },
+      { type: "p", text: "Non. Un bon agent IA prend le relais quand vous ne pouvez pas répondre, pas à votre place quand vous le pouvez. Il évite le pire scénario, celui du client qui n'a personne au bout du fil. Sur les cas sensibles, il sait passer la main et vous transférer l'appel." },
+      { type: "h3", text: "« Mes clients vont détester parler à une machine »" },
+      { type: "p", text: "Les agents vocaux récents tiennent une conversation fluide et polie. La plupart des clients préfèrent une réponse immédiate et un rendez-vous obtenu à un répondeur vide un dimanche soir. Ce qui agace un client, ce n'est pas l'IA, c'est de ne joindre personne." },
+      { type: "h3", text: "« C'est trop compliqué pour moi »" },
+      { type: "p", text: "En clé en main, vous n'ouvrez aucun logiciel et vous ne configurez rien. Vous fournissez vos informations une fois (horaires, zone, questions à poser), et l'agent tourne. Si vous savez répondre au téléphone, vous savez travailler avec un agent IA." },
+
+      { type: "h2", text: "Par où commencer" },
+      { type: "p", text: "Ne cherchez pas à tout automatiser d'un coup. Repérez d'abord la fuite la plus coûteuse dans votre activité. Vous ratez trop d'appels ? Commencez par le standardiste IA. Vos devis dorment sans réponse ? Commencez par l'agent de relance. Vous croulez sous les messages ? Commencez par l'agent conversationnel. Un seul agent bien installé rapporte déjà, et vous en ajoutez d'autres quand ils vous font gagner du temps." },
+      { type: "p", text: "C'est exactement l'approche de Sitaly : on identifie avec vous l'agent qui change la donne, on l'installe clé en main pour votre métier, et on l'entretient. Vous ne configurez rien. Pour en discuter, réservez un appel de 20 minutes, sans engagement." },
+
+      { type: "quote", text: "La vraie question n'est pas de savoir si l'IA va décrocher à votre place. C'est de savoir combien de clients vous perdez chaque semaine en attendant de vous décider." },
+
+      {
+        type: "faq",
+        items: [
+          { q: "Qu'est-ce qu'un agent IA ?", a: "Un agent IA est un programme qui comprend une demande en langage naturel, raisonne et agit pour la traiter de bout en bout. Pour une entreprise, il prend la forme d'un standardiste vocal, d'un agent qui répond aux messages ou d'un assistant qui relance les devis, en autonomie et 24h/24." },
+          { q: "Un agent IA peut-il vraiment répondre au téléphone ?", a: "Oui. Un agent IA téléphonique, ou standardiste IA, décroche, se présente au nom de votre entreprise, répond aux questions courantes, qualifie la demande et prend un rendez-vous. Sur un cas urgent ou sensible, il transfère l'appel à un humain." },
+          { q: "Quelle est la différence entre un agent IA et un chatbot ?", a: "Un chatbot suit un script et répond à des questions prévues à l'avance ; il bloque dès qu'on sort du cadre. Un agent IA comprend, s'adapte et poursuit un objectif concret, comme réserver un créneau, même face à des questions imprévues." },
+          { q: "Combien coûte un agent IA pour une petite entreprise ?", a: "Pour une TPE ou un artisan, un agent IA se compose d'une installation unique puis d'un abonnement mensuel, selon le périmètre. Ce n'est pas réservé aux grandes entreprises. Le point de vigilance n'est pas le prix mais le temps de configuration, que le mode clé en main supprime." },
+          { q: "Un agent IA remplace-t-il un salarié ?", a: "Non. Il prend en charge les tâches répétitives et les moments où vous n'êtes pas disponible : appels manqués, soir, week-end. Il évite les clients perdus et libère votre temps, sans remplacer la relation humaine sur les sujets qui comptent." },
+          { q: "Comment mettre en place un agent IA dans mon entreprise ?", a: "Le plus simple est le clé en main : un prestataire installe, paramètre et connecte l'agent à vos outils (téléphone, agenda, fiche Google). Vous fournissez vos informations une fois et l'agent tourne. Commencez par un seul agent, sur votre fuite la plus coûteuse, puis ajoutez-en d'autres." },
+          { q: "Existe-t-il des agents IA gratuits ?", a: "Il existe des outils gratuits ou en libre-service, mais ils demandent un long paramétrage et un entretien réguliers, rarement compatibles avec le quotidien d'un artisan. Un agent installé et entretenu pour vous coûte un abonnement, mais il fonctionne vraiment dès le premier jour." },
+        ],
+      },
+
+      { type: "h2", text: "Installez votre premier agent IA avec Sitaly" },
+      { type: "p", text: "Standardiste qui ne rate plus un appel, prise de rendez-vous, relance de devis, réponse aux messages : Sitaly installe pour vous des agents IA clé en main, pensés pour les artisans et les TPE. Vous ne configurez rien, on branche tout. Réservez un appel gratuit de 20 minutes pour identifier l'agent qui vous fera gagner le plus de clients." },
+    ],
+  },
 ];
 
 

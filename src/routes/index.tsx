@@ -34,7 +34,7 @@ import { CALENDLY_URL } from "@/lib/config";
 const FAQ_ITEMS = [
   {
     q: "Quel est le tarif ?",
-    a: "Deux briques, sans engagement et sans frais d'installation. Sitaly Présence (149€/mois) : votre site entretenu, bien référencé localement, avec l'application Sitaly incluse. Sitaly Acquisition (dès 299€/mois) : la gestion de vos campagnes Google Ads pour générer des clients, indépendamment du site — trois formules Starter (299€), Growth (499€) et Performance (799€). Vous prenez l'une, l'autre, ou les deux. Le budget publicitaire Google reste séparé.",
+    a: "Trois offres combinables, sans engagement et sans frais d'installation. Sitaly Présence (149€/mois) : votre site entretenu, bien référencé localement, avec l'application Sitaly incluse. Sitaly Acquisition (dès 299€/mois) : la gestion de vos campagnes Google Ads pour générer des clients, indépendamment du site, avec trois formules Starter (299€), Growth (499€) et Performance (799€). Sitaly Agents IA : des agents installés clé en main qui répondent, qualifient, prennent vos rendez-vous et relancent vos devis. Vous prenez l'une, plusieurs, ou tout. Le budget publicitaire Google reste séparé.",
   },
   {
     q: "Que comprennent vraiment les modifications incluses ?",

@@ -164,22 +164,40 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               makesOffer: [
                 {
                   "@type": "Offer",
-                  name: "Création de site internet (paiement unique)",
+                  name: "Sitaly Présence",
                   description:
-                    "Création complète d'un site vitrine sur mesure pour artisan ou TPE, livré en 48h.",
-                  price: "790",
+                    "Site internet professionnel sur mesure livré en 48h, avec hébergement, maintenance, modifications, fiche Google Business et référencement local inclus. En location, sans engagement et sans frais d'installation.",
+                  price: "149",
                   priceCurrency: "EUR",
-                  category: "Création de site internet",
+                  category: "Site internet avec maintenance",
+                  priceSpecification: {
+                    "@type": "UnitPriceSpecification",
+                    price: "149",
+                    priceCurrency: "EUR",
+                    unitCode: "MON",
+                  },
                 },
                 {
                   "@type": "Offer",
-                  name: "Site + maintenance (abonnement)",
+                  name: "Sitaly Acquisition",
                   description:
-                    "Création du site, hébergement, sécurité, mises à jour, petites modifications et support inclus. Sans engagement.",
-                  price: "99",
+                    "Création et gestion complète de vos campagnes Google Ads pour générer des appels et des devis, avec ou sans site. Budget publicitaire non inclus. Sans engagement.",
+                  price: "299",
                   priceCurrency: "EUR",
-                  category: "Site internet avec maintenance",
-                  eligibleDuration: { "@type": "QuantitativeValue", unitCode: "MON", value: 1 },
+                  category: "Publicité Google Ads",
+                  priceSpecification: {
+                    "@type": "UnitPriceSpecification",
+                    price: "299",
+                    priceCurrency: "EUR",
+                    unitCode: "MON",
+                  },
+                },
+                {
+                  "@type": "Offer",
+                  name: "Sitaly Agents IA",
+                  description:
+                    "Des agents IA installés clé en main pour votre activité : standardiste qui ne rate plus un appel, prise de rendez-vous, relance des devis et réponse aux messages. Sans engagement.",
+                  category: "Automatisation par intelligence artificielle",
                 },
               ],
               contactPoint: {
