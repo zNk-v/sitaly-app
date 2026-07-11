@@ -3,17 +3,17 @@ import {
   Phone,
   Calendar,
   Check,
+  Minus,
   ArrowRight,
   PhoneMissed,
   CalendarClock,
   MessageSquare,
   Star,
   Bot,
-  Plug,
+  Users,
+  Rocket,
   ClipboardCheck,
   Sparkles,
-  ShieldCheck,
-  Clock,
 } from "lucide-react";
 import { SitalyLogo } from "@/components/SitalyLogo";
 import { CALENDLY_URL } from "@/lib/config";
@@ -34,20 +34,20 @@ const FAQ_ITEMS = [
     a: "Non. Sitaly installe et paramètre chaque agent pour votre activité : numéro, messages, horaires, questions à poser. Vous nous confiez les informations une seule fois, on branche tout et l'agent tourne. Vous n'ouvrez aucun logiciel.",
   },
   {
-    q: "L'agent va-t-il remplacer le contact humain ?",
-    a: "Non. L'agent prend le relais quand vous ne pouvez pas répondre — appel manqué, soir, chantier, week-end — pour ne perdre aucune demande. Vous gardez la main et rappelez vos clients quand vous le souhaitez.",
+    q: "Un pack ou des agents à l'unité ?",
+    a: "Un pack revient moins cher qu'additionner les agents un par un, et couvre un besoin complet dès le départ. Si vous avez un seul besoin précis, prenez l'agent qui y répond : vous ajouterez les autres plus tard, à votre rythme.",
   },
   {
-    q: "Combien de temps pour le mettre en place ?",
-    a: "Comptez quelques jours entre l'appel de cadrage et la mise en service. On part de vos besoins réels, on installe un premier agent, puis on en ajoute d'autres seulement s'ils vous font gagner du temps.",
+    q: "L'agent va-t-il remplacer le contact humain ?",
+    a: "Non. L'agent prend le relais quand vous ne pouvez pas répondre : appel manqué, soir, chantier, week-end, pour ne perdre aucune demande. Vous gardez la main et rappelez vos clients quand vous le souhaitez.",
+  },
+  {
+    q: "Combien de temps pour la mise en service ?",
+    a: "Comptez quelques jours entre l'appel de cadrage et la mise en service. On installe le pack ou l'agent choisi, on teste, puis ça tourne. Vous n'avez rien à faire pendant l'installation.",
   },
   {
     q: "Et si je veux arrêter ?",
-    a: "Sans engagement, comme le reste de Sitaly. Vous pouvez retirer un agent à tout moment avec un simple préavis, sans frais ni durée minimale.",
-  },
-  {
-    q: "Combien ça coûte ?",
-    a: "Chaque agent se compose d'une installation unique puis d'un abonnement mensuel, selon le périmètre. On chiffre précisément après l'appel de cadrage, une fois vos besoins clairs. Pas de surprise : vous savez tout à l'avance.",
+    a: "Sans engagement, comme le reste de Sitaly. Vous pouvez retirer un agent ou un pack à tout moment avec un simple préavis, sans frais ni durée minimale.",
   },
 ];
 
@@ -58,13 +58,13 @@ export const Route = createFileRoute("/agents-ia")({
       {
         name: "description",
         content:
-          "Des agents IA installés clé en main par Sitaly : standardiste qui ne rate plus un appel, relance des devis, réponse aux messages et prise de rendez-vous. Vous ne configurez rien, on branche tout. Réservez un appel.",
+          "Une équipe d'agents IA installés clé en main par Sitaly : standardiste, prise de rendez-vous, relance de devis, messages. Des packs pensés pour les artisans et TPE, ou des agents à l'unité. Réservez un appel.",
       },
       { property: "og:title", content: "Agents IA pour artisans & TPE | Sitaly" },
       {
         property: "og:description",
         content:
-          "Des agents IA installés clé en main par Sitaly : ils répondent, qualifient, relancent et prennent les rendez-vous à votre place. Zéro configuration. Réservez un appel.",
+          "Des agents IA installés clé en main : packs prêts à l'emploi ou agents à l'unité. Ils répondent, qualifient, relancent et prennent les rendez-vous à votre place. Réservez un appel.",
       },
       { property: "og:url", content: "https://sitaly.fr/agents-ia" },
     ],
@@ -92,10 +92,9 @@ function AgentsIA() {
     <div className="min-h-screen bg-background text-foreground">
       <Nav />
       <Hero />
-      <Problem />
-      <Agents />
-      <HowItWorks />
-      <Benefits />
+      <Packs />
+      <Comparatif />
+      <AgentsUnit />
       <Faq />
       <FinalCta />
       <Footer />
@@ -164,34 +163,34 @@ function Hero() {
               className={`inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-muted-foreground ${SOFT_SHADOW}`}
             >
               <Sparkles className="h-3.5 w-3.5 text-accent" />
-              Nouveau — Agents IA installés clé en main
+              Nouveau — Une équipe IA installée clé en main
             </div>
             <h1 className="mt-6 font-display text-4xl font-extrabold leading-[1.02] tracking-tight sm:text-5xl lg:text-6xl">
-              Un agent IA qui répond, qualifie et prend vos rendez-vous.{" "}
+              Une équipe d'agents IA qui travaille pour vous.{" "}
               <span className="gradient-text">Pendant que vous travaillez.</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg text-muted-foreground sm:text-xl">
-              Sitaly installe des agents IA pour votre activité : ils décrochent quand vous êtes sur
-              un chantier, relancent vos devis et répondent à vos messages.{" "}
+              De vrais collaborateurs virtuels pour votre activité : ils décrochent quand vous êtes
+              sur un chantier, prennent vos rendez-vous et relancent vos devis.{" "}
               <strong className="text-foreground">Vous ne configurez rien</strong>, on branche tout.
             </p>
 
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <a
+                href="#packs"
+                className={`inline-flex items-center justify-center gap-2 rounded-[8px] bg-primary px-6 py-3.5 text-base font-semibold text-primary-foreground transition hover:opacity-90 ${CARD_SHADOW}`}
+              >
+                Voir les packs
+                <ArrowRight className="h-5 w-5" />
+              </a>
+              <a
                 href={CALENDLY_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`inline-flex items-center justify-center gap-2 rounded-[8px] bg-primary px-6 py-3.5 text-base font-semibold text-primary-foreground transition hover:opacity-90 ${CARD_SHADOW}`}
+                className="inline-flex items-center justify-center gap-2 rounded-[8px] border border-border bg-card px-6 py-3.5 text-base font-semibold text-foreground transition hover:bg-secondary"
               >
                 <Calendar className="h-5 w-5" />
                 Réserver un appel
-              </a>
-              <a
-                href="#agents"
-                className="inline-flex items-center justify-center gap-2 rounded-[8px] border border-border bg-card px-6 py-3.5 text-base font-semibold text-foreground transition hover:bg-secondary"
-              >
-                Voir les agents
-                <ArrowRight className="h-5 w-5" />
               </a>
             </div>
 
@@ -265,218 +264,341 @@ function HeroMock() {
   );
 }
 
-/* ---------------- PROBLEM ---------------- */
-function Problem() {
-  const items = [
-    {
-      icon: PhoneMissed,
-      title: "Les appels manqués partent chez le concurrent",
-      desc: "Sur un chantier, vous ne pouvez pas décrocher. 6 clients sur 10 ne rappellent jamais et appellent le suivant.",
-    },
-    {
-      icon: Clock,
-      title: "Les devis restent sans réponse",
-      desc: "Un devis envoyé puis oublié, c'est une vente perdue. Sans relance, la moitié tombe dans l'oubli.",
-    },
-    {
-      icon: MessageSquare,
-      title: "Les messages s'accumulent le soir",
-      desc: "Formulaires, WhatsApp, Instagram : répondre tard et vite fait donne une image bâclée à vos prospects.",
-    },
-  ];
-  return (
-    <section className="py-20 sm:py-28">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <SectionHeader
-          eyebrow="Le constat"
-          title="Chaque demande sans réponse est un client perdu"
-          subtitle="Vous faites votre métier. Pendant ce temps, les appels, devis et messages attendent — et vos clients, eux, n'attendent pas."
-        />
-        <div className="mt-14 grid gap-6 md:grid-cols-3">
-          {items.map((it) => (
-            <div
-              key={it.title}
-              className={`rounded-[8px] border border-border bg-card p-7 transition hover:-translate-y-1 ${CARD_SHADOW}`}
-            >
-              <div className="grid h-12 w-12 place-items-center rounded-full bg-destructive/10 text-destructive">
-                <it.icon className="h-6 w-6" />
-              </div>
-              <h3 className="mt-5 text-lg font-bold">{it.title}</h3>
-              <p className="mt-2 text-[15px] text-muted-foreground">{it.desc}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
+/* ---------------- PACKS ---------------- */
+type Pack = {
+  name: string;
+  badge: string;
+  featured: boolean;
+  icon: typeof Bot;
+  desc: string;
+  features: string[];
+  install: string;
+  monthly: string;
+};
 
-/* ---------------- AGENTS ---------------- */
-const AGENTS = [
+const PACKS: Pack[] = [
   {
+    name: "Pack Essentiel",
+    badge: "Le plus simple",
+    featured: false,
     icon: Bot,
-    tag: "Le plus demandé",
-    name: "Agent standardiste",
-    desc: "Il décroche à votre place quand vous ne pouvez pas, répond aux questions courantes, qualifie la demande et propose un créneau.",
-    outcome: "Plus aucun appel manqué",
+    desc: "Automatisez votre accueil client et ne perdez plus aucun contact.",
+    features: ["Agent Standardiste", "Agent Prise de rendez-vous", "Agent Appels manqués"],
+    install: "990 €",
+    monthly: "149 €",
   },
   {
-    icon: CalendarClock,
-    tag: "Agenda",
-    name: "Agent prise de rendez-vous",
-    desc: "Il propose vos créneaux disponibles, confirme le rendez-vous et envoie les rappels automatiquement. Fini les allers-retours.",
-    outcome: "Un agenda qui se remplit seul",
+    name: "Pack Performance",
+    badge: "Le plus populaire",
+    featured: true,
+    icon: Users,
+    desc: "Automatisez votre accueil et votre suivi commercial.",
+    features: [
+      "Agent Standardiste",
+      "Agent Prise de rendez-vous",
+      "Agent Relance de devis",
+      "Agent Appels manqués",
+    ],
+    install: "1 490 €",
+    monthly: "249 €",
   },
   {
-    icon: ClipboardCheck,
-    tag: "Ventes",
-    name: "Agent relance de devis",
-    desc: "Il relance vos devis en attente au bon moment, avec le bon message, et vous prévient dès qu'un client répond.",
-    outcome: "Plus de devis signés",
-  },
-  {
-    icon: MessageSquare,
-    tag: "Messagerie",
-    name: "Agent messages & réseaux",
-    desc: "Il répond aux messages entrants — formulaire, WhatsApp, Instagram — qualifie le besoin et bascule vers un rendez-vous.",
-    outcome: "Une réponse en quelques secondes",
-  },
-  {
-    icon: Star,
-    tag: "Réputation",
-    name: "Agent avis Google",
-    desc: "Il sollicite un avis après chaque intervention et répond aux avis reçus pour renforcer votre visibilité locale.",
-    outcome: "Plus d'avis, mieux classé",
-  },
-  {
-    icon: PhoneMissed,
-    tag: "Rappel",
-    name: "Agent appels manqués",
-    desc: "Dès qu'un appel est manqué, il envoie un SMS automatique pour garder le contact et proposer de rappeler ou réserver.",
-    outcome: "Le lien n'est jamais rompu",
+    name: "Pack Croissance",
+    badge: "Automatisation complète",
+    featured: false,
+    icon: Rocket,
+    desc: "Confiez la majorité des tâches répétitives à votre équipe IA.",
+    features: ["Tous les agents IA", "Optimisations continues", "Support prioritaire"],
+    install: "1 990 €",
+    monthly: "349 €",
   },
 ];
 
-function Agents() {
+function CardPack({ pack }: { pack: Pack }) {
+  const { featured } = pack;
   return (
-    <section id="agents" className="hero-bg py-20 sm:py-28">
+    <div
+      className={`relative flex h-full flex-col rounded-[8px] bg-card p-7 sm:p-8 ${
+        featured
+          ? "shadow-glow border-2 border-accent lg:z-10 lg:scale-[1.03]"
+          : `border border-border ${CARD_SHADOW}`
+      }`}
+    >
+      {featured && (
+        <div className="absolute -top-4 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-accent px-4 py-1 text-xs font-bold uppercase tracking-wider text-accent-foreground shadow-elevated">
+          {pack.badge}
+        </div>
+      )}
+
+      <div className="flex items-center justify-between">
+        <div className="grid h-12 w-12 place-items-center rounded-full bg-accent/12 text-accent">
+          <pack.icon className="h-6 w-6" />
+        </div>
+        {!featured && (
+          <span className="rounded-full bg-secondary px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+            {pack.badge}
+          </span>
+        )}
+      </div>
+
+      <h3 className="mt-5 text-xl font-bold">{pack.name}</h3>
+      <p className="mt-2 text-[15px] text-muted-foreground">{pack.desc}</p>
+
+      <div className="mt-6 flex items-baseline gap-1">
+        <span className="font-display text-4xl font-extrabold tracking-tight sm:text-5xl">
+          {pack.monthly}
+        </span>
+        <span className="text-muted-foreground">/mois</span>
+      </div>
+      <p className="mt-1 text-sm font-medium text-foreground/70">+ {pack.install} d'installation</p>
+
+      <ul className="mt-6 space-y-3">
+        {pack.features.map((f) => (
+          <li key={f} className="flex items-start gap-3 text-[15px]">
+            <Check className={`mt-0.5 h-5 w-5 shrink-0 ${featured ? "text-accent" : "text-success"}`} />
+            <span>{f}</span>
+          </li>
+        ))}
+      </ul>
+
+      <div className="mt-auto pt-8">
+        <a
+          href={CALENDLY_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`inline-flex w-full items-center justify-center gap-2 rounded-[8px] px-6 py-3.5 text-base font-semibold transition ${
+            featured
+              ? `bg-accent text-accent-foreground hover:opacity-90 ${CARD_SHADOW}`
+              : "border border-border bg-secondary text-secondary-foreground hover:bg-muted"
+          }`}
+        >
+          <Calendar className="h-5 w-5" />
+          Choisir ce pack
+        </a>
+      </div>
+    </div>
+  );
+}
+
+function Packs() {
+  return (
+    <section id="packs" className="py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeader
-          eyebrow="Les agents"
-          title="Des agents qui travaillent à votre place"
-          subtitle="On installe uniquement ceux qui vous sont utiles. Vous commencez avec un agent, vous en ajoutez d'autres quand ils vous font gagner du temps."
+          eyebrow="Nos Packs IA"
+          title="Une équipe IA qui travaille pour votre entreprise"
+          subtitle="Commencez avec le pack adapté à votre activité. Ajoutez de nouveaux collaborateurs IA au fur et à mesure de votre croissance."
         />
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-auto mt-16 grid max-w-5xl items-stretch gap-6 md:grid-cols-3 lg:gap-8">
+          {PACKS.map((p) => (
+            <CardPack key={p.name} pack={p} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------------- COMPARATIF ---------------- */
+const PACK_COLS = ["Essentiel", "Performance", "Croissance"];
+const COMPARISON: { feature: string; vals: [boolean, boolean, boolean] }[] = [
+  { feature: "Standardiste", vals: [true, true, true] },
+  { feature: "Prise de rendez-vous", vals: [true, true, true] },
+  { feature: "Relance devis", vals: [false, true, true] },
+  { feature: "Messages & Réseaux", vals: [false, false, true] },
+  { feature: "Avis Google", vals: [false, false, true] },
+  { feature: "SMS appels manqués", vals: [true, true, true] },
+  { feature: "Support prioritaire", vals: [false, false, true] },
+  { feature: "Optimisation continue", vals: [false, false, true] },
+];
+
+function PricingTable() {
+  return (
+    <div className="mx-auto mt-14 max-w-4xl">
+      <div className={`overflow-x-auto rounded-[8px] border border-border bg-card ${CARD_SHADOW}`}>
+        <table className="w-full min-w-[600px] border-collapse text-left text-sm">
+          <thead>
+            <tr className="border-b border-border">
+              <th scope="col" className="px-5 py-4 font-semibold text-muted-foreground">
+                Inclus dans le pack
+              </th>
+              {PACK_COLS.map((c, i) => (
+                <th
+                  scope="col"
+                  key={c}
+                  className={`px-5 py-4 text-center font-bold ${
+                    i === 1 ? "bg-accent/5 text-accent" : "text-foreground"
+                  }`}
+                >
+                  {c}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {COMPARISON.map((row) => (
+              <tr key={row.feature} className="border-b border-border last:border-0">
+                <th scope="row" className="px-5 py-3.5 text-left font-medium text-foreground">
+                  {row.feature}
+                </th>
+                {row.vals.map((v, i) => (
+                  <td
+                    key={i}
+                    className={`px-5 py-3.5 text-center ${i === 1 ? "bg-accent/5" : ""}`}
+                  >
+                    {v ? (
+                      <Check className="mx-auto h-5 w-5 text-accent" aria-label="Inclus" />
+                    ) : (
+                      <Minus
+                        className="mx-auto h-4 w-4 text-muted-foreground/40"
+                        aria-label="Non inclus"
+                      />
+                    )}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}
+
+function Comparatif() {
+  return (
+    <section className="bg-secondary/40 py-20 sm:py-28">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <SectionHeader
+          eyebrow="Comparatif"
+          title="Ce que contient chaque pack"
+          subtitle="Trois niveaux d'automatisation. Vous montez d'un cran quand votre activité grandit."
+        />
+        <PricingTable />
+      </div>
+    </section>
+  );
+}
+
+/* ---------------- AGENTS À L'UNITÉ ---------------- */
+type Agent = {
+  icon: typeof Bot;
+  name: string;
+  desc: string;
+  outcome: string;
+  install: string;
+  monthly: string;
+};
+
+const AGENTS: Agent[] = [
+  {
+    icon: Bot,
+    name: "Agent Standardiste",
+    desc: "Il décroche à votre place, répond aux questions courantes, qualifie la demande et propose un créneau.",
+    outcome: "Plus aucun appel manqué",
+    install: "490 €",
+    monthly: "149 €",
+  },
+  {
+    icon: CalendarClock,
+    name: "Agent Prise de rendez-vous",
+    desc: "Il propose vos créneaux disponibles, confirme le rendez-vous et envoie les rappels automatiquement.",
+    outcome: "Un agenda qui se remplit seul",
+    install: "390 €",
+    monthly: "99 €",
+  },
+  {
+    icon: ClipboardCheck,
+    name: "Agent Relance de devis",
+    desc: "Il relance vos devis en attente au bon moment, avec le bon message, et vous prévient dès qu'un client répond.",
+    outcome: "Plus de devis signés",
+    install: "390 €",
+    monthly: "119 €",
+  },
+  {
+    icon: MessageSquare,
+    name: "Agent Messages & Réseaux",
+    desc: "Il répond aux messages entrants (formulaire, WhatsApp, Instagram), qualifie le besoin et bascule vers un rendez-vous.",
+    outcome: "Une réponse en quelques secondes",
+    install: "290 €",
+    monthly: "79 €",
+  },
+  {
+    icon: Star,
+    name: "Agent Avis Google",
+    desc: "Il sollicite un avis après chaque intervention et répond aux avis reçus pour renforcer votre visibilité locale.",
+    outcome: "Plus d'avis, mieux classé",
+    install: "190 €",
+    monthly: "39 €",
+  },
+  {
+    icon: PhoneMissed,
+    name: "Agent Appels manqués",
+    desc: "Dès qu'un appel est manqué, il envoie un SMS automatique pour garder le contact et proposer de rappeler ou réserver.",
+    outcome: "Le lien n'est jamais rompu",
+    install: "190 €",
+    monthly: "49 €",
+  },
+];
+
+function CardAgent({ agent }: { agent: Agent }) {
+  return (
+    <div
+      className={`flex flex-col rounded-[8px] border border-border bg-card p-5 transition hover:-translate-y-1 ${CARD_SHADOW}`}
+    >
+      <div className="flex items-center gap-3">
+        <div className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-accent/12 text-accent">
+          <agent.icon className="h-5 w-5" />
+        </div>
+        <h3 className="text-base font-bold leading-tight">{agent.name}</h3>
+      </div>
+      <p className="mt-3 flex-1 text-sm text-muted-foreground">{agent.desc}</p>
+      <div className="mt-3 flex items-center gap-1.5 text-sm font-semibold text-accent">
+        <Check className="h-4 w-4 shrink-0" />
+        {agent.outcome}
+      </div>
+      <div className="mt-4 flex items-baseline gap-1 border-t border-border pt-4">
+        <span className="font-display text-2xl font-extrabold">{agent.monthly}</span>
+        <span className="text-sm text-muted-foreground">/mois</span>
+      </div>
+      <p className="mt-0.5 text-xs text-muted-foreground">+ {agent.install} d'installation</p>
+      <a
+        href={CALENDLY_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-4 inline-flex w-full items-center justify-center gap-1.5 rounded-[8px] border border-border bg-card px-4 py-2.5 text-sm font-semibold text-foreground transition hover:bg-secondary"
+      >
+        Découvrir
+        <ArrowRight className="h-4 w-4" />
+      </a>
+    </div>
+  );
+}
+
+function AgentsUnit() {
+  return (
+    <section id="agents" className="py-20 sm:py-28">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <SectionHeader
+          eyebrow="À la carte"
+          title="Vous avez seulement besoin d'un agent ?"
+          subtitle="Commencez avec un seul collaborateur IA et faites évoluer votre automatisation à votre rythme."
+        />
+        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {AGENTS.map((a) => (
-            <div
-              key={a.name}
-              className={`flex flex-col rounded-[8px] border border-border bg-card p-7 transition hover:-translate-y-1 ${CARD_SHADOW}`}
-            >
-              <div className="flex items-center justify-between">
-                <div className="grid h-12 w-12 place-items-center rounded-full bg-accent/12 text-accent">
-                  <a.icon className="h-6 w-6" />
-                </div>
-                <span className="rounded-full bg-secondary px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
-                  {a.tag}
-                </span>
-              </div>
-              <h3 className="mt-5 text-lg font-bold">{a.name}</h3>
-              <p className="mt-2 flex-1 text-[15px] text-muted-foreground">{a.desc}</p>
-              <div className="mt-5 flex items-center gap-2 border-t border-border pt-4 text-sm font-semibold text-accent">
-                <Check className="h-4 w-4 shrink-0" />
-                {a.outcome}
-              </div>
-            </div>
+            <CardAgent key={a.name} agent={a} />
           ))}
         </div>
-        <p className="mx-auto mt-10 max-w-2xl text-center text-sm text-muted-foreground">
-          Besoin d'un agent sur mesure pour votre métier ? On le conçoit avec vous lors de l'appel.
-        </p>
-      </div>
-    </section>
-  );
-}
 
-/* ---------------- HOW IT WORKS ---------------- */
-function HowItWorks() {
-  const steps = [
-    {
-      n: "01",
-      icon: Phone,
-      title: "On cadre vos besoins",
-      desc: "Un appel de 20 min pour comprendre votre activité et choisir le ou les agents qui changent la donne pour vous.",
-    },
-    {
-      n: "02",
-      icon: Plug,
-      title: "On installe et on branche",
-      desc: "Numéro, messages, horaires, agenda : Sitaly paramètre l'agent pour vous et le connecte à vos outils. Vous ne touchez à rien.",
-    },
-    {
-      n: "03",
-      icon: ShieldCheck,
-      title: "Ça tourne, on veille",
-      desc: "L'agent répond dès le premier jour. On suit les résultats et on ajuste pour qu'il travaille toujours mieux.",
-    },
-  ];
-  return (
-    <section className="py-20 sm:py-28">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <SectionHeader
-          eyebrow="Clé en main"
-          title="Vous ne configurez rien. On s'occupe de tout."
-          subtitle="C'est toute la différence : vous n'achetez pas un logiciel à paramétrer, vous achetez un résultat installé et entretenu."
-        />
-        <div className="mt-14 grid gap-6 md:grid-cols-3">
-          {steps.map((s) => (
-            <div
-              key={s.n}
-              className={`relative rounded-[8px] border border-border bg-card p-7 ${CARD_SHADOW}`}
-            >
-              <div className="flex items-center justify-between">
-                <div className="grid h-12 w-12 place-items-center rounded-full bg-accent/12 text-accent">
-                  <s.icon className="h-6 w-6" />
-                </div>
-                <span className="font-display text-3xl font-extrabold text-accent/25">{s.n}</span>
-              </div>
-              <h3 className="mt-5 text-xl font-bold">{s.title}</h3>
-              <p className="mt-2 text-[15px] text-muted-foreground">{s.desc}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ---------------- BENEFITS ---------------- */
-function Benefits() {
-  const items = [
-    { v: "24/7", l: "Vos clients trouvent toujours une réponse" },
-    { v: "0", l: "Appel manqué qui part chez le concurrent" },
-    { v: "48h", l: "Pour un premier agent en service" },
-    { v: "Sans", l: "Engagement, comme tout Sitaly" },
-  ];
-  return (
-    <section className="bg-primary py-20 text-primary-foreground sm:py-28">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="max-w-2xl">
-          <div className="text-xs font-semibold uppercase tracking-wider text-accent">Ce que ça change</div>
-          <h2 className="mt-2 font-display text-3xl font-extrabold sm:text-4xl">
-            Vous récupérez du temps et des clients
-          </h2>
-          <p className="mt-3 text-primary-foreground/70">
-            Pendant que vos agents répondent, qualifient et relancent, vous restez concentré sur votre
-            métier.
+        <div className="mx-auto mt-10 max-w-3xl rounded-[8px] border border-border bg-secondary/40 p-6 text-center">
+          <p className="text-sm font-medium text-foreground/80">
+            Toutes les offres incluent la configuration personnalisée, les tests, la mise en service,
+            les mises à jour, la maintenance et un volume d'utilisation mensuel.
           </p>
-        </div>
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {items.map((i) => (
-            <div key={i.l} className="rounded-[8px] border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
-              <div className="font-display text-4xl font-extrabold text-accent">{i.v}</div>
-              <div className="mt-2 text-sm text-primary-foreground/75">{i.l}</div>
-            </div>
-          ))}
+          <p className="mt-2 text-xs text-muted-foreground">
+            Les consommations dépassant le forfait inclus (appels, SMS ou conversations IA) peuvent
+            faire l'objet d'une facturation complémentaire.
+          </p>
         </div>
       </div>
     </section>
@@ -486,7 +608,7 @@ function Benefits() {
 /* ---------------- FAQ ---------------- */
 function Faq() {
   return (
-    <section className="py-20 sm:py-28">
+    <section className="bg-secondary/40 py-20 sm:py-28">
       <div className="mx-auto max-w-3xl px-4 sm:px-6">
         <SectionHeader
           eyebrow="FAQ"
@@ -516,7 +638,7 @@ function FinalCta() {
           Prêt à ne plus rien laisser passer ?
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
-          Réservez un appel de 20 minutes. On identifie ensemble le premier agent à installer et ce
+          Réservez un appel de 20 minutes. On identifie ensemble le pack ou l'agent à installer et ce
           qu'il vous rapporte. Sans engagement, ni démarchage.
         </p>
         <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
