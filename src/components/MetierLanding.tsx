@@ -162,7 +162,6 @@ export function MetierLanding(props: MetierLandingProps) {
                   "Maintenance & modifications",
                   "Fiche Google Business",
                   "Référencement local",
-                  "Accès Sitaly App inclus",
                 ],
                 note: null as string | null,
               },
