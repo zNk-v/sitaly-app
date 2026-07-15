@@ -51,7 +51,7 @@ export const BLOG_POSTS: BlogPost[] = [
         headers: ["", "Logiciels de facturation", "Outils de développement client"],
         rows: [
           ["À quoi ça sert", "Éditer devis, factures, compta", "Trouver, suivre et fidéliser des clients"],
-          ["Exemples", "Axonaut, Extrabat, Tolteck", "CRM léger, gestion des avis, Sitaly App"],
+          ["Exemples", "Axonaut, Extrabat, Tolteck", "CRM léger, avis Google, agents IA"],
           ["Ce que ça règle", "La paperasse et le légal", "Le carnet de commandes"],
           ["Impact sur le CA", "Indirect (gain de temps)", "Direct (plus d'appels, plus de devis)"],
         ],
@@ -87,29 +87,29 @@ export const BLOG_POSTS: BlogPost[] = [
       { type: "h2", text: "Un carnet et un tableur, ça ne suffit pas ?" },
       { type: "p", text: "Pour vos cinq premiers clients, oui. Au-delà, le carnet devient un trou noir : vous oubliez de relancer, vous perdez un numéro, vous ne savez plus qui a reçu son devis. Un tableur Excel fait illusion un temps, mais il ne vous rappellera jamais d'appeler M. Diallo aujourd'hui, et il n'enverra jamais une demande d'avis à votre place. Le passage à un vrai outil, c'est le moment où vous arrêtez de gérer de tête et où vous arrêtez de perdre des clients par simple oubli." },
 
-      { type: "h2", text: "Sitaly App : le copilote pour développer votre activité" },
-      { type: "p", text: "Sitaly App n'est pas un énième logiciel de facturation. C'est l'outil de la seconde famille, celui qui vous manque : un assistant digital pensé pour les artisans, qui centralise vos clients, muscle votre réputation et vous dit chaque jour quoi faire pour développer votre activité." },
+      { type: "h2", text: "Sitaly : la brique développement client, gérée pour vous" },
+      { type: "p", text: "Sitaly ne remplace pas votre logiciel de facturation. Sitaly s'occupe de la seconde famille, celle qui vous manque : être trouvé sur Google, récolter des avis, relancer au bon moment et ne rater aucun appel. La différence, c'est qu'on ne vous livre pas un énième outil à configurer seul. On met en place cette brique et on la fait tourner à votre place." },
       {
         type: "ul",
         items: [
-          "Un CRM simple : vos clients et prospects, leur statut, vos notes, l'historique, en un coup d'œil",
-          "Les avis Google : une demande d'avis envoyée par SMS ou WhatsApp en un clic, avec le lien direct vers votre fiche",
-          "Un assistant IA qui rédige vos réponses aux avis, vos SMS, vos e-mails et vos publications",
-          "Un tableau de bord qui affiche chaque matin vos actions prioritaires",
-          "Un score de visibilité et des recommandations concrètes, calculés dès votre inscription",
+          "Un site professionnel et une fiche Google soignée, pour être trouvé dans votre zone",
+          "Des demandes d'avis Google envoyées à vos clients au bon moment, sans que vous y pensiez",
+          "Un agent IA qui reprend vos appels manqués, relance vos devis en attente et prend vos rendez-vous",
+          "Vos réponses aux avis, SMS et messages rédigées pour vous",
+          "Un interlocuteur unique qui ajuste tout ça au fil des mois",
         ],
       },
-      { type: "p", text: "Le tout dans une interface épurée, utilisable depuis le téléphone, sans aucune compétence technique. Sitaly App se concentre sur ce qui remplit votre planning et laisse la facturation aux outils qui font ça très bien : les deux sont complémentaires." },
-      { type: "p", text: "L'application Sitaly est incluse dans l'offre Sitaly Présence (à partir de 149 €/mois, sans engagement) : votre site, votre visibilité locale et votre copilote de développement client réunis. Surtout, on la configure pour vous et on la connecte à votre fiche Google. Vous ne partez pas d'une page blanche, vous démarrez avec un outil déjà prêt pour votre métier." },
+      { type: "p", text: "Sitaly se concentre sur ce qui remplit votre planning et laisse la facturation aux outils qui font ça très bien : les deux sont complémentaires. Vous gardez votre logiciel de devis, on branche la partie qui vous apporte des clients." },
+      { type: "p", text: "Concrètement, ça tient en deux offres sans engagement : Sitaly Présence (à partir de 149 €/mois) pour votre site, votre visibilité locale et votre fiche Google, et Sitaly Agents IA pour automatiser relances, avis et appels manqués. On installe et on connecte tout à votre place. Vous ne partez pas d'une page blanche, vous démarrez avec un système déjà prêt pour votre métier." },
 
       { type: "h2", text: "Comment on met ça en place pour vous" },
       {
         type: "ul",
         items: [
           "Un appel de 20 minutes pour cadrer votre métier, votre zone et vos priorités",
-          "Sitaly configure l'application et la connecte à votre fiche Google Business",
-          "On importe avec vous vos clients et chantiers en cours",
-          "Chaque matin, l'application vous montre qui relancer et quel avis demander : vous n'avez plus qu'à suivre",
+          "Sitaly met en place votre visibilité et connecte vos agents à votre fiche Google Business",
+          "On règle avec vous les relances de devis, les demandes d'avis et la reprise des appels manqués",
+          "Ensuite tout tourne en fond : vous recevez les appels et les demandes de devis, on ajuste au fil des mois",
         ],
       },
 
@@ -119,10 +119,10 @@ export const BLOG_POSTS: BlogPost[] = [
         type: "faq",
         items: [
           { q: "C'est quoi un logiciel de gestion pour artisan ?", a: "C'est un outil qui centralise et automatise une partie de votre activité. Attention : certains gèrent la facturation et les chantiers (devis, factures, compta), d'autres gèrent le développement client (suivi des prospects, avis Google, relances, visibilité). Les deux sont utiles mais ne règlent pas le même problème." },
-          { q: "Existe-t-il un logiciel gratuit pour artisan ?", a: "Plusieurs outils de facturation proposent une version gratuite ou un essai. Côté développement client (suivi des prospects, avis Google, relances), l'application Sitaly est incluse dans l'offre Sitaly Présence et installée pour vous, plutôt que laissée à configurer seul. Réservez un appel pour voir ce qui correspond à votre situation." },
+          { q: "Existe-t-il un logiciel gratuit pour artisan ?", a: "Plusieurs outils de facturation proposent une version gratuite ou un essai. Côté développement client (avis Google, relances, appels manqués), Sitaly met ces automatisations en place pour vous via ses offres Présence et Agents IA, plutôt que de vous laisser un outil à configurer seul. Réservez un appel pour voir ce qui correspond à votre situation." },
           { q: "Un CRM est-il vraiment utile pour un artisan seul ?", a: "Surtout pour un artisan seul. Quand personne ne gère les relances à votre place, un outil qui vous rappelle qui contacter et quand vous évite de perdre des devis par simple oubli. C'est du chiffre d'affaires récupéré sans aucun budget publicitaire." },
-          { q: "Sitaly remplace-t-il mon logiciel de facturation ?", a: "Non, et c'est volontaire. Sitaly App se concentre sur les clients, les avis et la visibilité. Vous gardez votre outil de devis et de facture : les deux fonctionnent très bien ensemble." },
-          { q: "Faut-il être à l'aise avec l'informatique ?", a: "Non. Sitaly App est conçu pour être utilisé entre deux chantiers, depuis le téléphone, sans formation. Si vous savez envoyer un SMS, vous savez vous en servir." },
+          { q: "Sitaly remplace-t-il mon logiciel de facturation ?", a: "Non, et c'est volontaire. Sitaly se concentre sur les clients, les avis et la visibilité. Vous gardez votre outil de devis et de facture : les deux fonctionnent très bien ensemble." },
+          { q: "Faut-il être à l'aise avec l'informatique ?", a: "Non. Comme Sitaly installe et fait tourner les outils à votre place, vous n'avez rien à configurer. Vous recevez les appels et les demandes de devis, on s'occupe de la technique." },
         ],
       },
 
